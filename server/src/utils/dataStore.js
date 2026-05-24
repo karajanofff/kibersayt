@@ -48,15 +48,18 @@ export function getTestMeta() {
 }
 
 export function getCtfPublic() {
-  return readJson('ctf').map(({ flag, hintAnswer, javobFormat, ...rest }) => rest);
+  return readJson('ctf').map(({ flag, hintAnswer, javobFormat, acceptAliases, ...rest }) => rest);
 }
 
 export function checkCtfFlag(id, submittedFlag) {
   const challenges = readJson('ctf');
   const challenge = challenges.find((c) => c.id === id);
   if (!challenge) return { valid: false, message: 'Masala tabılmadı' };
-  const ok =
-    submittedFlag.trim().toLowerCase() === challenge.flag.toLowerCase();
+  const submitted = submittedFlag.trim().toLowerCase();
+  const accepted = [challenge.flag, ...(challenge.acceptAliases || [])].map((f) =>
+    f.toLowerCase()
+  );
+  const ok = accepted.includes(submitted);
   return {
     valid: ok,
     message: ok ? 'Flag durıs! Qutlıqlısız!' : 'Flag nadurıs. Qayta urınıp kóriń.',

@@ -106,7 +106,7 @@ router.get('/ctf/demo/aes', (req, res) => {
     success: true,
     data: {
       algorithm: 'AES-128-CBC',
-      ciphertext: 'W6LOHqRrBRx5wbKGmKrQdjsGj4EY0Mf8oLl48seaB3A=',
+      ciphertext: 'Z7lpNoFtIqEHCh913KpYUw==',
       key: 'CyberEduAESKey16',
       iv: '1234567890abcdef',
       encoding: 'base64',

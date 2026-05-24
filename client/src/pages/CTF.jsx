@@ -6,7 +6,6 @@ export default function CTF() {
   const [challenges, setChallenges] = useState([]);
   const [answers, setAnswers] = useState({});
   const [messages, setMessages] = useState({});
-  const [aesDemo, setAesDemo] = useState({});
 
   useEffect(() => {
     apiFetch('/api/ctf').then((res) => setChallenges(res.data));
@@ -26,15 +25,6 @@ export default function CTF() {
       }));
     } catch (err) {
       setMessages((m) => ({ ...m, [challengeId]: { ok: false, text: err.message } }));
-    }
-  };
-
-  const showAesDemo = async (challengeId) => {
-    try {
-      const res = await apiFetch('/api/ctf/demo/aes');
-      setAesDemo((d) => ({ ...d, [challengeId]: res.data }));
-    } catch {
-      setAesDemo((d) => ({ ...d, [challengeId]: { error: 'AES demo alınbadı' } }));
     }
   };
 
@@ -112,31 +102,39 @@ export default function CTF() {
               </p>
             )}
 
-            {c.id === 'ctf-4' && (
-              <div className="mt-4">
-                <button
-                  type="button"
-                  className="btn-secondary text-sm"
-                  onClick={() => showAesDemo(c.id)}
-                >
+            {c.kriptoKomek && (
+              <div className="mt-4 rounded-lg border border-amber-500/30 bg-amber-950/20 p-4 text-sm">
+                <div className="mb-2 flex items-center gap-2 font-semibold text-amber-300">
                   <KeyRound className="h-4 w-4" />
-                  AES demo — kalit hám IV
-                </button>
-                {aesDemo[c.id] && !aesDemo[c.id].error && (
-                  <div className="mt-3 rounded-lg border border-slate-600 bg-slate-800/80 p-3 text-sm text-slate-300">
-                    <p>
-                      <span className="text-slate-500">Algoritm:</span> {aesDemo[c.id].algorithm}
-                    </p>
-                    <p className="mt-1">
-                      <span className="text-slate-500">Kalit:</span>{' '}
-                      <code className="text-cyber-300">{aesDemo[c.id].key}</code>
-                    </p>
-                    <p className="mt-1">
-                      <span className="text-slate-500">IV:</span>{' '}
-                      <code className="text-cyber-300">{aesDemo[c.id].iv}</code>
-                    </p>
-                  </div>
+                  Dekodlaw ushın málimotlar (tayar)
+                </div>
+                <p>
+                  <span className="text-slate-500">Algoritm:</span>{' '}
+                  <span className="text-slate-200">{c.kriptoKomek.algorithm}</span>
+                </p>
+                <p className="mt-1">
+                  <span className="text-slate-500">Kalit (Key):</span>{' '}
+                  <code className="select-all text-cyber-300">{c.kriptoKomek.key}</code>
+                </p>
+                <p className="mt-1">
+                  <span className="text-slate-500">IV:</span>{' '}
+                  <code className="select-all text-cyber-300">{c.kriptoKomek.iv}</code>
+                </p>
+                {c.kriptoKomek.qadamlar && (
+                  <ol className="mt-3 list-decimal space-y-1 pl-5 text-slate-300">
+                    {c.kriptoKomek.qadamlar.map((q) => (
+                      <li key={q}>{q}</li>
+                    ))}
+                  </ol>
                 )}
+                <a
+                  href="https://gchq.github.io/CyberChef/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 inline-block text-cyber-400 hover:underline"
+                >
+                  CyberChef saytın ashıw →
+                </a>
               </div>
             )}
 
