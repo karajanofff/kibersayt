@@ -31,7 +31,7 @@ export default function Modules() {
         <BookOpen className="h-8 w-8 text-cyber-400" />
         Kurs modulları
       </h1>
-      <p className="mt-2 text-slate-400">6 modul, hár birinde 3 sabaq</p>
+      <p className="mt-2 text-slate-400">6 modul, hár birinde 5 sabaq</p>
 
       <div className="mt-8 grid gap-6 md:grid-cols-2">
         {modules.map((mod) => {

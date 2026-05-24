@@ -53,7 +53,7 @@ export default function Landing() {
             {
               icon: BookOpen,
               title: '6 kurs moduli',
-              desc: 'Hár birinde 3 sabaq — tarmaq, web, kripto hám basqalar.',
+              desc: 'Hár birinde 5 sabaq — tolıq teoriya hám amaliy maǵlıwmat.',
             },
             {
               icon: FlaskConical,
