@@ -1,0 +1,164 @@
+[
+  {
+    "id": "mod-1",
+    "title": "Kiberqáwipsizlikke kirispe",
+    "description": "Kiberqáwipsizlik túsiniwleri, threat landscape va etika.",
+    "icon": "shield",
+    "order": 1,
+    "lessons": [
+      {
+        "id": "lesson-1-1",
+        "title": "Kiberqáwipsizlik nima?",
+        "duration": "15 min",
+        "content": "Kiberqáwipsizlik — maǵlıwmatlar, tizimler hám tarmoqlardı qorǵaw sanatı hám ilmi. Bul darsda CIA triadası (Confidentiality, Integrity, Availability) hám zamonavı kiberlandshaft túsindiriledi. Oqıwshılar haqıqıy hujum emes, qorǵaw strategiyalarına diqqat qaratadı."
+      },
+      {
+        "id": "lesson-1-2",
+        "title": "Kiberxavflar túrleri",
+        "duration": "20 min",
+        "content": "Malware, phishing, DDoS, insider threat — bul xavflar qanday isleydi hám qanday qarsı sharalar bar. Demo stsenariylar arqalı xavf modelin qurıw mashqı."
+      },
+      {
+        "id": "lesson-1-3",
+        "title": "Kiberetika hám qonun",
+        "duration": "18 min",
+        "content": "Qonuniy chegaralar, etikalı oqıw, responsible disclosure. Platformada barlıq mashqlar simulyatsiya hám qonuniy ramkada ótedı."
+      }
+    ]
+  },
+  {
+    "id": "mod-2",
+    "title": "Tarmoq qáwipsizligi",
+    "description": "TCP/IP, firewall, VPN hám tarmoq monitoring.",
+    "icon": "network",
+    "order": 2,
+    "lessons": [
+      {
+        "id": "lesson-2-1",
+        "title": "TCP/IP asosları",
+        "duration": "25 min",
+        "content": "OSI modeli, IP, TCP, UDP — paketler qanday júrgenin túsiniw kiberqáwipsizlik ushın muhim."
+      },
+      {
+        "id": "lesson-2-2",
+        "title": "Firewall hám IDS",
+        "duration": "22 min",
+        "content": "Stateful firewall, IDS/IPS ayırması, qáwim qoideleri jasaw prinsipleri."
+      },
+      {
+        "id": "lesson-2-3",
+        "title": "VPN hám shifrlaw",
+        "duration": "20 min",
+        "content": "VPN túrleri, TLS, tarmoq trafigin qorǵaw usılları."
+      }
+    ]
+  },
+  {
+    "id": "mod-3",
+    "title": "Web qáwipsizligi",
+    "description": "OWASP xavfları, XSS, CSRF, SQL injection túsiniwleri.",
+    "icon": "globe",
+    "order": 3,
+    "lessons": [
+      {
+        "id": "lesson-3-1",
+        "title": "HTTP hám sessiya",
+        "duration": "20 min",
+        "content": "Cookie, session, HTTPS — web qáwipsizliginin negizi."
+      },
+      {
+        "id": "lesson-3-2",
+        "title": "XSS hám CSRF",
+        "duration": "24 min",
+        "content": "XSS túrleri, CSRF tokenlar, input sanitizatsiya — qorǵaw usılları."
+      },
+      {
+        "id": "lesson-3-3",
+        "title": "SQL injection qarsı",
+        "duration": "26 min",
+        "content": "Parametrli so'rovlar, ORM, prepared statements — xavfsiz kod yazıw."
+      }
+    ]
+  },
+  {
+    "id": "mod-4",
+    "title": "Kriptografiya",
+    "description": "Simmetrik, asimmetrik shifrlaw hám hash.",
+    "icon": "lock",
+    "order": 4,
+    "lessons": [
+      {
+        "id": "lesson-4-1",
+        "title": "Hash funksiyaları",
+        "duration": "18 min",
+        "content": "SHA-256, salt, parol saqlaw — hash qanday isleydi."
+      },
+      {
+        "id": "lesson-4-2",
+        "title": "AES hám RSA",
+        "duration": "28 min",
+        "content": "Simmetrik hám asimmetrik shifrlaw, kalit almasıw."
+      },
+      {
+        "id": "lesson-4-3",
+        "title": "Sertifikatlar hám PKI",
+        "duration": "22 min",
+        "content": "SSL/TLS, CA, sertifikat zanjiri."
+      }
+    ]
+  },
+  {
+    "id": "mod-5",
+    "title": "Incident Response",
+    "description": "Insidentlerdi aniqlaw, tahlil qılıw hám qayta tiklew.",
+    "icon": "alert",
+    "order": 5,
+    "lessons": [
+      {
+        "id": "lesson-5-1",
+        "title": "Insident josparı",
+        "duration": "20 min",
+        "content": "NIST IR fazaları: tayarlıq, aniqlaw, jazıw, qayta tiklew."
+      },
+      {
+        "id": "lesson-5-2",
+        "title": "Log tahlili",
+        "duration": "25 min",
+        "content": "SIEM, log korrelatsiya, IOC izlew."
+      },
+      {
+        "id": "lesson-5-3",
+        "title": "Forensics kirispe",
+        "duration": "30 min",
+        "content": "Disk imajı, memória tahlili — etikalı hám qonuniy chegaralar."
+      }
+    ]
+  },
+  {
+    "id": "mod-6",
+    "title": "Cloud qáwipsizligi",
+    "description": "Bulut infratuzilmasında qáwipsizlik basqıshları.",
+    "icon": "cloud",
+    "order": 6,
+    "lessons": [
+      {
+        "id": "lesson-6-1",
+        "title": "Shared responsibility",
+        "duration": "16 min",
+        "content": "Bulut provayder hám mijoz masuliyatı ayırması."
+      },
+      {
+        "id": "lesson-6-2",
+        "title": "IAM hám MFA",
+        "duration": "22 min",
+        "content": "Identity management, rol-based access, MFA."
+      },
+      {
+        "id": "lesson-6-3",
+        "title": "Container qáwipsizligi",
+        "duration": "24 min",
+        "content": "Docker image skaner, least privilege, secrets management."
+      }
+    ]
+  }
+]

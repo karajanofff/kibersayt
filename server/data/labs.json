@@ -1,0 +1,72 @@
+[
+  {
+    "id": "lab-1",
+    "title": "Parol qáwipsizligi simulyatsiyası",
+    "difficulty": "basta",
+    "duration": "30 min",
+    "description": "Parol qáwipsizligi qáwimlerin oqıw orayında amaliy mashq qılıń. Haqıqıy sistemalarga hujum qılmaymız.",
+    "objectives": ["Parol qáwimlerin túsiniw", "Brute-force xavfini baha law", "Xavfsiz parol jasaw"],
+    "steps": [
+      "Demo parol generatorin isletiń",
+      "Parol qáwim skorin tahlil qılıń",
+      "Xavfsiz parol siyasatın jazıń"
+    ],
+    "status": "available"
+  },
+  {
+    "id": "lab-2",
+    "title": "Phishing xabarın anıqlaw",
+    "difficulty": "orta",
+    "duration": "45 min",
+    "description": "Simulyatsiya email xabarları arasında phishing belgilerin tabıń.",
+    "objectives": ["Phishing belgilerin tanıw", "URL tekseriw", "Xabar metadata tahlili"],
+    "steps": [
+      "5 ta demo xabardı oqıń",
+      "Shubhalı belgilerdi belgileń",
+      "Qáwipsizlik eslatmasın jazıń"
+    ],
+    "status": "available"
+  },
+  {
+    "id": "lab-3",
+    "title": "Firewall qáwimlarin sozlaw",
+    "difficulty": "orta",
+    "duration": "60 min",
+    "description": "Virtual firewall orayında trafik qáwimlerin sozlaw mashqı.",
+    "objectives": ["Inbound/outbound qáwimler", "Port filtratsiyası", "Log tahlili"],
+    "steps": [
+      "Demo firewall interfeysin ashıń",
+      "HTTP/HTTPS qáwimlerin qosıń",
+      "Test trafikti tekseriń"
+    ],
+    "status": "available"
+  },
+  {
+    "id": "lab-4",
+    "title": "Hash funksiyaları laboratoriyası",
+    "difficulty": "basta",
+    "duration": "40 min",
+    "description": "MD5, SHA-256 hashlerin salıstırıw mashqı (oquw maqsadında).",
+    "objectives": ["Hash túsiniw", "Salt qollanıw", "Collision túsiniw"],
+    "steps": [
+      "Matn hashin hisaplań",
+      "Salt qosıp qayta hisaplań",
+      "Nátijelerdi salıstırıń"
+    ],
+    "status": "available"
+  },
+  {
+    "id": "lab-5",
+    "title": "Incident response josparı",
+    "difficulty": "joqarı",
+    "duration": "90 min",
+    "description": "Simulyatsiya insidenti boyınsha response josparın jasaw.",
+    "objectives": ["Insident klassifikatsiyası", "Kommunikatsiya", "Qayta tiklew"],
+    "steps": [
+      "Insident stsenariyin oqıń",
+      "Response josparın toltırıń",
+      "Post-mortem eslatmasın jazıń"
+    ],
+    "status": "available"
+  }
+]

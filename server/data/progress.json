@@ -1,0 +1,20 @@
+{
+  "student-1": {
+    "completedLessons": ["lesson-1-1", "lesson-1-2"],
+    "completedLabs": ["lab-1"],
+    "testScore": 75,
+    "testPassed": true,
+    "ctfSolved": ["ctf-1", "ctf-2"],
+    "moduleProgress": { "mod-1": 66 },
+    "updatedAt": "2026-05-20T10:00:00.000Z"
+  },
+  "student-2": {
+    "completedLessons": ["lesson-1-1"],
+    "completedLabs": [],
+    "testScore": 55,
+    "testPassed": false,
+    "ctfSolved": ["ctf-1"],
+    "moduleProgress": { "mod-1": 33 },
+    "updatedAt": "2026-05-21T14:30:00.000Z"
+  }
+}

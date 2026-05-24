@@ -1,0 +1,126 @@
+{
+  "title": "Kiberqáwipsizlik bilim testi",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": "q-1",
+      "text": "CIA triadasında 'C' nima anglatadı?",
+      "options": ["Confidentiality", "Compliance", "Capacity", "Control"],
+      "correctIndex": 0
+    },
+    {
+      "id": "q-2",
+      "text": "Phishing — bul qanday xavf?",
+      "options": ["Fizikalıq búzıw", "Aldaw arqalı maǵlıwmat alıw", "DDoS", "Brute-force"],
+      "correctIndex": 1
+    },
+    {
+      "id": "q-3",
+      "text": "Xavfsiz parol ushın eng jaqsı amaliyat?",
+      "options": ["Bir paroldı barlıq jerde qollanıw", "Uzın hám únikal parol", "Ism hám tuwılǵan sánesi", "Parolsız kiris"],
+      "correctIndex": 1
+    },
+    {
+      "id": "q-4",
+      "text": "HTTPS qanday protokol?",
+      "options": ["HTTP + TLS", "FTP", "SMTP", "DNS"],
+      "correctIndex": 0
+    },
+    {
+      "id": "q-5",
+      "text": "XSS — bul ne?",
+      "options": ["Cross-Site Scripting", "Extra Secure Socket", "XML Storage", "Cross Server Sync"],
+      "correctIndex": 0
+    },
+    {
+      "id": "q-6",
+      "text": "SQL injectionnan qorǵanish?",
+      "options": ["Parametrli so'rovlar", "Parolsız DB", "Public admin", "SQL debug rejimi"],
+      "correctIndex": 0
+    },
+    {
+      "id": "q-7",
+      "text": "MFA nima?",
+      "options": ["Multi-Factor Authentication", "Main File Access", "Manual Firewall Admin", "Memory Forensics Analysis"],
+      "correctIndex": 0
+    },
+    {
+      "id": "q-8",
+      "text": "SHA-256 qanday funksiya?",
+      "options": ["Hash", "Shifrlaw", "Sıqıw", "Arxivlew"],
+      "correctIndex": 0
+    },
+    {
+      "id": "q-9",
+      "text": "Firewall ne ish qıladı?",
+      "options": ["Trafikti filtrleýdi", "Virus jazadı", "Parol buzadı", "Email jiberedi"],
+      "correctIndex": 0
+    },
+    {
+      "id": "q-10",
+      "text": "Responsible disclosure — ne?",
+      "options": ["Xavfsizlik kamchiligin etikalı xabarlaw", "Hujum jasaw", "Maǵlıwmat satusıw", "Parol paylasıw"],
+      "correctIndex": 0
+    },
+    {
+      "id": "q-11",
+      "text": "DDoS xavfı nege qaratılǵan?",
+      "options": ["Qızmetten sheshiriw", "Parol ózgertiw", "Email oqıw", "Fayl nusqalasıw"],
+      "correctIndex": 0
+    },
+    {
+      "id": "q-12",
+      "text": "VPN ne ushın qollanıladı?",
+      "options": ["Xavfsiz túnel", "Virus skaner", "Parol generator", "Spam filtr"],
+      "correctIndex": 0
+    },
+    {
+      "id": "q-13",
+      "text": "OWASP Top 10 ne haqqında?",
+      "options": ["Web qáwipsizligi xavfları", "Operatsion sistema", "Printer qáwipsizligi", "Fizikalıq qorǵaw"],
+      "correctIndex": 0
+    },
+    {
+      "id": "q-14",
+      "text": "Salt parol hashinde ne ushın?",
+      "options": ["Rainbow table qarsı", "Tezlik artırıw", "Parol uzaytırıw", "Email qosıw"],
+      "correctIndex": 0
+    },
+    {
+      "id": "q-15",
+      "text": "CSRF token ne qıladı?",
+      "options": ["So'rov avtorizatsiyasın tekseredi", "Virus óchiredi", "Parol generatsiya qıladı", "Log jazadı"],
+      "correctIndex": 0
+    },
+    {
+      "id": "q-16",
+      "text": "Insident response birinshi qadamı?",
+      "options": ["Anıqlaw hám klassifikatsiya", "Formatlaw", "Marketing", "Sotıw"],
+      "correctIndex": 0
+    },
+    {
+      "id": "q-17",
+      "text": "Least privilege printsipi?",
+      "options": ["Minimal kerek ruxsat", "Maksimal admin", "Parolsız kiris", "Ochiq portlar"],
+      "correctIndex": 0
+    },
+    {
+      "id": "q-18",
+      "text": "TLS ne qorǵaydı?",
+      "options": ["Trafik shifrlaw", "Fizikalıq esik", "Printer", "Monitor"],
+      "correctIndex": 0
+    },
+    {
+      "id": "q-19",
+      "text": "Bulut shared responsibility kimge qaratılǵan?",
+      "options": ["Provayder hám mijoz", "Faqat student", "Faqat hacker", "Faqat DNS"],
+      "correctIndex": 0
+    },
+    {
+      "id": "q-20",
+      "text": "Kiberetika oqıwda ne muhim?",
+      "options": ["Qonuniy hám etikalı mashq", "Haqiqiy hujum", "Parol satusıw", "Noqonuniy ekspluatatsiya"],
+      "correctIndex": 0
+    }
+  ]
+}

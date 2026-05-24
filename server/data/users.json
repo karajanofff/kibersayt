@@ -1,0 +1,44 @@
+[
+  {
+    "id": "admin-1",
+    "name": "Platforma Admini",
+    "email": "admin@cyberedu.local",
+    "password": "admin123",
+    "role": "admin"
+  },
+  {
+    "id": "student-1",
+    "name": "Aqıljan Nurlanov",
+    "email": "aqiljan@student.local",
+    "password": "student123",
+    "role": "student"
+  },
+  {
+    "id": "student-2",
+    "name": "Dáulet Qaraev",
+    "email": "daulet@student.local",
+    "password": "student123",
+    "role": "student"
+  },
+  {
+    "id": "student-3",
+    "name": "Gúlziya Muxamedova",
+    "email": "gulziya@student.local",
+    "password": "student123",
+    "role": "student"
+  },
+  {
+    "id": "student-4",
+    "name": "Ersin Bekov",
+    "email": "ersin@student.local",
+    "password": "student123",
+    "role": "student"
+  },
+  {
+    "id": "student-5",
+    "name": "Jasura Tóleuova",
+    "email": "jasura@student.local",
+    "password": "student123",
+    "role": "student"
+  }
+]

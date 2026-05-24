@@ -1,0 +1,84 @@
+[
+  {
+    "id": "ctf-1",
+    "title": "Base64 xabar",
+    "category": "kriptografiya",
+    "difficulty": "basta",
+    "points": 100,
+    "description": "Quyidagi kodlangan xabardı dekodlań. Flag formatı: CYBER{...}",
+    "hint": "Base64 — 64 ta belgili kodlaw.",
+    "encoded": "Q1lCRVJ7YmFzZTY0X2RlY29kZWR9",
+    "flag": "CYBER{base64_decoded}"
+  },
+  {
+    "id": "ctf-2",
+    "title": "Metadata izi",
+    "category": "forensics",
+    "difficulty": "basta",
+    "points": 150,
+    "description": "Demo fayl metadataında jasırın flag bar. Simulyatsiya muhitinde izdeń.",
+    "hint": "Author maydanı tekseriń.",
+    "metadata": { "author": "flag:CYBER{meta_author_2026}", "created": "2026-01-15" },
+    "flag": "CYBER{meta_author_2026}"
+  },
+  {
+    "id": "ctf-3",
+    "title": "HTTP header topıw",
+    "category": "web",
+    "difficulty": "orta",
+    "points": 200,
+    "description": "Demo API javabında maxsus header bar. Flag shu jerde.",
+    "hint": "X-Training-Flag headerin qarań.",
+    "flag": "CYBER{header_found}"
+  },
+  {
+    "id": "ctf-4",
+    "title": "ROT13 matn",
+    "category": "kriptografiya",
+    "difficulty": "basta",
+    "points": 100,
+    "description": "ROT13 bilan kodlangan: PLREO{synt_c13}",
+    "hint": "ROT13 — 13 pozitsiya siljisiw.",
+    "flag": "CYBER{rot13_ok}"
+  },
+  {
+    "id": "ctf-5",
+    "title": "Port skaner simulyatsiyası",
+    "category": "tarmoq",
+    "difficulty": "orta",
+    "points": 250,
+    "description": "Demo serverde ashıq port 8080. Flag javobda qaytarıladı.",
+    "hint": "GET /api/ctf/sim/port javabın tekseriń (platforma ichinde).",
+    "flag": "CYBER{port_8080_open}"
+  },
+  {
+    "id": "ctf-6",
+    "title": "SQL injection oqıw",
+    "category": "web",
+    "difficulty": "joqarı",
+    "points": 300,
+    "description": "Parametrli so'rovlar ushın xavfsiz demo. Flag — to'g'ri input validatsiyası natijasida.",
+    "hint": "Faqat oqıw maqsadındagi demo formadan foydalaning.",
+    "flag": "CYBER{safe_query_only}"
+  },
+  {
+    "id": "ctf-7",
+    "title": "Steganografiya",
+    "category": "forensics",
+    "difficulty": "orta",
+    "points": 200,
+    "description": "Demo rasm faylida LSB usulında jasırın matn (simulyatsiya).",
+    "hint": "Platforma CTF sahifasındagi 'Stego' tugmasin basıń.",
+    "flag": "CYBER{stego_lsb_demo}"
+  },
+  {
+    "id": "ctf-8",
+    "title": "Log tahlili",
+    "category": "forensics",
+    "difficulty": "joqarı",
+    "points": 350,
+    "description": "Auth loglarida muvaffaqiyatli login vaqti 03:14. Flag shu vaqıttan.",
+    "hint": "Log qatarı: [03:14:22] LOGIN OK token=...",
+    "flag": "CYBER{log_031422}"
+  }
+]
