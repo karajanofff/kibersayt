@@ -1,24 +1,24 @@
 import { useEffect, useState } from 'react';
-import { Flag, Send, HelpCircle, KeyRound } from 'lucide-react';
+import { Flag, Send, HelpCircle, KeyRound, FileText, PenLine } from 'lucide-react';
 import { apiFetch } from '../api/client';
 
 export default function CTF() {
   const [challenges, setChallenges] = useState([]);
-  const [flags, setFlags] = useState({});
+  const [answers, setAnswers] = useState({});
   const [messages, setMessages] = useState({});
-  const [hints, setHints] = useState({});
+  const [aesDemo, setAesDemo] = useState({});
 
   useEffect(() => {
     apiFetch('/api/ctf').then((res) => setChallenges(res.data));
   }, []);
 
-  const submitFlag = async (challengeId) => {
-    const flag = flags[challengeId]?.trim();
-    if (!flag) return;
+  const submitAnswer = async (challengeId) => {
+    const javob = answers[challengeId]?.trim();
+    if (!javob) return;
     try {
       const res = await apiFetch('/api/ctf/check', {
         method: 'POST',
-        body: JSON.stringify({ challengeId, flag }),
+        body: JSON.stringify({ challengeId, flag: javob }),
       });
       setMessages((m) => ({
         ...m,
@@ -32,11 +32,13 @@ export default function CTF() {
   const showAesDemo = async (challengeId) => {
     try {
       const res = await apiFetch('/api/ctf/demo/aes');
-      setHints((h) => ({ ...h, [challengeId]: JSON.stringify(res.data, null, 2) }));
+      setAesDemo((d) => ({ ...d, [challengeId]: res.data }));
     } catch {
-      setHints((h) => ({ ...h, [challengeId]: 'AES demo maǵlıwmat alınbadı' }));
+      setAesDemo((d) => ({ ...d, [challengeId]: { error: 'AES demo alınbadı' } }));
     }
   };
+
+  const getMisol = (c) => c.berilganMisol || c.ciphertext || '';
 
   return (
     <div>
@@ -45,86 +47,128 @@ export default function CTF() {
         CTF — Kriptologiya
       </h1>
       <p className="mt-2 text-slate-400">
-        4 ta kriptologiya masalası. Flaglar serverda tekseriledi.
+        4 ta masala. Berilgan misoldı yeshiń, javobıńızdı tekst kórinishinde jiberiń.
       </p>
 
       <div className="card mt-6 border-cyber-500/30 bg-cyber-500/5">
         <p className="text-sm text-cyber-200">
-          Sezer, ROT13, Vejiner hám AES — oquw simulyatsiyası. Flag formatı:{' '}
-          <code className="text-cyber-300">CYBER{'{...}'}</code>
+          <strong>Qanday isleydi:</strong> «Berilgan misol» — shifrlangan matn. Uni dekodlań.
+          «Javobıńız» maydanına natijeni <code className="text-cyber-300">CYBER{'{...}'}</code>{' '}
+          formatında jazıp, «Javobni jiberiw» basıń.
         </p>
       </div>
 
-      <div className="mt-8 space-y-6">
+      <div className="mt-8 space-y-8">
         {challenges.map((c, index) => (
-          <div key={c.id} className="card">
+          <div key={c.id} className="card border-slate-700">
             <div className="flex flex-wrap items-start justify-between gap-2">
               <div>
-                <span className="text-xs uppercase tracking-wide text-purple-400">
-                  KRIPTOLOGIYA · {index + 1}/4
+                <span className="text-xs font-semibold uppercase tracking-wide text-purple-400">
+                  KRIPTOLOGIYA · Masala {index + 1}/4
                 </span>
-                <h2 className="text-lg font-semibold text-white">{c.title}</h2>
+                <h2 className="mt-1 text-xl font-semibold text-white">{c.title}</h2>
               </div>
               <span className="rounded-full bg-purple-500/20 px-3 py-1 text-sm text-purple-300">
                 {c.points} ball
               </span>
             </div>
-            <p className="mt-2 text-sm text-slate-400">{c.description}</p>
 
-            {c.ciphertext && (
-              <pre className="mt-3 overflow-x-auto rounded-lg border border-slate-700 bg-slate-800 p-4 font-mono text-sm text-cyber-300">
-                {c.ciphertext}
-              </pre>
-            )}
+            <p className="mt-3 text-sm leading-relaxed text-slate-300">{c.description}</p>
 
             {c.cipherMeta && (
               <p className="mt-2 text-xs text-slate-500">
-                Túri: {c.cipherMeta.type}
+                Shifrlaw túri: <span className="text-slate-400">{c.cipherMeta.type}</span>
                 {c.cipherMeta.shift != null && ` · siljisiw: ${c.cipherMeta.shift}`}
                 {c.cipherMeta.key && ` · kalit: ${c.cipherMeta.key}`}
               </p>
             )}
 
+            {/* Berilgan misol */}
+            <div className="mt-5 rounded-lg border-2 border-cyber-500/40 bg-cyber-950/50 p-4">
+              <div className="mb-2 flex items-center gap-2 text-sm font-semibold text-cyber-400">
+                <FileText className="h-4 w-4" />
+                Berilgan misol (shifrlangan matn)
+              </div>
+              <pre className="select-all whitespace-pre-wrap break-all font-mono text-base leading-relaxed text-white">
+                {getMisol(c)}
+              </pre>
+            </div>
+
             {c.hint && (
-              <p className="mt-2 flex items-center gap-1 text-xs text-slate-500">
-                <HelpCircle className="h-3 w-3 shrink-0" />
-                {c.hint}
+              <p className="mt-3 flex items-start gap-2 text-sm text-amber-200/90">
+                <HelpCircle className="mt-0.5 h-4 w-4 shrink-0" />
+                <span>
+                  <strong className="text-amber-300">Kómek:</strong> {c.hint}
+                </span>
               </p>
             )}
 
             {c.id === 'ctf-4' && (
+              <div className="mt-4">
+                <button
+                  type="button"
+                  className="btn-secondary text-sm"
+                  onClick={() => showAesDemo(c.id)}
+                >
+                  <KeyRound className="h-4 w-4" />
+                  AES demo — kalit hám IV
+                </button>
+                {aesDemo[c.id] && !aesDemo[c.id].error && (
+                  <div className="mt-3 rounded-lg border border-slate-600 bg-slate-800/80 p-3 text-sm text-slate-300">
+                    <p>
+                      <span className="text-slate-500">Algoritm:</span> {aesDemo[c.id].algorithm}
+                    </p>
+                    <p className="mt-1">
+                      <span className="text-slate-500">Kalit:</span>{' '}
+                      <code className="text-cyber-300">{aesDemo[c.id].key}</code>
+                    </p>
+                    <p className="mt-1">
+                      <span className="text-slate-500">IV:</span>{' '}
+                      <code className="text-cyber-300">{aesDemo[c.id].iv}</code>
+                    </p>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Javob */}
+            <div className="mt-5 rounded-lg border border-slate-600 bg-slate-800/30 p-4">
+              <div className="mb-2 flex items-center gap-2 text-sm font-semibold text-emerald-400">
+                <PenLine className="h-4 w-4" />
+                Javobıńız (tekst kórinishinde)
+              </div>
+              <p className="mb-2 text-xs text-slate-500">
+                Format: {c.javobFormat || 'CYBER{dekodlangan_matn}'}
+              </p>
+              <textarea
+                className="input-field min-h-[80px] resize-y font-mono text-base"
+                placeholder="Mysal: CYBER{sezer_shifrlash}"
+                value={answers[c.id] || ''}
+                onChange={(e) => setAnswers((a) => ({ ...a, [c.id]: e.target.value }))}
+                rows={2}
+              />
               <button
                 type="button"
-                className="btn-secondary mt-4 text-sm"
-                onClick={() => showAesDemo(c.id)}
+                className="btn-primary mt-3 w-full sm:w-auto"
+                onClick={() => submitAnswer(c.id)}
               >
-                <KeyRound className="h-4 w-4" />
-                AES demo (kalit, IV)
-              </button>
-            )}
-
-            {hints[c.id] && (
-              <pre className="mt-2 overflow-x-auto rounded bg-slate-800 p-3 text-xs text-amber-200">
-                {hints[c.id]}
-              </pre>
-            )}
-
-            <div className="mt-4 flex gap-2">
-              <input
-                type="text"
-                className="input-field flex-1"
-                placeholder="CYBER{...}"
-                value={flags[c.id] || ''}
-                onChange={(e) => setFlags((f) => ({ ...f, [c.id]: e.target.value }))}
-              />
-              <button type="button" className="btn-primary" onClick={() => submitFlag(c.id)}>
                 <Send className="h-4 w-4" />
-                Tekseriw
+                Javobni jiberiw
               </button>
             </div>
+
             {messages[c.id] && (
-              <p className={`mt-2 text-sm ${messages[c.id].ok ? 'text-emerald-400' : 'text-red-400'}`}>
+              <p
+                className={`mt-3 rounded-lg px-3 py-2 text-sm ${
+                  messages[c.id].ok
+                    ? 'bg-emerald-500/10 text-emerald-400'
+                    : 'bg-red-500/10 text-red-400'
+                }`}
+              >
                 {messages[c.id].text}
+                {messages[c.id].ok && messages[c.id].points
+                  ? ` (+${messages[c.id].points} ball)`
+                  : ''}
               </p>
             )}
           </div>
