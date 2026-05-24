@@ -20,8 +20,9 @@ const corsOrigins = process.env.CORS_ORIGIN
 
 app.use(
   helmet({
-    contentSecurityPolicy: process.env.NODE_ENV === 'production',
+    contentSecurityPolicy: false,
     crossOriginEmbedderPolicy: false,
+    crossOriginResourcePolicy: false,
   })
 );
 app.use(cors({ origin: corsOrigins, credentials: true }));
@@ -37,14 +38,27 @@ const staticDirs = [
 const staticDir = staticDirs.find((d) => existsSync(join(d, 'index.html')));
 
 if (staticDir) {
-  app.use(express.static(staticDir));
-  app.get('*', (req, res, next) => {
-    if (req.path.startsWith('/api')) return next();
-    res.sendFile(join(staticDir, 'index.html'));
-  });
+  app.use(
+    express.static(staticDir, {
+      maxAge: process.env.NODE_ENV === 'production' ? '1d' : 0,
+      setHeaders(res, filePath) {
+        if (filePath.endsWith('.js') || filePath.endsWith('.css')) {
+          res.setHeader('Cache-Control', 'public, max-age=86400');
+        }
+      },
+    })
+  );
 }
 
-app.use('/api/*', notFound);
+app.get('*', (req, res, next) => {
+  if (req.path.startsWith('/api')) return next();
+  if (!staticDir) return next();
+  res.sendFile(join(staticDir, 'index.html'), (err) => {
+    if (err) next(err);
+  });
+});
+
+app.use('/api', notFound);
 app.use(errorHandler);
 
 app.listen(PORT, () => {

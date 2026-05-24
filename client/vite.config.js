@@ -1,8 +1,18 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
+function stripCrossorigin() {
+  return {
+    name: 'strip-crossorigin',
+    transformIndexHtml(html) {
+      return html.replace(/\s+crossorigin/g, '');
+    },
+  };
+}
+
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), stripCrossorigin()],
+  base: '/',
   server: {
     port: 5173,
     proxy: {
@@ -14,5 +24,6 @@ export default defineConfig({
   },
   build: {
     outDir: 'dist',
+    modulePreload: { polyfill: false },
   },
 });
