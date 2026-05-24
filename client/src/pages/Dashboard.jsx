@@ -33,8 +33,11 @@ export default function Dashboard() {
       color: 'text-emerald-400',
     },
     {
-      label: 'Test balı',
-      value: progress?.testScore != null ? `${progress.testScore}%` : '—',
+      label: 'Test ortasha ballı',
+      value:
+        progress?.testScores && Object.keys(progress.testScores).length > 0
+          ? `${progress.testScore ?? '—'}%`
+          : '—',
       icon: ClipboardCheck,
       color: 'text-amber-400',
     },
