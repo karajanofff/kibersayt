@@ -26,7 +26,13 @@ export default function VideoWatch() {
 
   if (!video) return <p className="text-slate-400">Júklenbekte...</p>;
 
-  const embedUrl = `https://www.youtube.com/embed/${video.youtubeId}?rel=0`;
+  const origin = typeof window !== 'undefined' ? window.location.origin : '';
+  const embedParams = new URLSearchParams({
+    rel: '0',
+    modestbranding: '1',
+    ...(origin ? { origin } : {}),
+  });
+  const embedUrl = `https://www.youtube-nocookie.com/embed/${video.youtubeId}?${embedParams}`;
 
   return (
     <div>
@@ -53,8 +59,9 @@ export default function VideoWatch() {
           <iframe
             title={video.title}
             src={embedUrl}
-            className="absolute inset-0 h-full w-full"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            className="absolute inset-0 h-full w-full border-0"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
           />
         </div>
