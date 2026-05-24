@@ -12,17 +12,23 @@ export default function Dashboard() {
   const [videoCourses, setVideoCourses] = useState([]);
 
   useEffect(() => {
-    Promise.all([
-      apiFetch('/api/progress'),
-      apiFetch('/api/modules'),
-      apiFetch('/api/video-courses'),
-    ])
-      .then(([p, m, v]) => {
-        setProgress(p.data);
-        setModules(m.data);
-        setVideoCourses(v.data);
-      })
-      .catch(() => {});
+    let active = true;
+
+    async function load() {
+      const tasks = [
+        apiFetch('/api/modules').then((m) => active && setModules(m.data ?? [])),
+        apiFetch('/api/video-courses').then((v) => active && setVideoCourses(v.data ?? [])),
+        apiFetch('/api/progress')
+          .then((p) => active && setProgress(p.data))
+          .catch(() => active && setProgress(null)),
+      ];
+      await Promise.allSettled(tasks);
+    }
+
+    load();
+    return () => {
+      active = false;
+    };
   }, []);
 
   const stats = [

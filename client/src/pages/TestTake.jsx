@@ -11,10 +11,26 @@ export default function TestTake() {
   const [result, setResult] = useState(null);
   const [submitting, setSubmitting] = useState(false);
 
+  const [loadError, setLoadError] = useState('');
+
   useEffect(() => {
+    let active = true;
     setResult(null);
     setAnswers({});
-    apiFetch(`/api/tests/${id}`).then((res) => setTest(res.data));
+    setLoadError('');
+    setTest(null);
+
+    apiFetch(`/api/tests/${id}`)
+      .then((res) => {
+        if (active) setTest(res.data);
+      })
+      .catch((err) => {
+        if (active) setLoadError(err.message || kaa.errorOccurred);
+      });
+
+    return () => {
+      active = false;
+    };
   }, [id]);
 
   const select = (questionId, index) => {
@@ -44,6 +60,20 @@ export default function TestTake() {
       setSubmitting(false);
     }
   };
+
+  if (loadError) {
+    return (
+      <div>
+        <Link to="/test" className="inline-flex items-center gap-1 text-sm text-cyber-400 hover:underline">
+          <ArrowLeft className="h-4 w-4" />
+          {kaa.backToTests}
+        </Link>
+        <p className="mt-6 rounded-lg border border-red-500/40 bg-red-500/10 px-4 py-3 text-red-300">
+          {loadError}
+        </p>
+      </div>
+    );
+  }
 
   if (!test) return <p className="text-slate-400">{kaa.loading}</p>;
 
@@ -99,7 +129,7 @@ export default function TestTake() {
             <div className="mt-4 space-y-2">
               {q.options.map((opt, oi) => (
                 <label
-                  key={opt}
+                  key={`${q.id}-opt-${oi}`}
                   className={`flex cursor-pointer items-center gap-3 rounded-lg border px-4 py-3 transition ${
                     answers[q.id] === oi
                       ? 'border-cyber-500 bg-cyber-500/10'

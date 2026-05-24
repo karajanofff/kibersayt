@@ -92,6 +92,7 @@ export const kaa = {
   loginSignUp: 'Dizimnen ótiw',
   loginSuccess: 'Kiriw ámelge asırıldı',
   loginFailed: 'Kiriw ámelge aspadi',
+  sessionExpired: 'Sessiya waqtı támam boldı. Qayta kiriń.',
   requiredField: 'Bul maydan toltırılıwı kerek',
 
   dashboardWelcome: 'Qayta xosh keldińiz',

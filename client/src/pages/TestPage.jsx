@@ -4,20 +4,48 @@ import { ClipboardCheck, ChevronRight, CheckCircle2 } from 'lucide-react';
 import { apiFetch } from '../api/client';
 import { kaa, formatQuestionCount } from '../i18n/kaa';
 
+const emptyTests = { passingScore: 70, sections: [] };
+
 export default function TestPage() {
   const [data, setData] = useState(null);
   const [progress, setProgress] = useState(null);
+  const [error, setError] = useState('');
 
   useEffect(() => {
-    Promise.all([apiFetch('/api/tests'), apiFetch('/api/progress')])
-      .then(([tests, prog]) => {
-        setData(tests.data);
-        setProgress(prog.data);
-      })
-      .catch(() => {});
+    let active = true;
+
+    async function load() {
+      setError('');
+      try {
+        const tests = await apiFetch('/api/tests');
+        if (!active) return;
+        setData(tests.data ?? emptyTests);
+      } catch (err) {
+        if (!active) return;
+        setError(err.message || kaa.errorOccurred);
+        setData(emptyTests);
+        return;
+      }
+
+      try {
+        const prog = await apiFetch('/api/progress');
+        if (active) setProgress(prog.data);
+      } catch {
+        if (active) setProgress(null);
+      }
+    }
+
+    load();
+    return () => {
+      active = false;
+    };
   }, []);
 
-  if (!data) return <p className="text-slate-400">{kaa.loading}</p>;
+  if (!data) {
+    return <p className="text-slate-400">{kaa.loading}</p>;
+  }
+
+  const sections = data.sections ?? [];
 
   return (
     <div>
@@ -26,41 +54,54 @@ export default function TestPage() {
         {kaa.testsTitle}
       </h1>
       <p className="mt-2 text-slate-400">
-        {kaa.testsSubtitle}: {data.passingScore}% · Bólimler ajratılǵan
+        {kaa.testsSubtitle}: {data.passingScore ?? 70}% · Bólimler ajratılǵan
       </p>
 
-      <div className="mt-8 grid gap-4 md:grid-cols-2">
-        {data.sections.map((section, i) => {
-          const result = progress?.testScores?.[section.id];
-          return (
-            <Link
-              key={section.id}
-              to={`/test/${section.id}`}
-              className="card flex items-center justify-between transition hover:border-cyber-500/50"
-            >
-              <div className="flex-1">
-                <span className="text-xs font-medium text-purple-400">
-                  {kaa.theme} {i + 1}/6
-                </span>
-                <h2 className="mt-1 text-lg font-semibold text-white">{section.title}</h2>
-                <p className="mt-1 text-sm text-slate-400">{section.description}</p>
-                <p className="mt-2 text-xs text-cyber-400">{formatQuestionCount(section.questionCount)}</p>
-                {result && (
-                  <p
-                    className={`mt-2 flex items-center gap-1 text-sm ${
-                      result.passed ? 'text-emerald-400' : 'text-amber-400'
-                    }`}
-                  >
-                    <CheckCircle2 className="h-4 w-4" />
-                    {kaa.testsScore}: {result.score}% {result.passed ? `· ${kaa.testsPassed}` : `· ${kaa.testsRetry}`}
+      {error && (
+        <p className="mt-4 rounded-lg border border-amber-500/40 bg-amber-500/10 px-4 py-3 text-sm text-amber-200">
+          {error}
+        </p>
+      )}
+
+      {sections.length === 0 ? (
+        <p className="mt-8 text-slate-400">{kaa.noData}</p>
+      ) : (
+        <div className="mt-8 grid gap-4 md:grid-cols-2">
+          {sections.map((section, i) => {
+            const result = progress?.testScores?.[section.id];
+            return (
+              <Link
+                key={section.id}
+                to={`/test/${section.id}`}
+                className="card flex items-center justify-between transition hover:border-cyber-500/50"
+              >
+                <div className="flex-1">
+                  <span className="text-xs font-medium text-purple-400">
+                    {kaa.theme} {i + 1}/{sections.length}
+                  </span>
+                  <h2 className="mt-1 text-lg font-semibold text-white">{section.title}</h2>
+                  <p className="mt-1 text-sm text-slate-400">{section.description}</p>
+                  <p className="mt-2 text-xs text-cyber-400">
+                    {formatQuestionCount(section.questionCount ?? 0)}
                   </p>
-                )}
-              </div>
-              <ChevronRight className="h-6 w-6 shrink-0 text-cyber-400" />
-            </Link>
-          );
-        })}
-      </div>
+                  {result && (
+                    <p
+                      className={`mt-2 flex items-center gap-1 text-sm ${
+                        result.passed ? 'text-emerald-400' : 'text-amber-400'
+                      }`}
+                    >
+                      <CheckCircle2 className="h-4 w-4" />
+                      {kaa.testsScore}: {result.score}%{' '}
+                      {result.passed ? `· ${kaa.testsPassed}` : `· ${kaa.testsRetry}`}
+                    </p>
+                  )}
+                </div>
+                <ChevronRight className="h-6 w-6 shrink-0 text-cyber-400" />
+              </Link>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 }

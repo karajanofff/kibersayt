@@ -14,9 +14,14 @@ export function AuthProvider({ children }) {
         setUser(JSON.parse(saved));
       } catch {
         localStorage.removeItem('cyberedu_user');
+        localStorage.removeItem('cyberedu_token');
       }
     }
     setLoading(false);
+
+    const onSessionExpired = () => setUser(null);
+    window.addEventListener('cyberedu:session-expired', onSessionExpired);
+    return () => window.removeEventListener('cyberedu:session-expired', onSessionExpired);
   }, []);
 
   const login = async (email, password) => {
