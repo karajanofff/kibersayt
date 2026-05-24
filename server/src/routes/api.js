@@ -101,35 +101,16 @@ router.get('/ctf', (req, res) => {
   res.json({ success: true, data: getCtfPublic() });
 });
 
-router.get('/ctf/demo/headers', (req, res) => {
-  res.set('X-Training-Flag', 'CYBER{header_found}');
-  res.json({
-    success: true,
-    data: { message: 'Demo API javabı. Headerlardı tekseriń.', hint: 'X-Training-Flag' },
-  });
-});
-
-router.get('/ctf/demo/port', (req, res) => {
+router.get('/ctf/demo/aes', (req, res) => {
   res.json({
     success: true,
     data: {
-      port: 8080,
-      status: 'open',
-      message: 'Simulyatsiya: port 8080 ashıq. Flag formatı CYBER{...}',
-    },
-  });
-});
-
-router.get('/ctf/demo/metadata/:id', (req, res) => {
-  if (req.params.id !== 'ctf-2') {
-    return res.status(404).json({ success: false, message: 'Demo metadata tabılmadı' });
-  }
-  res.json({
-    success: true,
-    data: {
-      author: 'meta_author_2026',
-      created: '2026-01-15',
-      hint: 'Flag formatı: CYBER{author_máni}',
+      algorithm: 'AES-128-CBC',
+      ciphertext: 'W6LOHqRrBRx5wbKGmKrQdjsGj4EY0Mf8oLl48seaB3A=',
+      key: 'CyberEduAESKey16',
+      iv: '1234567890abcdef',
+      encoding: 'base64',
+      note: 'Dekodlangan matn CYBER{...} formatında flag boladi.',
     },
   });
 });

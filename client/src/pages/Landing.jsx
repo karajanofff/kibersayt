@@ -57,8 +57,8 @@ export default function Landing() {
             },
             {
               icon: Flag,
-              title: '8 CTF challenge',
-              desc: 'Flaglar serverda saqlanadı — etikalı oquw musobaqası.',
+              title: '4 CTF — Kriptologiya',
+              desc: 'Sezer, ROT13, Vejiner hám AES masalaları.',
             },
           ].map(({ icon: Icon, title, desc }) => (
             <div key={title} className="card text-left">

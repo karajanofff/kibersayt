@@ -1,84 +1,50 @@
 [
   {
     "id": "ctf-1",
-    "title": "Base64 xabar",
-    "category": "kriptografiya",
+    "title": "Sezer shifrlash",
+    "category": "kriptologiya",
     "difficulty": "basta",
     "points": 100,
-    "description": "Quyidagi kodlangan xabardı dekodlań. Flag formatı: CYBER{...}",
-    "hint": "Base64 — 64 ta belgili kodlaw.",
-    "encoded": "Q1lCRVJ7YmFzZTY0X2RlY29kZWR9",
-    "flag": "CYBER{base64_decoded}"
+    "description": "Quyıdagi matn Sezer (Caesar) usılı menen 3 pozitsiyaǵa siljirilgen. Dekodlań. Flag formatı: CYBER{...}",
+    "hint": "Lotin álfaviti boyınsha 3 harf artqa qaytıń (yamasa 23 aldıńǵa).",
+    "ciphertext": "FBEHU{vhchu_vkliuodvk}",
+    "cipherMeta": { "type": "caesar", "shift": 3 },
+    "flag": "CYBER{sezer_shifrlash}"
   },
   {
     "id": "ctf-2",
-    "title": "Metadata izi",
-    "category": "forensics",
+    "title": "ROT13 shifrlash",
+    "category": "kriptologiya",
     "difficulty": "basta",
-    "points": 150,
-    "description": "Demo fayl metadataında jasırın flag bar. Simulyatsiya muhitinde izdeń.",
-    "hint": "Author maydanı tekseriń.",
-    "metadata": { "author": "flag:CYBER{meta_author_2026}", "created": "2026-01-15" },
-    "flag": "CYBER{meta_author_2026}"
+    "points": 100,
+    "description": "ROT13 — Caesar shifrlawınıń maxsus jaǵdayı (siljisiw = 13). Matndı dekodlań.",
+    "hint": "ROT13 qayta qollanılsa, dastlabkı matn qaytadı.",
+    "ciphertext": "PLORE{ebg13_fuvseynfu}",
+    "cipherMeta": { "type": "rot13" },
+    "flag": "CYBER{rot13_shifrlash}"
   },
   {
     "id": "ctf-3",
-    "title": "HTTP header topıw",
-    "category": "web",
+    "title": "Vejiner shifrlash",
+    "category": "kriptologiya",
     "difficulty": "orta",
-    "points": 200,
-    "description": "Demo API javabında maxsus header bar. Flag shu jerde.",
-    "hint": "X-Training-Flag headerin qarań.",
-    "flag": "CYBER{header_found}"
+    "points": 150,
+    "description": "Vejiner (Vigenère) polialfavit shifrlaw. Kalit so‘z yordamında dekodlań.",
+    "hint": "Kalit: KURS (qayta-qayta qollanıladı).",
+    "ciphertext": "MSSWB{pvbshvj_cbzxbfrkr}",
+    "cipherMeta": { "type": "vigenere", "key": "KURS" },
+    "flag": "CYBER{vejiner_shifrlash}"
   },
   {
     "id": "ctf-4",
-    "title": "ROT13 matn",
-    "category": "kriptografiya",
-    "difficulty": "basta",
-    "points": 100,
-    "description": "ROT13 bilan kodlangan: PLREO{synt_c13}",
-    "hint": "ROT13 — 13 pozitsiya siljisiw.",
-    "flag": "CYBER{rot13_ok}"
-  },
-  {
-    "id": "ctf-5",
-    "title": "Port skaner simulyatsiyası",
-    "category": "tarmoq",
-    "difficulty": "orta",
-    "points": 250,
-    "description": "Demo serverde ashıq port 8080. Flag javobda qaytarıladı.",
-    "hint": "GET /api/ctf/sim/port javabın tekseriń (platforma ichinde).",
-    "flag": "CYBER{port_8080_open}"
-  },
-  {
-    "id": "ctf-6",
-    "title": "SQL injection oqıw",
-    "category": "web",
+    "title": "AES shifrlash misalı",
+    "category": "kriptologiya",
     "difficulty": "joqarı",
-    "points": 300,
-    "description": "Parametrli so'rovlar ushın xavfsiz demo. Flag — to'g'ri input validatsiyası natijasida.",
-    "hint": "Faqat oqıw maqsadındagi demo formadan foydalaning.",
-    "flag": "CYBER{safe_query_only}"
-  },
-  {
-    "id": "ctf-7",
-    "title": "Steganografiya",
-    "category": "forensics",
-    "difficulty": "orta",
     "points": 200,
-    "description": "Demo rasm faylida LSB usulında jasırın matn (simulyatsiya).",
-    "hint": "Platforma CTF sahifasındagi 'Stego' tugmasin basıń.",
-    "flag": "CYBER{stego_lsb_demo}"
-  },
-  {
-    "id": "ctf-8",
-    "title": "Log tahlili",
-    "category": "forensics",
-    "difficulty": "joqarı",
-    "points": 350,
-    "description": "Auth loglarida muvaffaqiyatli login vaqti 03:14. Flag shu vaqıttan.",
-    "hint": "Log qatarı: [03:14:22] LOGIN OK token=...",
-    "flag": "CYBER{log_031422}"
+    "description": "AES-128-CBC menen shifrlangan demo maǵlıwmat. «AES demo» tugmasin basıp kalit hám IV alıń, keyin dekodlań.",
+    "hint": "Algoritm: AES-128-CBC. Kalit uzınlıǵı 16 bayt.",
+    "ciphertext": "W6LOHqRrBRx5wbKGmKrQdjsGj4EY0Mf8oLl48seaB3A=",
+    "cipherMeta": { "type": "aes-128-cbc" },
+    "flag": "CYBER{aes_shifrlash}"
   }
 ]

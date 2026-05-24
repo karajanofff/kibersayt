@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Flag, Send, HelpCircle } from 'lucide-react';
+import { Flag, Send, HelpCircle, KeyRound } from 'lucide-react';
 import { apiFetch } from '../api/client';
 
 export default function CTF() {
@@ -29,26 +29,12 @@ export default function CTF() {
     }
   };
 
-  const showDemo = async (type, challengeId) => {
+  const showAesDemo = async (challengeId) => {
     try {
-      if (type === 'header') {
-        const res = await fetch('/api/ctf/demo/headers');
-        const flagHeader = res.headers.get('X-Training-Flag');
-        const body = await res.json();
-        setHints((h) => ({
-          ...h,
-          [challengeId]: `Javap header: X-Training-Flag = ${flagHeader || '(tabılmadı)'}\n${JSON.stringify(body.data, null, 2)}`,
-        }));
-        return;
-      }
-      const path =
-        type === 'metadata'
-          ? `/api/ctf/demo/metadata/${challengeId}`
-          : '/api/ctf/demo/port';
-      const res = await apiFetch(path);
+      const res = await apiFetch('/api/ctf/demo/aes');
       setHints((h) => ({ ...h, [challengeId]: JSON.stringify(res.data, null, 2) }));
     } catch {
-      setHints((h) => ({ ...h, [challengeId]: 'Demo maǵlıwmat alınbadı' }));
+      setHints((h) => ({ ...h, [challengeId]: 'AES demo maǵlıwmat alınbadı' }));
     }
   };
 
@@ -56,25 +42,27 @@ export default function CTF() {
     <div>
       <h1 className="flex items-center gap-2 text-3xl font-bold text-white">
         <Flag className="h-8 w-8 text-cyber-400" />
-        CTF — Xavfsiz oquw musobaqası
+        CTF — Kriptologiya
       </h1>
       <p className="mt-2 text-slate-400">
-        8 ta challenge. Flaglar serverda tekseriledi — frontendda ochiq emas.
+        4 ta kriptologiya masalası. Flaglar serverda tekseriledi.
       </p>
 
       <div className="card mt-6 border-cyber-500/30 bg-cyber-500/5">
         <p className="text-sm text-cyber-200">
-          Barlıq topshiriqlar qonuniy oquw simulyatsiyası. Haqıqıy hujum, parol buzish yamasa
-          noqonuniy ekspluatatsiya boyınsha ko‘rsatmalar jo‘q.
+          Sezer, ROT13, Vejiner hám AES — oquw simulyatsiyası. Flag formatı:{' '}
+          <code className="text-cyber-300">CYBER{'{...}'}</code>
         </p>
       </div>
 
       <div className="mt-8 space-y-6">
-        {challenges.map((c) => (
+        {challenges.map((c, index) => (
           <div key={c.id} className="card">
             <div className="flex flex-wrap items-start justify-between gap-2">
               <div>
-                <span className="text-xs uppercase text-slate-500">{c.category}</span>
+                <span className="text-xs uppercase tracking-wide text-purple-400">
+                  KRIPTOLOGIYA · {index + 1}/4
+                </span>
                 <h2 className="text-lg font-semibold text-white">{c.title}</h2>
               </div>
               <span className="rounded-full bg-purple-500/20 px-3 py-1 text-sm text-purple-300">
@@ -83,69 +71,42 @@ export default function CTF() {
             </div>
             <p className="mt-2 text-sm text-slate-400">{c.description}</p>
 
-            {c.encoded && (
-              <pre className="mt-3 overflow-x-auto rounded bg-slate-800 p-3 text-xs text-cyber-300">
-                {c.encoded}
+            {c.ciphertext && (
+              <pre className="mt-3 overflow-x-auto rounded-lg border border-slate-700 bg-slate-800 p-4 font-mono text-sm text-cyber-300">
+                {c.ciphertext}
               </pre>
             )}
-            {c.metadata && (
-              <pre className="mt-3 overflow-x-auto rounded bg-slate-800 p-3 text-xs text-slate-400">
-                {JSON.stringify(c.metadata, null, 2)}
-              </pre>
+
+            {c.cipherMeta && (
+              <p className="mt-2 text-xs text-slate-500">
+                Túri: {c.cipherMeta.type}
+                {c.cipherMeta.shift != null && ` · siljisiw: ${c.cipherMeta.shift}`}
+                {c.cipherMeta.key && ` · kalit: ${c.cipherMeta.key}`}
+              </p>
             )}
+
             {c.hint && (
               <p className="mt-2 flex items-center gap-1 text-xs text-slate-500">
-                <HelpCircle className="h-3 w-3" />
+                <HelpCircle className="h-3 w-3 shrink-0" />
                 {c.hint}
               </p>
             )}
 
-            <div className="mt-4 flex flex-wrap gap-2">
-              {c.id === 'ctf-2' && (
-                <button
-                  type="button"
-                  className="btn-secondary text-sm"
-                  onClick={() => showDemo('metadata', c.id)}
-                >
-                  Metadata demo
-                </button>
-              )}
-              {c.id === 'ctf-3' && (
-                <button
-                  type="button"
-                  className="btn-secondary text-sm"
-                  onClick={() => showDemo('header', c.id)}
-                >
-                  Demo header tekseriw
-                </button>
-              )}
-              {c.id === 'ctf-5' && (
-                <button
-                  type="button"
-                  className="btn-secondary text-sm"
-                  onClick={() => showDemo('port', c.id)}
-                >
-                  Port simulyatsiyası
-                </button>
-              )}
-              {c.id === 'ctf-7' && (
-                <button
-                  type="button"
-                  className="btn-secondary text-sm"
-                  onClick={() =>
-                    setHints((h) => ({
-                      ...h,
-                      [c.id]: 'Steganografiya simulyatsiyası: LSB usulında jasırın matn bar. Topilgan flagni serverda tekseriń.',
-                    }))
-                  }
-                >
-                  Stego demo
-                </button>
-              )}
-            </div>
+            {c.id === 'ctf-4' && (
+              <button
+                type="button"
+                className="btn-secondary mt-4 text-sm"
+                onClick={() => showAesDemo(c.id)}
+              >
+                <KeyRound className="h-4 w-4" />
+                AES demo (kalit, IV)
+              </button>
+            )}
 
             {hints[c.id] && (
-              <pre className="mt-2 rounded bg-slate-800 p-2 text-xs text-amber-200">{hints[c.id]}</pre>
+              <pre className="mt-2 overflow-x-auto rounded bg-slate-800 p-3 text-xs text-amber-200">
+                {hints[c.id]}
+              </pre>
             )}
 
             <div className="mt-4 flex gap-2">
