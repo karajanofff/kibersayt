@@ -55,10 +55,10 @@ export default function Login() {
         <div className="mt-4 space-y-2 rounded-lg border border-slate-700 bg-slate-800/50 p-3 text-sm">
           <p className="font-medium text-slate-300">Demo akkauntlar</p>
           <p className="text-slate-400">
-            <span className="text-cyber-400">Student:</span> {DEMO_STUDENT.email} / {DEMO_STUDENT.password}
+            <span className="text-cyber-400">Oqıwshı:</span> {DEMO_STUDENT.email} / {DEMO_STUDENT.password}
           </p>
           <p className="text-slate-400">
-            <span className="text-amber-400">Admin:</span> {DEMO_ADMIN.email} / {DEMO_ADMIN.password}
+            <span className="text-amber-400">Basqarıwshı:</span> {DEMO_ADMIN.email} / {DEMO_ADMIN.password}
           </p>
         </div>
 
@@ -70,7 +70,7 @@ export default function Login() {
             className="btn-primary text-sm py-2"
           >
             <GraduationCap className="h-4 w-4" />
-            Student kiris
+            Oqıwshı kirisi
           </button>
           <button
             type="button"
@@ -79,13 +79,13 @@ export default function Login() {
             className="btn-secondary text-sm py-2"
           >
             <UserCog className="h-4 w-4" />
-            Admin kiris
+            Basqarıwshı kirisi
           </button>
         </div>
 
         <form onSubmit={handleSubmit} className="mt-6 space-y-4">
           <div>
-            <label className="mb-1 block text-sm text-slate-400">Email</label>
+            <label className="mb-1 block text-sm text-slate-400">Elektron pochta</label>
             <input
               type="email"
               className="input-field"

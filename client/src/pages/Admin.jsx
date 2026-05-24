@@ -1,10 +1,16 @@
 import { useEffect, useState } from 'react';
 import { Settings, Users, BookOpen, Flag } from 'lucide-react';
 import { apiFetch } from '../api/client';
+import { kaa } from '../i18n/kaa';
+
+const roleLabels = {
+  admin: kaa.roleAdmin,
+  student: kaa.roleStudent,
+};
 
 export default function Admin() {
   const [students, setStudents] = useState([]);
-  const [stats, setStats] = useState({ modules: 6, labs: 5, ctf: 8 });
+  const [stats, setStats] = useState({ modules: 6, labs: 5, ctf: 4 });
 
   useEffect(() => {
     apiFetch('/api/students')
@@ -23,7 +29,7 @@ export default function Admin() {
     <div>
       <h1 className="flex items-center gap-2 text-3xl font-bold text-white">
         <Settings className="h-8 w-8 text-amber-400" />
-        Admin panel
+        Basqarıwshı paneli
       </h1>
       <p className="mt-2 text-slate-400">Platforma basqarıwı — demo rejim</p>
 
@@ -31,7 +37,7 @@ export default function Admin() {
         {[
           { label: 'Modullar', value: stats.modules, icon: BookOpen },
           { label: 'Laboratoriyalar', value: stats.labs, icon: Settings },
-          { label: 'CTF', value: stats.ctf, icon: Flag },
+          { label: 'Kripto CTF', value: stats.ctf, icon: Flag },
         ].map(({ label, value, icon: Icon }) => (
           <div key={label} className="card border-amber-500/20">
             <Icon className="h-8 w-8 text-amber-400" />
@@ -44,15 +50,15 @@ export default function Admin() {
       <div className="card mt-10">
         <h2 className="flex items-center gap-2 text-xl font-semibold text-white">
           <Users className="h-5 w-5 text-amber-400" />
-          Demo studentler ({students.length})
+          Demo oqıwshılar ({students.length})
         </h2>
         <div className="mt-4 overflow-x-auto">
           <table className="w-full text-left text-sm">
             <thead>
               <tr className="border-b border-slate-700 text-slate-400">
-                <th className="py-2 pr-4">Ismi</th>
-                <th className="py-2 pr-4">Email</th>
-                <th className="py-2">Rol</th>
+                <th className="py-2 pr-4">Atı</th>
+                <th className="py-2 pr-4">Elektron pochta</th>
+                <th className="py-2">Roli</th>
               </tr>
             </thead>
             <tbody>
@@ -60,15 +66,13 @@ export default function Admin() {
                 <tr key={s.id} className="border-b border-slate-800">
                   <td className="py-3 pr-4 text-white">{s.name}</td>
                   <td className="py-3 pr-4 text-slate-400">{s.email}</td>
-                  <td className="py-3 text-cyber-400">{s.role}</td>
+                  <td className="py-3 text-cyber-400">{roleLabels[s.role] || s.role}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
-        <p className="mt-4 text-xs text-slate-500">
-          Student paroli (demo): student123
-        </p>
+        <p className="mt-4 text-xs text-slate-500">Demo oqıwshı paroli: student123</p>
       </div>
     </div>
   );

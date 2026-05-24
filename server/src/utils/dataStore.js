@@ -54,7 +54,7 @@ export function getCtfPublic() {
 export function checkCtfFlag(id, submittedFlag) {
   const challenges = readJson('ctf');
   const challenge = challenges.find((c) => c.id === id);
-  if (!challenge) return { valid: false, message: 'Challenge tabılmadı' };
+  if (!challenge) return { valid: false, message: 'Masala tabılmadı' };
   const ok =
     submittedFlag.trim().toLowerCase() === challenge.flag.toLowerCase();
   return {

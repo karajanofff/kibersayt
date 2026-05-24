@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { BookOpen, Shield, Globe, Lock, Cloud, AlertTriangle, Network } from 'lucide-react';
 import { apiFetch } from '../api/client';
+import { formatLessonCount } from '../i18n/kaa';
 
 const icons = {
   shield: Shield,
@@ -30,7 +31,7 @@ export default function Modules() {
         <BookOpen className="h-8 w-8 text-cyber-400" />
         Kurs modulları
       </h1>
-      <p className="mt-2 text-slate-400">6 modul, har birinde 3 dars</p>
+      <p className="mt-2 text-slate-400">6 modul, hár birinde 3 sabaq</p>
 
       <div className="mt-8 grid gap-6 md:grid-cols-2">
         {modules.map((mod) => {
@@ -47,7 +48,7 @@ export default function Modules() {
               <div>
                 <h2 className="text-lg font-semibold text-white">{mod.title}</h2>
                 <p className="mt-1 text-sm text-slate-400">{mod.description}</p>
-                <p className="mt-2 text-xs text-cyber-400">{mod.lessonCount} dars</p>
+                <p className="mt-2 text-xs text-cyber-400">{formatLessonCount(mod.lessonCount)}</p>
               </div>
             </Link>
           );

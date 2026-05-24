@@ -2,48 +2,48 @@
   {
     "id": "res-1",
     "title": "OWASP Top 10 — oquw qısqa shaqlama",
-    "type": "hujjet",
+    "type": "hújjet",
     "url": "https://owasp.org/www-project-top-ten/",
-    "description": "Web qáwipsizligi xavflariniń eng kóp kezdesetin 10 túri."
+    "description": "Web qáwipsizligi qáwiplerinin eń kóp kezdesetin 10 túri."
   },
   {
     "id": "res-2",
     "title": "Kiberqáwipsizlik sózligi",
-    "type": "hujjet",
+    "type": "hújjet",
     "url": "#",
     "description": "Platforma ishinde qollanılatın terminler dizimi."
   },
   {
     "id": "res-3",
-    "title": "NIST Cybersecurity Framework",
+    "title": "NIST kiberqáwipsizlik ramkası",
     "type": "standart",
     "url": "https://www.nist.gov/cyberframework",
-    "description": "Kiberqáwipsizlik basqıshları boyınsha xalqara standart."
+    "description": "Kiberqáwipsizlik basqıshları boyınsha xalıqara standart."
   },
   {
     "id": "res-4",
-    "title": "XSS túsiniw — video dars",
+    "title": "XSS túsiniw — video sabaq",
     "type": "video",
     "url": "#",
-    "description": "Cross-Site Scripting xavfi haqqında qisqa túsindirme."
+    "description": "Cross-Site Scripting qáwipi haqqında qısqa túsindirme."
   },
   {
     "id": "res-5",
-    "title": "Parol menedjerleri qollanba",
-    "type": "hujjet",
+    "title": "Parol menejerleri qollanbası",
+    "type": "hújjet",
     "url": "#",
-    "description": "Xavfsiz parol saqlaw usılları."
+    "description": "Qáwipsiz parol saqlaw usılları."
   },
   {
     "id": "res-6",
     "title": "Phishing qarsı qáwimler",
-    "type": "cheatsheet",
+    "type": "qısqa qollanba",
     "url": "#",
-    "description": "Email va havolalardı tekseriw usılları."
+    "description": "Elektron pochta hám siltemelerdi tekseriw usılları."
   },
   {
     "id": "res-7",
-    "title": "Linux asosları — kiber oqıwshılar ushın",
+    "title": "Linux negizleri — kiber oqıwshılar ushın",
     "type": "kurs",
     "url": "#",
     "description": "Terminal, fayl sistema, ruxsatlar."
@@ -53,11 +53,11 @@
     "title": "CTF oqıw strategiyası",
     "type": "maqala",
     "url": "#",
-    "description": "Xavfsiz CTF musobaqalarında qanday oqıw kerek."
+    "description": "Qáwipsiz CTF musobaqalarında qanday oqıw kerek."
   },
   {
     "id": "res-9",
-    "title": "GDPR va shaxsiy maǵlıwmatlar",
+    "title": "GDPR hám jeke maǵlıwmatlar",
     "type": "standart",
     "url": "#",
     "description": "EU maǵlıwmatlar qorǵaw talapları haqqında kirispe."
@@ -67,6 +67,6 @@
     "title": "Kiberetika etikasi",
     "type": "maqala",
     "url": "#",
-    "description": "Qonuniy va etikalı kiberqáwipsizlik mashqları."
+    "description": "Qanuniy hám etikalı kiberqáwipsizlik mashqları."
   }
 ]

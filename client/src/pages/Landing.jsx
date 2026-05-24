@@ -26,18 +26,18 @@ export default function Landing() {
         </p>
         <h1 className="mx-auto max-w-4xl text-4xl font-bold leading-tight text-white md:text-6xl">
           CyberEdu — Kiberqáwipsizlikke{' '}
-          <span className="text-cyber-400">professionallıq</span> bilan oqıń
+          <span className="text-cyber-400">professional</span> dárejede oqıń
         </h1>
         <p className="mx-auto mt-6 max-w-2xl text-lg text-slate-400">
-          Modullar, laboratoriyalar, testler hám xavfsiz CTF mashqları arqalı kiberqáwipsizlik
-          bilimlerin ósiriń. Barlıq mashqlar qonuniy oquw simulyatsiyası.
+          Modullar, laboratoriyalar, testler hám qáwipsiz CTF mashqları arqalı kiberqáwipsizlik
+          bilimlerin ósiriń. Barlıq mashqlar qanuniy oqıw simulyatsiyası.
         </p>
         <div className="mt-10 flex flex-wrap justify-center gap-4">
           <Link to="/login" className="btn-primary text-lg px-8 py-3">
             Platformaga kiriw
           </Link>
           <a href="#features" className="btn-secondary text-lg px-8 py-3">
-            Kóbirek bilis
+            Kóbirek biliw
           </a>
         </div>
       </section>
@@ -48,12 +48,12 @@ export default function Landing() {
             {
               icon: BookOpen,
               title: '6 kurs moduli',
-              desc: 'Har birinde 3 dars — tarmoq, web, kripto hám basqalar.',
+              desc: 'Hár birinde 3 sabaq — tarmaq, web, kripto hám basqalar.',
             },
             {
               icon: FlaskConical,
               title: '5 laboratoriya',
-              desc: 'Xavfsiz simulyatsiya orayında amaliy mashqlar.',
+              desc: 'Qáwipsiz simulyatsiya ishinde amaliy mashqlar.',
             },
             {
               icon: Flag,
@@ -71,8 +71,8 @@ export default function Landing() {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 py-12 text-center text-sm text-slate-500">
-        <p>Demo student: Allayar007@student.local / Allayar123</p>
-        <p className="mt-1">Demo admin: admin@cyberedu.local / admin123</p>
+        <p>Demo oqıwshı: Allayar007@student.local / Allayar123</p>
+        <p className="mt-1">Demo basqarıwshı: admin@cyberedu.local / admin123</p>
       </section>
     </div>
   );

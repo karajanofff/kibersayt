@@ -50,7 +50,7 @@ router.get(
   validate,
   (req, res) => {
     const lesson = getLessonById(req.params.id);
-    if (!lesson) return res.status(404).json({ success: false, message: 'Dars tabılmadı' });
+    if (!lesson) return res.status(404).json({ success: false, message: 'Sabaq tabılmadı' });
     res.json({ success: true, data: lesson });
   }
 );
@@ -110,7 +110,7 @@ router.get('/ctf/demo/aes', (req, res) => {
       key: 'CyberEduAESKey16',
       iv: '1234567890abcdef',
       encoding: 'base64',
-      note: 'Dekodlangan matn CYBER{...} formatında flag boladi.',
+      note: 'Dekodlangan matn CYBER{...} formatında flag boladı.',
     },
   });
 });

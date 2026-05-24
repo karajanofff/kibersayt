@@ -58,7 +58,7 @@ export default function LabDetail() {
 
       <div className="card mt-6 border-amber-500/30 bg-amber-500/5">
         <p className="text-sm text-amber-200">
-          Esletpe: Bul laboratoriya faqat oquw simulyatsiyası. Haqıqıy sistemalarga ruxsatsız
+          Esletpe: Bul laboratoriya faqat oqıw simulyatsiyası. Haqıyqıy sistemalarga ruxsatsız
           kiriw qadaǵanlanǵan.
         </p>
       </div>

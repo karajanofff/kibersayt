@@ -9,6 +9,12 @@ const diffColors = {
   joqarı: 'bg-red-500/20 text-red-300',
 };
 
+const diffLabels = {
+  basta: 'Baslanğısh',
+  orta: 'Orta',
+  joqarı: 'Joqarı',
+};
+
 export default function Labs() {
   const [labs, setLabs] = useState([]);
 
@@ -22,7 +28,7 @@ export default function Labs() {
         <FlaskConical className="h-8 w-8 text-cyber-400" />
         Laboratoriya
       </h1>
-      <p className="mt-2 text-slate-400">Xavfsiz simulyatsiya mashqları — 5 laboratoriya</p>
+      <p className="mt-2 text-slate-400">Qáwipsiz simulyatsiya mashqları — 5 laboratoriya</p>
 
       <div className="mt-8 grid gap-6 md:grid-cols-2">
         {labs.map((lab) => (
@@ -30,7 +36,7 @@ export default function Labs() {
             <div className="flex items-start justify-between">
               <h2 className="text-lg font-semibold text-white">{lab.title}</h2>
               <span className={`rounded-full px-2 py-0.5 text-xs ${diffColors[lab.difficulty]}`}>
-                {lab.difficulty}
+                {diffLabels[lab.difficulty] || lab.difficulty}
               </span>
             </div>
             <p className="mt-2 text-sm text-slate-400">{lab.description}</p>

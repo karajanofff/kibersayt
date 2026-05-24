@@ -3,9 +3,11 @@ import { Library, ExternalLink, FileText, Video } from 'lucide-react';
 import { apiFetch } from '../api/client';
 
 const typeIcons = {
+  hújjet: FileText,
   hujjet: FileText,
   video: Video,
   standart: Library,
+  'qısqa qollanba': FileText,
   cheatsheet: FileText,
   kurs: Library,
   maqala: FileText,
@@ -24,7 +26,7 @@ export default function Resources() {
         <Library className="h-8 w-8 text-cyber-400" />
         Resurslar
       </h1>
-      <p className="mt-2 text-slate-400">10 ta oquw resursı</p>
+      <p className="mt-2 text-slate-400">10 ta oqıw resursı</p>
 
       <div className="mt-8 grid gap-4 md:grid-cols-2">
         {resources.map((r) => {

@@ -21,7 +21,7 @@ const nav = [
   { to: '/modules', label: 'Kurs modulları', icon: BookOpen },
   { to: '/labs', label: 'Laboratoriya', icon: FlaskConical },
   { to: '/test', label: 'Test', icon: ClipboardCheck },
-  { to: '/ctf', label: 'CTF', icon: Flag },
+  { to: '/ctf', label: 'Kripto CTF', icon: Flag },
   { to: '/resources', label: 'Resurslar', icon: Library },
 ];
 
@@ -69,7 +69,7 @@ export default function Layout() {
                 }
               >
                 <Settings className="h-4 w-4" />
-                Admin
+                Basqarıw
               </NavLink>
             )}
           </nav>
@@ -115,7 +115,7 @@ export default function Layout() {
             ))}
             {isAdmin && (
               <NavLink to="/admin" onClick={() => setMobileOpen(false)} className="block py-2 text-amber-300">
-                Admin
+                Basqarıw
               </NavLink>
             )}
             {user ? (
@@ -137,7 +137,7 @@ export default function Layout() {
 
       <footer className="mt-16 border-t border-slate-800 py-8 text-center text-sm text-slate-500">
         <p>© 2026 CyberEdu — Kiberqáwipsizlik kursı platforması</p>
-        <p className="mt-1">Barlıq mashqlar xavfsiz oquw simulyatsiyası.</p>
+        <p className="mt-1">Barlıq mashqlar qáwipsiz oqıw simulyatsiyası.</p>
       </footer>
     </div>
   );

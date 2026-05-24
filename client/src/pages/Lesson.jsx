@@ -49,7 +49,7 @@ export default function Lesson() {
         className="btn-primary mt-6"
       >
         <CheckCircle className="h-4 w-4" />
-        {done ? 'Tamamlandı' : 'Darsdı tamamladım'}
+        {done ? 'Tamamlandı' : 'Sabaqtı tamamladım'}
       </button>
     </div>
   );

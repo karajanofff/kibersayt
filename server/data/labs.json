@@ -4,12 +4,12 @@
     "title": "Parol qáwipsizligi simulyatsiyası",
     "difficulty": "basta",
     "duration": "30 min",
-    "description": "Parol qáwipsizligi qáwimlerin oqıw orayında amaliy mashq qılıń. Haqıqıy sistemalarga hujum qılmaymız.",
-    "objectives": ["Parol qáwimlerin túsiniw", "Brute-force xavfini baha law", "Xavfsiz parol jasaw"],
+    "description": "Parol qáwipsizligi qáwimlerin oqıw ishinde amaliy mashq qılıń. Haqıyqıy sistemalarga hujum qılmaymız.",
+    "objectives": ["Parol qáwimlerin túsiniw", "Brute-force qáwipin bahalaw", "Qáwipsiz parol jasaw"],
     "steps": [
       "Demo parol generatorin isletiń",
-      "Parol qáwim skorin tahlil qılıń",
-      "Xavfsiz parol siyasatın jazıń"
+      "Parol qáwim ballın tallañ",
+      "Qáwipsiz parol siyasatın jazıń"
     ],
     "status": "available"
   },
@@ -18,8 +18,8 @@
     "title": "Phishing xabarın anıqlaw",
     "difficulty": "orta",
     "duration": "45 min",
-    "description": "Simulyatsiya email xabarları arasında phishing belgilerin tabıń.",
-    "objectives": ["Phishing belgilerin tanıw", "URL tekseriw", "Xabar metadata tahlili"],
+    "description": "Simulyatsiya elektron pochta xabarları arasında phishing belgilerin tabıń.",
+    "objectives": ["Phishing belgilerin taniw", "URL tekseriw", "Xabar metadata tallawı"],
     "steps": [
       "5 ta demo xabardı oqıń",
       "Shubhalı belgilerdi belgileń",
@@ -29,11 +29,11 @@
   },
   {
     "id": "lab-3",
-    "title": "Firewall qáwimlarin sozlaw",
+    "title": "Firewall qáwimlerin sozlaw",
     "difficulty": "orta",
     "duration": "60 min",
-    "description": "Virtual firewall orayında trafik qáwimlerin sozlaw mashqı.",
-    "objectives": ["Inbound/outbound qáwimler", "Port filtratsiyası", "Log tahlili"],
+    "description": "Virtual firewall ishinde trafik qáwimlerin sozlaw mashqı.",
+    "objectives": ["Kiruvchi/shıǵıw qáwimleri", "Port filtratsiyası", "Log tallawı"],
     "steps": [
       "Demo firewall interfeysin ashıń",
       "HTTP/HTTPS qáwimlerin qosıń",
@@ -43,28 +43,28 @@
   },
   {
     "id": "lab-4",
-    "title": "Hash funksiyaları laboratoriyası",
+    "title": "Hash funkciyaları laboratoriyası",
     "difficulty": "basta",
     "duration": "40 min",
-    "description": "MD5, SHA-256 hashlerin salıstırıw mashqı (oquw maqsadında).",
+    "description": "MD5, SHA-256 hashlerdi salıstırıw mashqı (oqıw maqsadında).",
     "objectives": ["Hash túsiniw", "Salt qollanıw", "Collision túsiniw"],
     "steps": [
-      "Matn hashin hisaplań",
-      "Salt qosıp qayta hisaplań",
+      "Matn hashin esaplań",
+      "Salt qosıp qayta esaplań",
       "Nátijelerdi salıstırıń"
     ],
     "status": "available"
   },
   {
     "id": "lab-5",
-    "title": "Incident response josparı",
+    "title": "Insidentke javap beriw josparı",
     "difficulty": "joqarı",
     "duration": "90 min",
-    "description": "Simulyatsiya insidenti boyınsha response josparın jasaw.",
+    "description": "Simulyatsiya insidenti boyınsha javap beriw josparın jasaw.",
     "objectives": ["Insident klassifikatsiyası", "Kommunikatsiya", "Qayta tiklew"],
     "steps": [
       "Insident stsenariyin oqıń",
-      "Response josparın toltırıń",
+      "Javap beriw josparın toltırıń",
       "Post-mortem eslatmasın jazıń"
     ],
     "status": "available"

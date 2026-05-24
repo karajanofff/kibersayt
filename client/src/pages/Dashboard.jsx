@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { BookOpen, FlaskConical, ClipboardCheck, Flag, TrendingUp } from 'lucide-react';
 import { apiFetch } from '../api/client';
 import { useAuth } from '../context/AuthContext';
+import { formatLessonCount } from '../i18n/kaa';
 
 export default function Dashboard() {
   const { user } = useAuth();
@@ -20,7 +21,7 @@ export default function Dashboard() {
 
   const stats = [
     {
-      label: 'Tamamlanǵan darslar',
+      label: 'Tamamlanǵan sabaqlar',
       value: progress?.completedLessons?.length || 0,
       icon: BookOpen,
       color: 'text-cyber-400',
@@ -32,13 +33,13 @@ export default function Dashboard() {
       color: 'text-emerald-400',
     },
     {
-      label: 'Test ballı',
+      label: 'Test balı',
       value: progress?.testScore != null ? `${progress.testScore}%` : '—',
       icon: ClipboardCheck,
       color: 'text-amber-400',
     },
     {
-      label: 'CTF sheshildi',
+      label: 'Sheshilgen CTF',
       value: progress?.ctfSolved?.length || 0,
       icon: Flag,
       color: 'text-purple-400',
@@ -47,10 +48,8 @@ export default function Dashboard() {
 
   return (
     <div>
-      <h1 className="text-3xl font-bold text-white">
-        Salám, {user?.name}!
-      </h1>
-      <p className="mt-2 text-slate-400">Basqarıw paneli — óqıw júrińizdi kúziń</p>
+      <h1 className="text-3xl font-bold text-white">Salám, {user?.name}!</h1>
+      <p className="mt-2 text-slate-400">Basqarıw paneli — oqıw júrińizdi kúziń</p>
 
       <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {stats.map(({ label, value, icon: Icon, color }) => (
@@ -72,7 +71,7 @@ export default function Dashboard() {
             <Link key={mod.id} to={`/modules/${mod.id}`} className="card transition hover:border-cyber-500/50">
               <h3 className="font-semibold text-white">{mod.title}</h3>
               <p className="mt-2 line-clamp-2 text-sm text-slate-400">{mod.description}</p>
-              <p className="mt-3 text-xs text-cyber-400">{mod.lessonCount} dars</p>
+              <p className="mt-3 text-xs text-cyber-400">{formatLessonCount(mod.lessonCount)}</p>
             </Link>
           ))}
         </div>

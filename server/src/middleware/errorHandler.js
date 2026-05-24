@@ -1,5 +1,5 @@
 export function notFound(req, res, next) {
-  res.status(404).json({ success: false, message: 'API jol tabılmadı' });
+  res.status(404).json({ success: false, message: 'API jolu tabılmadı' });
 }
 
 export function errorHandler(err, req, res, next) {

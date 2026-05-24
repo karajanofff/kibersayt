@@ -7,7 +7,7 @@
     "points": 100,
     "description": "Berilgan misoldı Sezer (Caesar) usılı menen dekodlań. Siljisiw: 3 pozitsiya. Javobıńızdı tekst kórinishinde jiberiń.",
     "berilganMisol": "FBEHU{vhchu_vkliuodvk}",
-    "hint": "Lotin álfaviti boyınsha 3 harf artqa qaytıń (yamasa 23 aldıńǵa).",
+    "hint": "Lotin álifbiti boyınsha 3 harf artqa qaytıń (yamasa 23 aldıńǵa).",
     "javobFormat": "CYBER{dekodlangan_sóz}",
     "cipherMeta": { "type": "caesar", "shift": 3 },
     "flag": "CYBER{sezer_shifrlash}"
@@ -44,7 +44,7 @@
     "category": "kriptologiya",
     "difficulty": "joqarı",
     "points": 200,
-    "description": "Berilgan AES shifrlangan maǵlıwmatnı dekodlań. «AES demo» tugmasin basıp kalit hám IV oling. Javob tekst kórinishinde CYBER{...} bolıwı kerek.",
+    "description": "Berilgan AES shifrlangan maǵlıwmattı dekodlań. «AES demo» tugmasın basıp kalit hám IV oling. Javob tekst kórinishinde CYBER{...} bolıwı kerek.",
     "berilganMisol": "W6LOHqRrBRx5wbKGmKrQdjsGj4EY0Mf8oLl48seaB3A=",
     "hint": "Algoritm: AES-128-CBC. Kalit uzınlıǵı 16 bayt. Demo maǵlıwmatta kalit hám IV bar.",
     "javobFormat": "CYBER{dekodlangan_sóz}",

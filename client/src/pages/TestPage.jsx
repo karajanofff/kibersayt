@@ -23,7 +23,7 @@ export default function TestPage() {
       selectedIndex: answers[q.id] ?? -1,
     }));
     if (payload.some((a) => a.selectedIndex < 0)) {
-      alert('Barlıq sorawlarga juwap beriń');
+      alert('Barlıq sorawlarga juwap beriń!');
       return;
     }
     setSubmitting(true);

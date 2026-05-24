@@ -16,7 +16,7 @@ export async function apiFetch(path, options = {}) {
   const data = await res.json().catch(() => ({}));
 
   if (!res.ok) {
-    throw new Error(data.message || "So'rov qáteligi");
+    throw new Error(data.message || 'Soraw qáteligi');
   }
   return data;
 }

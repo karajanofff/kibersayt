@@ -1,7 +1,7 @@
 [
   {
     "id": "admin-1",
-    "name": "Platforma Admini",
+    "name": "Platforma basqarıwshısı",
     "email": "admin@cyberedu.local",
     "password": "admin123",
     "role": "admin"
