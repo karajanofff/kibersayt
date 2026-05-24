@@ -146,12 +146,10 @@ export default function CTF() {
                 <PenLine className="h-4 w-4" />
                 Javobıńız (tekst kórinishinde)
               </div>
-              <p className="mb-2 text-xs text-slate-500">
-                Kútiletuǵın javob: {c.javobFormat || 'tekst'}
-              </p>
               <textarea
                 className="input-field min-h-[80px] resize-y font-mono text-base uppercase"
-                placeholder={c.javobFormat ? `Mysal: ${c.javobFormat}` : 'Javobıńızdı jazıń...'}
+                placeholder="Durıs javobtı kiritiń"
+                aria-label="Durıs javobtı kiritiń"
                 value={answers[c.id] || ''}
                 onChange={(e) => setAnswers((a) => ({ ...a, [c.id]: e.target.value }))}
                 rows={2}

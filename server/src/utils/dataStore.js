@@ -48,7 +48,7 @@ export function getTestMeta() {
 }
 
 export function getCtfPublic() {
-  return readJson('ctf').map(({ flag, hintAnswer, ...rest }) => rest);
+  return readJson('ctf').map(({ flag, hintAnswer, javobFormat, ...rest }) => rest);
 }
 
 export function checkCtfFlag(id, submittedFlag) {
