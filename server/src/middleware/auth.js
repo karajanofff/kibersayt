@@ -15,7 +15,7 @@ export function authOptional(req, res, next) {
 export function authRequired(req, res, next) {
   const header = req.headers.authorization;
   if (!header?.startsWith('Bearer ')) {
-    return res.status(401).json({ success: false, message: 'Avtorizatsiya kerek' });
+    return res.status(401).json({ success: false, message: 'Avtorizatsiya talap etiledi' });
   }
   try {
     req.user = jwt.verify(header.slice(7), process.env.JWT_SECRET || 'cyberedu-dev-secret');

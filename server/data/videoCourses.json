@@ -1,8 +1,8 @@
 [
   {
     "id": "vc-kiber",
-    "title": "Kiberxavfsizlik video kursı",
-    "description": "Kiberqáwipsizlik negizleri — «Kiberxavfsizlik» video darslar toplamınan 5 sabaq.",
+    "title": "Kiberqáwipsizlik video kursı",
+    "description": "Kiberqáwipsizlik negizleri — «Kiberqáwipsizlik» video darslar toplamınan 5 sabaq.",
     "icon": "video",
     "playlistUrl": "https://www.youtube.com/playlist?list=PLFRnhpV9odGDXUoUp5p50A6NHH4m4v7qS",
     "order": 1,
@@ -10,16 +10,16 @@
       {
         "id": "vid-1",
         "youtubeId": "unTavenYgDo",
-        "title": "Kiberxavfsizlik nima?",
-        "theme": "Kiberqáwipsizlikke kirispe",
+        "title": "Kiberqáwipsizlik nima?",
+        "theme": "Kiberqáwipsizlikke kirisiw",
         "duration": "~45 mın",
-        "description": "Kiberqáwipsizlik túsiniwi, maǵlıwmat qorǵawı hám zamanaǵı qáwipler haqqında kirispe dars."
+        "description": "Kiberqáwipsizlik túsiniwi, maǵlıwmat qorǵawı hám zamanaǵı qáwipler haqqında kirisiw dars."
       },
       {
         "id": "vid-2",
         "youtubeId": "tAzT4h0Pwt0",
         "title": "CIA uchligi",
-        "theme": "Kiberqáwipsizlikke kirispe",
+        "theme": "Kiberqáwipsizlikke kirisiw",
         "duration": "~40 mın",
         "description": "Confidentiality, Integrity, Availability — qorǵaw strategiyası negizi."
       },

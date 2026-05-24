@@ -67,7 +67,6 @@ export default function Landing() {
         <p className="mt-2">{kaa.footerFullStack}</p>
         <p className="mt-1">{kaa.footerJunior}</p>
         <p className="mt-6 text-slate-600">{kaa.footerCopyright}</p>
-        <p className="mt-4 text-xs text-slate-600">{kaa.footerDemoAccounts}</p>
       </section>
     </div>
   );

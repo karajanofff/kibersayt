@@ -40,9 +40,7 @@ export default function CTF() {
       <p className="mt-2 text-slate-400">{kaa.ctfSubtitle}</p>
 
       <div className="card mt-6 border-cyber-500/30 bg-cyber-500/5">
-        <p className="text-sm text-cyber-200">
-          <strong>Qanday isleydi:</strong> {kaa.ctfHowItWorks}
-        </p>
+        <p className="text-sm text-cyber-200">{kaa.ctfHowItWorks}</p>
       </div>
 
       <div className="mt-8 space-y-8">

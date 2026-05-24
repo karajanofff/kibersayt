@@ -64,7 +64,7 @@ export default function Dashboard() {
   return (
     <div>
       <h1 className="text-3xl font-bold text-white">
-        {kaa.dashboardGreeting}, {user?.name}!
+        {kaa.dashboardWelcome}, {user?.name}!
       </h1>
       <p className="mt-2 text-slate-400">{kaa.dashboardSubtitle}</p>
 

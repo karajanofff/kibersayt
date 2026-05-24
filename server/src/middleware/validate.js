@@ -5,7 +5,7 @@ export function validate(req, res, next) {
   if (!errors.isEmpty()) {
     return res.status(400).json({
       success: false,
-      message: 'Validatsiya qáteligi',
+      message: 'Validatsiya qáteligi júz berdi',
       errors: errors.array().map((e) => ({ field: e.path, msg: e.msg })),
     });
   }

@@ -4,15 +4,15 @@
     {
       "id": "test-mod-1",
       "moduleId": "mod-1",
-      "title": "Kiberqáwipsizlikke kirispe",
+      "title": "Kiberqáwipsizlikke kirisiw",
       "description": "CIA triadasi, qáwipler túrleri hám kiberetika boyınsha 10 soraw.",
       "questions": [
         { "id": "t1-q1", "text": "CIA triadasında 'C' nima anglatadi?", "options": ["Qupiyalıq", "Sáykeslik", "Qabilet", "Basqarıw"], "correctIndex": 0 },
         { "id": "t1-q2", "text": "Phishing — bul qanday qáwip?", "options": ["Fizikalıq búzıw", "Aldaw arqalı maǵlıwmat alıw", "DDoS", "Brute-force"], "correctIndex": 1 },
-        { "id": "t1-q3", "text": "Qáwipsiz parol ushın eń jaqsı amal?", "options": ["Bir paroldı barlıq jerde qollanıw", "Uzın hám únikal parol", "Ism hám tuwılǵan sánesi", "Parolsız kiris"], "correctIndex": 1 },
+        { "id": "t1-q3", "text": "Qáwipsiz parol ushın eń jaqsı amal?", "options": ["Bir paroldı barlıq jerde qollanıw", "Uzın hám únikal parol", "Ism hám tuwılǵan sánesi", "Parolsız kiriw"], "correctIndex": 1 },
         { "id": "t1-q4", "text": "Malware ne?", "options": ["Ziyankeser programma", "Antivirus", "Firewall", "VPN"], "correctIndex": 0 },
         { "id": "t1-q5", "text": "Insider threat — kim?", "options": ["Sırtqı haker", "Shirket ishki xodimi qáwipi", "VPN", "DNS"], "correctIndex": 1 },
-        { "id": "t1-q6", "text": "Kiberetika oqıwda ne muhim?", "options": ["Qanuniy hám etikalı mashq", "Haqıyqıy hujum", "Parol satusıw", "Noqonuniy ekspluatatsiya"], "correctIndex": 0 },
+        { "id": "t1-q6", "text": "Kiberetika oqıwda ne muhim?", "options": ["Qanuniy hám etikalı shınıǵıw", "Haqıyqıy hujum", "Parol satusıw", "Noqonuniy ekspluatatsiya"], "correctIndex": 0 },
         { "id": "t1-q7", "text": "Integrity (I) nima anglatadi?", "options": ["Maǵlıwmat túrliligin saqlaw", "Tezlik", "Parol", "Elektron pochta"], "correctIndex": 0 },
         { "id": "t1-q8", "text": "Availability (A) nima anglatadi?", "options": ["Qızmet barlıq waqıtta ishlawı", "Shifrlaw", "Log jazıw", "Parol buzıw"], "correctIndex": 0 },
         { "id": "t1-q9", "text": "Jetkilikli ashkaralaw — ne?", "options": ["Qáwipsizlik kemchiligin etikalı xabarlaw", "Hujum jasaw", "Maǵlıwmat satusıw", "Spam jiberiw"], "correctIndex": 0 },
@@ -80,7 +80,7 @@
       "description": "Insident josparı, log tallaw hám forensics boyınsha 10 soraw.",
       "questions": [
         { "id": "t5-q1", "text": "Insidentke javap beriwdiń birinshi qadami?", "options": ["Anıqlaw hám klassifikatsiya", "Formatlaw", "Marketing", "Satuw"], "correctIndex": 0 },
-        { "id": "t5-q2", "text": "Minimal ruxsat printsipi?", "options": ["Minimal kerek ruxsat", "Maksimal admin", "Parolsız kiris", "Ashıq portlar"], "correctIndex": 0 },
+        { "id": "t5-q2", "text": "Minimal ruxsat printsipi?", "options": ["Minimal kerek ruxsat", "Maksimal admin", "Parolsız kiriw", "Ashıq portlar"], "correctIndex": 0 },
         { "id": "t5-q3", "text": "SIEM ne qıladı?", "options": ["Loglardı jinaydı hám tahlil qıladı", "Parol buzadı", "Elektron xat jazadı", "Virus jazadı"], "correctIndex": 0 },
         { "id": "t5-q4", "text": "IOC — ne?", "options": ["Buzılıw belgisi", "Kompyuterler interneti", "Kiritiw-shıǵıw basqarıwı", "Ishxana ishki kodi"], "correctIndex": 0 },
         { "id": "t5-q5", "text": "Post-mortem eslatma — ne ushın?", "options": ["Kelasi insidentten qorǵanish", "Parol ózgertiw", "Marketing", "Satuw"], "correctIndex": 0 },

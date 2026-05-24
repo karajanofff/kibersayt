@@ -1,7 +1,7 @@
 [
   {
     "id": "mod-1",
-    "title": "Kiberqáwipsizlikke kirispe",
+    "title": "Kiberqáwipsizlikke kirisiw",
     "description": "Kiberqáwipsizlik túsiniwleri, qáwip landshaft, parol qáwimi hám etika.",
     "icon": "shield",
     "order": 1,
@@ -22,7 +22,7 @@
         "id": "lesson-1-3",
         "title": "Parol qáwipsizligi",
         "duration": "28 mın",
-        "content": "Parol — eń kóp qollanılatın autentifikatsiya usılı. Náçar parol — eń kóp qáwip.\n\nQáwipsiz parol qáwimleri:\n• Uzınlıq: keminde 12–16 ta belgi\n• Únikallıq: hár jerde basqa parol\n• Kúshlilik: kishi hám úlken harf, san, arnawlı belgi\n\nNáçar parol misalları: 123456, password, ism+tuwılǵan sáne — bulardı tekseriwshiler sekundlarda buzadı.\n\nParol menejeri (Bitwarden, KeePass) — parollardı qáwipsiz saqlaw usılı.\n\nMFA (kóp faktorlı autentifikatsiya) — parol + SMS kod / authenticator ilojası. MFA qollanılsa, parol buzilse de kiris qiyinlesedi.\n\nBrute-force: robot million kombinatsiya sinaydı. Qarsı shara: account lockout, CAPTCHA, MFA.\n\nQorındı: Uzın, únikal parol + MFA = kúshli kiris qorǵawı."
+        "content": "Parol — eń kóp qollanılatın autentifikatsiya usılı. Náçar parol — eń kóp qáwip.\n\nQáwipsiz parol qáwimleri:\n• Uzınlıq: keminde 12–16 ta belgi\n• Únikallıq: hár jerde basqa parol\n• Kúshlilik: kishi hám úlken harf, san, arnawlı belgi\n\nNáçar parol misalları: 123456, password, ism+tuwılǵan sáne — bulardı tekseriwshiler sekundlarda buzadı.\n\nParol menejeri (Bitwarden, KeePass) — parollardı qáwipsiz saqlaw usılı.\n\nMFA (kóp faktorlı autentifikatsiya) — parol + SMS kod / authenticator ilojası. MFA qollanılsa, parol buzilse de kiriw qiyinlesedi.\n\nBrute-force: robot million kombinatsiya sinaydı. Qarsı shara: account lockout, CAPTCHA, MFA.\n\nQorındı: Uzın, únikal parol + MFA = kúshli kiriw qorǵawı."
       },
       {
         "id": "lesson-1-4",
@@ -34,7 +34,7 @@
         "id": "lesson-1-5",
         "title": "Kiberetika hám qanun",
         "duration": "25 mın",
-        "content": "Kiberqáwipsizlik oqıwı qonuniy hám etikalı ramkada ótewi kerek.\n\nEtikalı tamallar:\n• Ruxsatsız sistemalarga kirmew\n• Topılǵan qáwipsizlik kamchiligin jetkilikli xabarlaw\n• Maǵlıwmatlardı qorǵaw\n• Oqıw maqsadında simulyatsiya\n\nJetkilikli ashkaralaw (responsible disclosure):\n1. Kamchilikti anıqlaw\n2. Shirketke xabarlaw\n3. Remont waqtın beriw\n4. Keyin ashkaralaw (eger kelisilse)\n\nQonuniy jeke: kompyuter qanunları, jeke maǵlıwmatlardı qorǵaw.\n\nPlatformada barlıq mashqlar — qonuniy oqıw simulyatsiyası. Haqıyqıy hujum, parol satusıw, noqonuniy ekspluatatsiya qadaǵan.\n\nQorındı: Bilim + etika = sáwleli kiber maman."
+        "content": "Kiberqáwipsizlik oqıwı qonuniy hám etikalı ramkada ótewi kerek.\n\nEtikalı tamallar:\n• Ruxsatsız sistemalarga kirmew\n• Topılǵan qáwipsizlik kamchiligin jetkilikli xabarlaw\n• Maǵlıwmatlardı qorǵaw\n• Oqıw maqsadında simulyatsiya\n\nJetkilikli ashkaralaw (responsible disclosure):\n1. Kamchilikti anıqlaw\n2. Shirketke xabarlaw\n3. Remont waqtın beriw\n4. Keyin ashkaralaw (eger kelisilse)\n\nQonuniy jeke: kompyuter qanunları, jeke maǵlıwmatlardı qorǵaw.\n\nPlatformada barlıq shınıǵıwları — qonuniy oqıw simulyatsiyası. Haqıyqıy hujum, parol satusıw, noqonuniy ekspluatatsiya qadaǵan.\n\nQorındı: Bilim + etika = sáwleli kiber maman."
       }
     ]
   },
@@ -55,13 +55,13 @@
         "id": "lesson-2-2",
         "title": "Firewall hám IDS",
         "duration": "32 mın",
-        "content": "Firewall — tarmoq qáwimi. Trafikti qoideler boyınsha ótkizedi yamasa bloklaydı.\n\nTúrleri:\n• Packet filtering — IP, port boyınsha\n• Stateful — ulanish holatin eslap qaladı\n• Application-layer — HTTP, DNS boyınsha\n\nQáwim qoideleri:\n• Default deny — barlıq narseni bloklaw, tek kereklerin ashıw\n• Least privilege — minimal portlar ashıq\n• Inbound vs Outbound — kiris hám shıǵıs alohida\n\nIDS (Intrusion Detection) — qáwipli aktivlikti anıqlaydı, log jazadı.\nIPS (Intrusion Prevention) — anıqlap, avtomatik bloklaydı.\n\nSIEM — loglardı bir joyda jinaydı hám tahlil qıladı.\n\nQorındı: Firewall + IDS/IPS = tarmoq qorǵawı."
+        "content": "Firewall — tarmoq qáwimi. Trafikti qoideler boyınsha ótkizedi yamasa bloklaydı.\n\nTúrleri:\n• Packet filtering — IP, port boyınsha\n• Stateful — ulanish holatin eslap qaladı\n• Application-layer — HTTP, DNS boyınsha\n\nQáwim qoideleri:\n• Default deny — barlıq narseni bloklaw, tek kereklerin ashıw\n• Least privilege — minimal portlar ashıq\n• Inbound vs Outbound — kiriw hám shıǵıs alohida\n\nIDS (Intrusion Detection) — qáwipli aktivlikti anıqlaydı, log jazadı.\nIPS (Intrusion Prevention) — anıqlap, avtomatik bloklaydı.\n\nSIEM — loglardı bir joyda jinaydı hám tahlil qıladı.\n\nQorındı: Firewall + IDS/IPS = tarmoq qorǵawı."
       },
       {
         "id": "lesson-2-3",
         "title": "VPN hám shifrlaw",
         "duration": "28 mın",
-        "content": "VPN (Virtual Private Network) — internet üzerinde qáwipsiz túnel.\n\nNe ushın:\n• Uzakdan islew (ofis tarmagına qáwipsiz kiris)\n• ISPdan jasırınlıq\n• Geografiyalıq sheklovlanıwdan ótew\n\nVPN túrleri: Site-to-site, Remote access (paydalanıwshı VPN klienti).\n\nTLS/SSL — web trafikti shifrlaw. HTTPS = HTTP + TLS. Brauzerde qulf belgisi.\n\nShifrlaw protokolları: TLS 1.2, TLS 1.3 (jańa, qáwipsiz).\n\nVPN vs HTTPS: VPN — barlıq trafikti túnelde; HTTPS — tek brauzer trafiki.\n\nQorındı: Ochiq Wi-Fi da VPN yamasa faqat HTTPS saytlarǵa kiriń."
+        "content": "VPN (Virtual Private Network) — internet üzerinde qáwipsiz túnel.\n\nNe ushın:\n• Uzakdan islew (ofis tarmagına qáwipsiz kiriw)\n• ISPdan jasırınlıq\n• Geografiyalıq sheklovlanıwdan ótew\n\nVPN túrleri: Site-to-site, Remote access (paydalanıwshı VPN klienti).\n\nTLS/SSL — web trafikti shifrlaw. HTTPS = HTTP + TLS. Brauzerde qulf belgisi.\n\nShifrlaw protokolları: TLS 1.2, TLS 1.3 (jańa, qáwipsiz).\n\nVPN vs HTTPS: VPN — barlıq trafikti túnelde; HTTPS — tek brauzer trafiki.\n\nQorındı: Ochiq Wi-Fi da VPN yamasa faqat HTTPS saytlarǵa kiriń."
       },
       {
         "id": "lesson-2-4",
@@ -100,7 +100,7 @@
         "id": "lesson-3-3",
         "title": "SQL injection qarsı",
         "duration": "32 mın",
-        "content": "SQL injection — maǵlıwmatlar bazasına ziyankeser sórew eniziw.\n\nMysal: login formasında ' OR '1'='1 — barlıq paydalanıwshılarga kiris.\n\nNátije: maǵlıwmat oqıw, ózgertiw, óchiriw, sistema basqarıwı.\n\nQorǵaw:\n• Parametrli sórovlar (prepared statements) — eń muhim\n• ORM (Object-Relational Mapping)\n• Input validatsiya\n• Minimal DB ruxsatları\n• WAF (Web Application Firewall)\n\nKodda heshqashan: \"SELECT * FROM users WHERE name = '\" + input + \"'\" — QÁWIPSIZ EMAS!\n\nDurıs: preparedStatement.setString(1, input)\n\nQorındı: Parametrli sórovlar — SQL injectionnan #1 qorǵaw."
+        "content": "SQL injection — maǵlıwmatlar bazasına ziyankeser sórew eniziw.\n\nMysal: login formasında ' OR '1'='1 — barlıq paydalanıwshılarga kiriw.\n\nNátije: maǵlıwmat oqıw, ózgertiw, óchiriw, sistema basqarıwı.\n\nQorǵaw:\n• Parametrli sórovlar (prepared statements) — eń muhim\n• ORM (Object-Relational Mapping)\n• Input validatsiya\n• Minimal DB ruxsatları\n• WAF (Web Application Firewall)\n\nKodda heshqashan: \"SELECT * FROM users WHERE name = '\" + input + \"'\" — QÁWIPSIZ EMAS!\n\nDurıs: preparedStatement.setString(1, input)\n\nQorındı: Parametrli sórovlar — SQL injectionnan #1 qorǵaw."
       },
       {
         "id": "lesson-3-4",
@@ -176,7 +176,7 @@
       },
       {
         "id": "lesson-5-3",
-        "title": "Forensics kirispe",
+        "title": "Forensics kirisiw",
         "duration": "30 mın",
         "content": "Digital forensics — raqamli dálillerdi jıynaw hám tahlil.\n\nDálil túrleri: disk imajı, memória dump, log, tarmoq trafik.\n\nTamallar:\n• Chain of custody — kim, qashan tiykardi\n• Dálildi ózgertpew (write blocker)\n• Vaqt belgisi (timestamp)\n\nQadamlar:\n1. Izolyatsiya (tarmoqtan ajratıw)\n2. Imij alıw (bit-by-bit nusqa)\n3. Tahlil (quraldar: Autopsy, Volatility)\n4. Esabat\n\nEtika: faqat qonuniy ruxsat penen, faqat kerek maǵlıwmat.\n\nQorındı: Forensics — insidentti túsiniw ushın dálil."
       },
@@ -211,7 +211,7 @@
         "id": "lesson-6-2",
         "title": "IAM hám MFA",
         "duration": "30 mın",
-        "content": "IAM (Identity and Access Management) — kim nege ruxsatı bar.\n\nPrintsipler:\n• Least privilege — minimal ruxsat\n• Separation of duties — bir kishi barlıq narseni basqarmaydı\n• Regular review — ruxsatlardı waqıt-waqıt tekseriw\n\nRBAC — rol boyınsha: Admin, Developer, Viewer.\n\nMFA — bult konsolga kiris ushın májbúriy.\n\nRoot account — eń qáwip. MFA + minimal qollanıw.\n\nService account — ilojalar ushın. Kalitler rotation.\n\nQorındı: IAM — bult qáwipsizliginin #1 máselesi."
+        "content": "IAM (Identity and Access Management) — kim nege ruxsatı bar.\n\nPrintsipler:\n• Least privilege — minimal ruxsat\n• Separation of duties — bir kishi barlıq narseni basqarmaydı\n• Regular review — ruxsatlardı waqıt-waqıt tekseriw\n\nRBAC — rol boyınsha: Admin, Developer, Viewer.\n\nMFA — bult konsolga kiriw ushın májbúriy.\n\nRoot account — eń qáwip. MFA + minimal qollanıw.\n\nService account — ilojalar ushın. Kalitler rotation.\n\nQorındı: IAM — bult qáwipsizliginin #1 máselesi."
       },
       {
         "id": "lesson-6-3",

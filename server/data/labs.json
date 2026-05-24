@@ -4,7 +4,7 @@
     "title": "Parol qáwipsizligi simulyatsiyası",
     "difficulty": "basta",
     "duration": "30 mın",
-    "description": "Parol qáwipsizligi qáwimlerin oqıw ishinde amaliy mashq qılıń. Haqıyqıy sistemalarga hujum qılmaymız.",
+    "description": "Parol qáwipsizligi qáwimlerin oqıw ishinde amaliy shınıǵıw qılıń. Haqıyqıy sistemalarga hujum qılmaymız.",
     "objectives": ["Parol qáwimlerin túsiniw", "Brute-force qáwipin bahalaw", "Qáwipsiz parol jasaw"],
     "steps": [
       "Sınaq parol generatorin isletiń",
@@ -32,7 +32,7 @@
     "title": "Firewall qáwimlerin sozlaw",
     "difficulty": "orta",
     "duration": "60 mın",
-    "description": "Virtual firewall ishinde trafik qáwimlerin sozlaw mashqı.",
+    "description": "Virtual firewall ishinde trafik qáwimlerin sozlaw shınıǵıwı.",
     "objectives": ["Kiruvchi/shıǵıw qáwimleri", "Port filtratsiyası", "Log tallawı"],
     "steps": [
       "Sınaq firewall interfeysin ashıń",
@@ -46,7 +46,7 @@
     "title": "Hash funkciyaları laboratoriyası",
     "difficulty": "basta",
     "duration": "40 mın",
-    "description": "MD5, SHA-256 hashlerdi salıstırıw mashqı (oqıw maqsadında).",
+    "description": "MD5, SHA-256 hashlerdi salıstırıw shınıǵıwı (oqıw maqsadında).",
     "objectives": ["Hash túsiniw", "Salt qollanıw", "Collision túsiniw"],
     "steps": [
       "Matn hashin esaplań",
