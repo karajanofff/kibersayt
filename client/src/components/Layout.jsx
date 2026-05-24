@@ -137,7 +137,7 @@ export default function Layout() {
 
       <footer className="mt-16 border-t border-slate-800 py-8 text-center text-sm text-slate-500">
         <p>© 2026 CyberEdu — Kiberqáwipsizlik kursı platforması</p>
-        <p className="mt-1">Barlıq mashqlar qáwipsiz oqıw simulyatsiyası.</p>
+        <p className="mt-1">Barlıq tapsırmalar nızamlı oqıw simulyaciyası retinde dúzilgen.</p>
       </footer>
     </div>
   );

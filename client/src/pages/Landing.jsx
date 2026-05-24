@@ -21,20 +21,25 @@ export default function Landing() {
       </header>
 
       <section className="mx-auto max-w-7xl px-4 py-20 text-center">
-        <p className="mb-4 text-sm font-medium uppercase tracking-widest text-cyber-400">
+        <p className="mb-6 text-sm font-semibold uppercase tracking-[0.2em] text-cyber-400">
           Kiberqáwipsizlik kursı platforması
         </p>
         <h1 className="mx-auto max-w-4xl text-4xl font-bold leading-tight text-white md:text-6xl">
-          CyberEdu — Kiberqáwipsizlikke{' '}
-          <span className="text-cyber-400">professional</span> dárejede oqıń
+          <span className="text-cyber-400">CyberEdu</span>
+          <span className="mt-2 block text-3xl font-semibold text-slate-200 md:text-4xl">
+            — Kiberqáwipsizlikti kásiplik dárejede úyreniń
+          </span>
         </h1>
-        <p className="mx-auto mt-6 max-w-2xl text-lg text-slate-400">
-          Modullar, laboratoriyalar, testler hám qáwipsiz CTF mashqları arqalı kiberqáwipsizlik
-          bilimlerin ósiriń. Barlıq mashqlar qanuniy oqıw simulyatsiyası.
+        <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-slate-400">
+          Modullar, laboratoriya jumısları, testler hám qáwipsiz CTF shınıǵıwları arqalı
+          kiberqáwipsizlik boyınsha bilimlerińizdi arttırıń.
+          <span className="mt-3 block">
+            Barlıq tapsırmalar nızamlı oqıw simulyaciyası retinde dúzilgen.
+          </span>
         </p>
         <div className="mt-10 flex flex-wrap justify-center gap-4">
           <Link to="/login" className="btn-primary text-lg px-8 py-3">
-            Platformaga kiriw
+            Platformaǵa kiriw
           </Link>
           <a href="#features" className="btn-secondary text-lg px-8 py-3">
             Kóbirek biliw
@@ -53,7 +58,7 @@ export default function Landing() {
             {
               icon: FlaskConical,
               title: '5 laboratoriya',
-              desc: 'Qáwipsiz simulyatsiya ishinde amaliy mashqlar.',
+              desc: 'Qáwipsiz simulyatsiya ishinde amaliy jumıslar.',
             },
             {
               icon: Flag,
