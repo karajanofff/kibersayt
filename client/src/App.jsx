@@ -10,6 +10,7 @@ import Lesson from './pages/Lesson';
 import Labs from './pages/Labs';
 import LabDetail from './pages/LabDetail';
 import TestPage from './pages/TestPage';
+import TestTake from './pages/TestTake';
 import CTF from './pages/CTF';
 import Resources from './pages/Resources';
 import Admin from './pages/Admin';
@@ -74,6 +75,14 @@ export default function App() {
           element={
             <ProtectedRoute>
               <TestPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/test/:id"
+          element={
+            <ProtectedRoute>
+              <TestTake />
             </ProtectedRoute>
           }
         />

@@ -37,14 +37,38 @@ export function getLabs() {
   return readJson('labs');
 }
 
-export function getTests() {
-  const data = readJson('tests');
-  return data.questions;
+function getTestsData() {
+  return readJson('tests');
 }
 
-export function getTestMeta() {
-  const data = readJson('tests');
-  return { title: data.title, passingScore: data.passingScore };
+export function getTestSections() {
+  return getTestsData().sections.map(({ questions, ...section }) => ({
+    ...section,
+    questionCount: questions.length,
+  }));
+}
+
+export function getTestSectionById(id) {
+  const section = getTestsData().sections.find((s) => s.id === id);
+  if (!section) return null;
+  const questions = section.questions.map(({ correctIndex, ...q }) => q);
+  return {
+    id: section.id,
+    moduleId: section.moduleId,
+    title: section.title,
+    description: section.description,
+    passingScore: getTestsData().passingScore,
+    questions,
+  };
+}
+
+export function getTestSectionQuestions(id) {
+  const section = getTestsData().sections.find((s) => s.id === id);
+  return section?.questions || [];
+}
+
+export function getTestPassingScore() {
+  return getTestsData().passingScore;
 }
 
 export function getCtfPublic() {
@@ -87,6 +111,8 @@ export function getProgress(userId) {
     completedLessons: [],
     completedLabs: [],
     testScore: null,
+    testPassed: null,
+    testScores: {},
     ctfSolved: [],
     moduleProgress: {},
   };

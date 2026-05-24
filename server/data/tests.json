@@ -1,126 +1,113 @@
 {
-  "title": "Kiberqáwipsizlik bilim testi",
   "passingScore": 70,
-  "questions": [
+  "sections": [
     {
-      "id": "q-1",
-      "text": "CIA triadasında 'C' ne anglatadı?",
-      "options": ["Confidentiality", "Compliance", "Capacity", "Control"],
-      "correctIndex": 0
+      "id": "test-mod-1",
+      "moduleId": "mod-1",
+      "title": "Kiberqáwipsizlikke kirispe",
+      "description": "CIA triadasi, qáwipler túrleri hám kiberetika boyınsha 10 soraw.",
+      "questions": [
+        { "id": "t1-q1", "text": "CIA triadasında 'C' ne anglatadı?", "options": ["Confidentiality", "Compliance", "Capacity", "Control"], "correctIndex": 0 },
+        { "id": "t1-q2", "text": "Phishing — bul qanday qáwip?", "options": ["Fizikalıq búzıw", "Aldaw arqalı maǵlıwmat alıw", "DDoS", "Brute-force"], "correctIndex": 1 },
+        { "id": "t1-q3", "text": "Qáwipsiz parol ushın eń jaqsı amal?", "options": ["Bir paroldı barlıq jerde qollanıw", "Uzın hám únikal parol", "Ism hám tuwılǵan sánesi", "Parolsız kiris"], "correctIndex": 1 },
+        { "id": "t1-q4", "text": "Malware ne?", "options": ["Ziyankeser programma", "Antivirus", "Firewall", "VPN"], "correctIndex": 0 },
+        { "id": "t1-q5", "text": "Insider threat — kim?", "options": ["Sırtqı haker", "Shirket ishki xodimi qáwipi", "VPN", "DNS"], "correctIndex": 1 },
+        { "id": "t1-q6", "text": "Kiberetika oqıwda ne muhim?", "options": ["Qanuniy hám etikalı mashq", "Haqıyqıy hujum", "Parol satusıw", "Noqonuniy ekspluatatsiya"], "correctIndex": 0 },
+        { "id": "t1-q7", "text": "Integrity (I) ne anglatadı?", "options": ["Maǵlıwmat túrliligin saqlaw", "Tezlik", "Parol", "Email"], "correctIndex": 0 },
+        { "id": "t1-q8", "text": "Availability (A) ne anglatadı?", "options": ["Qızmet barlıq waqıtta ishlawı", "Shifrlaw", "Log jazıw", "Parol buzıw"], "correctIndex": 0 },
+        { "id": "t1-q9", "text": "Jetkilikli ashkaralaw — ne?", "options": ["Qáwipsizlik kemchiligin etikalı xabarlaw", "Hujum jasaw", "Maǵlıwmat satusıw", "Spam jiberiw"], "correctIndex": 0 },
+        { "id": "t1-q10", "text": "Kiberqáwipsizlik — ne?", "options": ["Tizimler hám maǵlıwmatlardı qorǵaw", "Faqat antivirus", "Faqat parol", "Faqat firewall"], "correctIndex": 0 }
+      ]
     },
     {
-      "id": "q-2",
-      "text": "Phishing — bul qanday qáwip?",
-      "options": ["Fizikalıq búzıw", "Aldaw arqalı maǵlıwmat alıw", "DDoS", "Brute-force"],
-      "correctIndex": 1
+      "id": "test-mod-2",
+      "moduleId": "mod-2",
+      "title": "Tarmaq qáwipsizligi",
+      "description": "TCP/IP, firewall, VPN hám tarmaq qáwipleri boyınsha 10 soraw.",
+      "questions": [
+        { "id": "t2-q1", "text": "HTTPS qanday protokol?", "options": ["HTTP + TLS", "FTP", "SMTP", "DNS"], "correctIndex": 0 },
+        { "id": "t2-q2", "text": "Firewall ne ish qıladı?", "options": ["Trafikti filtrleýdi", "Virus jazadı", "Parol buzadı", "Email jiberedi"], "correctIndex": 0 },
+        { "id": "t2-q3", "text": "DDoS qáwipi nege qaratılǵan?", "options": ["Qızmetten sheshiriw", "Parol ózgertiw", "Email oqıw", "Fayl nusqalasıw"], "correctIndex": 0 },
+        { "id": "t2-q4", "text": "VPN ne ushın qollanıladı?", "options": ["Qáwipsiz túnel", "Virus skaneri", "Parol generatorı", "Spam filtri"], "correctIndex": 0 },
+        { "id": "t2-q5", "text": "TCP/IP modelinde neşe qabat bar?", "options": ["4 (TCP/IP)", "7 (OSI)", "2", "10"], "correctIndex": 0 },
+        { "id": "t2-q6", "text": "IDS ne qıladı?", "options": ["Qáwipli aktivlikti aniqlaydı", "Parol generatsiya", "Email filtr", "Disk formatlaw"], "correctIndex": 0 },
+        { "id": "t2-q7", "text": "Port 443 qaysı xizmet ushın?", "options": ["HTTPS", "HTTP", "FTP", "SSH"], "correctIndex": 0 },
+        { "id": "t2-q8", "text": "TLS ne qorǵaydı?", "options": ["Trafikti shifrlaýdı", "Fizikalıq esik", "Printer", "Monitor"], "correctIndex": 0 },
+        { "id": "t2-q9", "text": "Inbound firewall qáwimi — ne?", "options": ["Kiruvchi trafik", "Shıǵıw trafik", "Email", "DNS"], "correctIndex": 0 },
+        { "id": "t2-q10", "text": "IP manzil ne ushın?", "options": ["Tarmoqtıǵı qurılmanı identifikatsiya", "Parol", "Email", "Fayl atı"], "correctIndex": 0 }
+      ]
     },
     {
-      "id": "q-3",
-      "text": "Qáwipsiz parol ushın eń jaqsı amal?",
-      "options": ["Bir paroldı barlıq jerde qollanıw", "Uzın hám únikal parol", "Ism hám tuwılǵan sánesi", "Parolsız kiris"],
-      "correctIndex": 1
+      "id": "test-mod-3",
+      "moduleId": "mod-3",
+      "title": "Web qáwipsizligi",
+      "description": "XSS, CSRF, SQL injection hám OWASP boyınsha 10 soraw.",
+      "questions": [
+        { "id": "t3-q1", "text": "XSS — bul ne?", "options": ["Cross-Site Scripting", "Extra Secure Socket", "XML Storage", "Cross Server Sync"], "correctIndex": 0 },
+        { "id": "t3-q2", "text": "SQL injectionnan qanday qorǵanamız?", "options": ["Parametrli sórovlar", "Parolsız DB", "Ashıq admin", "SQL debug rejimi"], "correctIndex": 0 },
+        { "id": "t3-q3", "text": "OWASP Top 10 ne haqqında?", "options": ["Web qáwipsizligi qáwipleri", "Operatsion sistema", "Printer qáwipsizligi", "Fizikalıq qorǵaw"], "correctIndex": 0 },
+        { "id": "t3-q4", "text": "CSRF token ne qıladı?", "options": ["Sórov avtorizatsiyasın tekseredi", "Virus óchiredi", "Parol generatsiya qıladı", "Log jazadı"], "correctIndex": 0 },
+        { "id": "t3-q5", "text": "Cookie ne ushın qollanıladı?", "options": ["Sessiya hám state saqlaw", "Virus", "Firewall", "VPN"], "correctIndex": 0 },
+        { "id": "t3-q6", "text": "HTTPS qaysı portta?", "options": ["443", "80", "21", "22"], "correctIndex": 0 },
+        { "id": "t3-q7", "text": "Input validatsiya nege kerek?", "options": ["Ziyankeser kiritpemenen qorǵanish", "Tezlik", "Dizayn", "Rang"], "correctIndex": 0 },
+        { "id": "t3-q8", "text": "Stored XSS qayerde saqlanadı?", "options": ["Serverda (DB)", "Faqat brauzerda", "Emailda", "DNSda"], "correctIndex": 0 },
+        { "id": "t3-q9", "text": "Prepared statement ne qıladı?", "options": ["SQL injection qarsı", "XSS qarsı", "DDoS qarsı", "Phishing qarsı"], "correctIndex": 0 },
+        { "id": "t3-q10", "text": "Session hijacking — ne?", "options": ["Sessiyani basqanıw", "Parol generatsiya", "Hash", "Port skaner"], "correctIndex": 0 }
+      ]
     },
     {
-      "id": "q-4",
-      "text": "HTTPS qanday protokol?",
-      "options": ["HTTP + TLS", "FTP", "SMTP", "DNS"],
-      "correctIndex": 0
+      "id": "test-mod-4",
+      "moduleId": "mod-4",
+      "title": "Kriptografiya",
+      "description": "Hash, AES, RSA hám sertifikatlar boyınsha 10 soraw.",
+      "questions": [
+        { "id": "t4-q1", "text": "SHA-256 qanday funkciya?", "options": ["Hash", "Shifrlaw", "Sıqıw", "Arxivlew"], "correctIndex": 0 },
+        { "id": "t4-q2", "text": "Salt parol hashinde ne ushın?", "options": ["Rainbow table qarsı", "Tezlikti artırıw", "Paroldı uzaytırıw", "Email qosıw"], "correctIndex": 0 },
+        { "id": "t4-q3", "text": "Simmetrik shifrlaw — ne?", "options": ["Bir kalit shifrlaw hám dekodlaw", "Eki kalit", "Hash", "Parol"], "correctIndex": 0 },
+        { "id": "t4-q4", "text": "AES qanday algoritm?", "options": ["Simmetrik shifrlaw", "Hash", "Asimmetrik", "SIEM"], "correctIndex": 0 },
+        { "id": "t4-q5", "text": "RSA qanday algoritm?", "options": ["Asimmetrik shifrlaw", "Hash", "Firewall", "VPN"], "correctIndex": 0 },
+        { "id": "t4-q6", "text": "SSL/TLS sertifikatı ne ushın?", "options": ["Server identifikatsiyası hám HTTPS", "Email", "Parol", "Log"], "correctIndex": 0 },
+        { "id": "t4-q7", "text": "Hash funksiyası qaytaradı?", "options": ["Fiksirlengen uzınlıqtı ózgermes qıymet", "Parol", "Kalit", "IV"], "correctIndex": 0 },
+        { "id": "t4-q8", "text": "Public key kimge beriledi?", "options": ["Barlıqǵa ashıq", "Faqat admin", "Faqat hacker", "Faqat DNS"], "correctIndex": 0 },
+        { "id": "t4-q9", "text": "CA (Certificate Authority) — ne?", "options": ["Sertifikat beriwshı organ", "Antivirus", "Firewall", "Router"], "correctIndex": 0 },
+        { "id": "t4-q10", "text": "End-to-end shifrlaw — ne?", "options": ["Faqat joǵarı hám tómengi arasında oqıwshılar oqiy aladı", "Heshkim oqimaydı", "Faqat server", "Faqat DNS"], "correctIndex": 0 }
+      ]
     },
     {
-      "id": "q-5",
-      "text": "XSS — bul ne?",
-      "options": ["Cross-Site Scripting", "Extra Secure Socket", "XML Storage", "Cross Server Sync"],
-      "correctIndex": 0
+      "id": "test-mod-5",
+      "moduleId": "mod-5",
+      "title": "Insidentke javap beriw",
+      "description": "Insident josparı, log tallaw hám forensics boyınsha 10 soraw.",
+      "questions": [
+        { "id": "t5-q1", "text": "Insidentke javap beriwdiń birinshi qadami?", "options": ["Anıqlaw hám klassifikatsiya", "Formatlaw", "Marketing", "Satuw"], "correctIndex": 0 },
+        { "id": "t5-q2", "text": "Minimal ruxsat printsipi?", "options": ["Minimal kerek ruxsat", "Maksimal admin", "Parolsız kiris", "Ashıq portlar"], "correctIndex": 0 },
+        { "id": "t5-q3", "text": "SIEM ne qıladı?", "options": ["Loglardı jinaydı hám tahlil qıladı", "Parol buzadı", "Email jazadı", "Virus jazadı"], "correctIndex": 0 },
+        { "id": "t5-q4", "text": "IOC — ne?", "options": ["Indikator of Compromise", "Internet of Computers", "Input Output Control", "Internal Office Code"], "correctIndex": 0 },
+        { "id": "t5-q5", "text": "Post-mortem eslatma — ne ushın?", "options": ["Kelasi insidentten qorǵanish", "Parol ózgertiw", "Marketing", "Satuw"], "correctIndex": 0 },
+        { "id": "t5-q6", "text": "Forensics — ne?", "options": ["Raqamli dálillerdi jıynaw hám tahlil", "Virus jazıw", "Hujum", "Spam"], "correctIndex": 0 },
+        { "id": "t5-q7", "text": "NIST IR fazaları — qaysı?", "options": ["Tayarlıq, Anıqlaw, Jazıw, Qayta tiklew", "Faqat hujum", "Faqat marketing", "Faqat sotıw"], "correctIndex": 0 },
+        { "id": "t5-q8", "text": "Log korrelatsiya — ne?", "options": ["Turli loglardı baylanıstırıw", "Log óchiriw", "Parol", "Email"], "correctIndex": 0 },
+        { "id": "t5-q9", "text": "Ransomware insidentinde birinshi qadam?", "options": ["Izolyatsiya hám tahlil", "Toleń!", "Parol paylasıw", "Formatlaw"], "correctIndex": 0 },
+        { "id": "t5-q10", "text": "Insident kommunikatsiyasında ne muhim?", "options": ["Anıq hám waqtında xabar", "Jashırın qalıw", "Marketing", "Spam"], "correctIndex": 0 }
+      ]
     },
     {
-      "id": "q-6",
-      "text": "SQL injectionnan qanday qorǵanamız?",
-      "options": ["Parametrli sórovlar", "Parolsız DB", "Ashıq admin", "SQL debug rejimi"],
-      "correctIndex": 0
-    },
-    {
-      "id": "q-7",
-      "text": "MFA ne?",
-      "options": ["Kóp faktorlı autentifikatsiya", "Main File Access", "Manual Firewall Admin", "Memory Forensics Analysis"],
-      "correctIndex": 0
-    },
-    {
-      "id": "q-8",
-      "text": "SHA-256 qanday funkciya?",
-      "options": ["Hash", "Shifrlaw", "Sıqıw", "Arxivlew"],
-      "correctIndex": 0
-    },
-    {
-      "id": "q-9",
-      "text": "Firewall ne ish qıladı?",
-      "options": ["Trafikti filtrleýdi", "Virus jazadı", "Parol buzadı", "Email jiberedi"],
-      "correctIndex": 0
-    },
-    {
-      "id": "q-10",
-      "text": "Jetkilikli ashkaralaw — ne?",
-      "options": ["Qáwipsizlik kemchiligin etikalı xabarlaw", "Hujum jasaw", "Maǵlıwmat satusıw", "Parol bólisiw"],
-      "correctIndex": 0
-    },
-    {
-      "id": "q-11",
-      "text": "DDoS qáwipi nege qaratılǵan?",
-      "options": ["Qızmetten sheshiriw", "Parol ózgertiw", "Email oqıw", "Fayl nusqalasıw"],
-      "correctIndex": 0
-    },
-    {
-      "id": "q-12",
-      "text": "VPN ne ushın qollanıladı?",
-      "options": ["Qáwipsiz túnel", "Virus skaneri", "Parol generatorı", "Spam filtri"],
-      "correctIndex": 0
-    },
-    {
-      "id": "q-13",
-      "text": "OWASP Top 10 ne haqqında?",
-      "options": ["Web qáwipsizligi qáwipleri", "Operatsion sistema", "Printer qáwipsizligi", "Fizikalıq qorǵaw"],
-      "correctIndex": 0
-    },
-    {
-      "id": "q-14",
-      "text": "Salt parol hashinde ne ushın?",
-      "options": ["Rainbow table qarsı", "Tezlikti artırıw", "Paroldı uzaytırıw", "Email qosıw"],
-      "correctIndex": 0
-    },
-    {
-      "id": "q-15",
-      "text": "CSRF token ne qıladı?",
-      "options": ["Sórov avtorizatsiyasın tekseredi", "Virus óchiredi", "Parol generatsiya qıladı", "Log jazadı"],
-      "correctIndex": 0
-    },
-    {
-      "id": "q-16",
-      "text": "Insidentke javap beriwdiń birinshi qadami?",
-      "options": ["Anıqlaw hám klassifikatsiya", "Formatlaw", "Marketing", "Satuw"],
-      "correctIndex": 0
-    },
-    {
-      "id": "q-17",
-      "text": "Minimal ruxsat printsipi?",
-      "options": ["Minimal kerek ruxsat", "Maksimal admin", "Parolsız kiris", "Ashıq portlar"],
-      "correctIndex": 0
-    },
-    {
-      "id": "q-18",
-      "text": "TLS ne qorǵaydı?",
-      "options": ["Trafikti shifrlaýdı", "Fizikalıq esik", "Printer", "Monitor"],
-      "correctIndex": 0
-    },
-    {
-      "id": "q-19",
-      "text": "Bultta ortaq jawapkerlik kime qaratılǵan?",
-      "options": ["Provayder hám tárep", "Tek oqıwshı", "Tek hacker", "Tek DNS"],
-      "correctIndex": 0
-    },
-    {
-      "id": "q-20",
-      "text": "Kiberetika oqıwda ne muhim?",
-      "options": ["Qanuniy hám etikalı mashq", "Haqıyqıy hujum", "Parol satusıw", "Noqanuniy ekspluatatsiya"],
-      "correctIndex": 0
+      "id": "test-mod-6",
+      "moduleId": "mod-6",
+      "title": "Bult qáwipsizligi",
+      "description": "Bult infrastrukturasi, IAM hám konteynerler boyınsha 10 soraw.",
+      "questions": [
+        { "id": "t6-q1", "text": "MFA ne?", "options": ["Kóp faktorlı autentifikatsiya", "Main File Access", "Manual Firewall Admin", "Memory Forensics Analysis"], "correctIndex": 0 },
+        { "id": "t6-q2", "text": "Bultta ortaq jawapkerlik kime qaratılǵan?", "options": ["Provayder hám tárep", "Tek oqıwshı", "Tek hacker", "Tek DNS"], "correctIndex": 0 },
+        { "id": "t6-q3", "text": "IAM ne basqaradı?", "options": ["Paydalanıwshılar hám ruxsatlar", "Virus", "Printer", "Monitor"], "correctIndex": 0 },
+        { "id": "t6-q4", "text": "S3 bucket ashıq qoyılǵan — qanday qáwip?", "options": ["Maǵlıwmat sızıwı", "Tezlik", "Parol", "Email"], "correctIndex": 0 },
+        { "id": "t6-q5", "text": "Konteyner image skaneri nege kerek?", "options": ["Ziyankeser qatlamlardı tabıw", "Tezlik", "Dizayn", "Rang"], "correctIndex": 0 },
+        { "id": "t6-q6", "text": "Secrets management — ne?", "options": ["API kalit hám parollardı qáwipsiz saqlaw", "Spam", "DDoS", "XSS"], "correctIndex": 0 },
+        { "id": "t6-q7", "text": "Bult provayder masuliyati — ne?", "options": ["Infrastruktura qáwipsizligi", "Barlıq maǵlıwmat", "Faqat dizayn", "Faqat email"], "correctIndex": 0 },
+        { "id": "t6-q8", "text": "Mijoz (tárep) masuliyati — ne?", "options": ["Maǵlıwmat hám qollanıwshı basqarıwı", "Faqat fizikal server", "Faqat DNS", "Faqat router"], "correctIndex": 0 },
+        { "id": "t6-q9", "text": "RBAC — ne?", "options": ["Rol boyınsha ruxsat beriw", "Random backup", "Router basqarıw", "Rainbow attack"], "correctIndex": 0 },
+        { "id": "t6-q10", "text": "Bult migratsiya qáwipsizligi — ne muhim?", "options": ["Maǵlıwmat shifrlaw hám ruxsatlar", "Rang", "Font", "Logo"], "correctIndex": 0 }
+      ]
     }
   ]
 }

@@ -8,8 +8,10 @@ import {
   getModuleById,
   getLessonById,
   getLabs,
-  getTests,
-  getTestMeta,
+  getTestSections,
+  getTestSectionById,
+  getTestSectionQuestions,
+  getTestPassingScore,
   getCtfPublic,
   checkCtfFlag,
   getResources,
@@ -60,20 +62,36 @@ router.get('/labs', (req, res) => {
 });
 
 router.get('/tests', (req, res) => {
-  const meta = getTestMeta();
-  const questions = getTests().map(({ correctIndex, ...q }) => q);
-  res.json({ success: true, data: { ...meta, questions } });
+  res.json({
+    success: true,
+    data: { passingScore: getTestPassingScore(), sections: getTestSections() },
+  });
 });
+
+router.get(
+  '/tests/:id',
+  param('id').notEmpty(),
+  validate,
+  (req, res) => {
+    const section = getTestSectionById(req.params.id);
+    if (!section) return res.status(404).json({ success: false, message: 'Test bólimi tabılmadı' });
+    res.json({ success: true, data: section });
+  }
+);
 
 router.post(
   '/tests/submit',
   authRequired,
+  body('testId').notEmpty(),
   body('answers').isArray({ min: 1 }),
   body('answers.*.questionId').notEmpty(),
   body('answers.*.selectedIndex').isInt({ min: 0 }),
   validate,
   (req, res) => {
-    const questions = getTests();
+    const questions = getTestSectionQuestions(req.body.testId);
+    if (!questions.length) {
+      return res.status(404).json({ success: false, message: 'Test bólimi tabılmadı' });
+    }
     const { answers } = req.body;
     let correct = 0;
     const results = answers.map((a) => {
@@ -85,14 +103,26 @@ router.post(
     });
     const total = questions.length;
     const score = Math.round((correct / total) * 100);
-    const meta = getTestMeta();
-    const passed = score >= meta.passingScore;
+    const passingScore = getTestPassingScore();
+    const passed = score >= passingScore;
 
-    updateProgress(req.user.id, { testScore: score, testPassed: passed });
+    const progress = getProgress(req.user.id);
+    const testScores = {
+      ...(progress.testScores || {}),
+      [req.body.testId]: { score, passed, updatedAt: new Date().toISOString() },
+    };
+    const allScores = Object.values(testScores).map((t) => t.score);
+    const avgScore = Math.round(allScores.reduce((a, b) => a + b, 0) / allScores.length);
+
+    updateProgress(req.user.id, {
+      testScores,
+      testScore: avgScore,
+      testPassed: Object.values(testScores).every((t) => t.passed),
+    });
 
     res.json({
       success: true,
-      data: { score, correct, total, passed, passingScore: meta.passingScore, results },
+      data: { score, correct, total, passed, passingScore, results, testId: req.body.testId },
     });
   }
 );
