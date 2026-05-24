@@ -52,9 +52,8 @@ export default function CTF() {
 
       <div className="card mt-6 border-cyber-500/30 bg-cyber-500/5">
         <p className="text-sm text-cyber-200">
-          <strong>Qanday isleydi:</strong> «Berilgan misol» — shifrlangan matn. Uni dekodlań.
-          «Javobıńız» maydanına natijeni <code className="text-cyber-300">CYBER{'{...}'}</code>{' '}
-          formatında jazıp, «Javobni jiberiw» basıń.
+          <strong>Qanday isleydi:</strong> Berilgan misoldı óqiń, shifrlań yamasa dekodlań.
+          «Javobıńız» maydanına natijeni tekst kórinishinde jazıp, «Javobni jiberiw» basıń.
         </p>
       </div>
 
@@ -83,16 +82,26 @@ export default function CTF() {
               </p>
             )}
 
-            {/* Berilgan misol */}
-            <div className="mt-5 rounded-lg border-2 border-cyber-500/40 bg-cyber-950/50 p-4">
-              <div className="mb-2 flex items-center gap-2 text-sm font-semibold text-cyber-400">
-                <FileText className="h-4 w-4" />
-                Berilgan misol (shifrlangan matn)
+            {c.ochiqMatn && (
+              <div className="mt-5 rounded-lg border-2 border-emerald-500/40 bg-emerald-950/30 p-4">
+                <div className="mb-2 text-sm font-semibold text-emerald-400">Ashıq matn:</div>
+                <pre className="select-all text-center font-mono text-2xl font-bold tracking-widest text-white">
+                  {c.ochiqMatn}
+                </pre>
               </div>
-              <pre className="select-all whitespace-pre-wrap break-all font-mono text-base leading-relaxed text-white">
-                {getMisol(c)}
-              </pre>
-            </div>
+            )}
+
+            {getMisol(c) && (
+              <div className="mt-4 rounded-lg border-2 border-cyber-500/40 bg-cyber-950/50 p-4">
+                <div className="mb-2 flex items-center gap-2 text-sm font-semibold text-cyber-400">
+                  <FileText className="h-4 w-4" />
+                  {c.ochiqMatn ? 'Alfavit (kómek)' : 'Berilgan misol (shifrlangan matn)'}
+                </div>
+                <pre className="select-all whitespace-pre-wrap break-all font-mono text-sm leading-relaxed text-cyber-200">
+                  {getMisol(c)}
+                </pre>
+              </div>
+            )}
 
             {c.hint && (
               <p className="mt-3 flex items-start gap-2 text-sm text-amber-200/90">
@@ -138,11 +147,11 @@ export default function CTF() {
                 Javobıńız (tekst kórinishinde)
               </div>
               <p className="mb-2 text-xs text-slate-500">
-                Format: {c.javobFormat || 'CYBER{dekodlangan_matn}'}
+                Kútiletuǵın javob: {c.javobFormat || 'tekst'}
               </p>
               <textarea
-                className="input-field min-h-[80px] resize-y font-mono text-base"
-                placeholder="Mysal: CYBER{sezer_shifrlash}"
+                className="input-field min-h-[80px] resize-y font-mono text-base uppercase"
+                placeholder={c.javobFormat ? `Mysal: ${c.javobFormat}` : 'Javobıńızdı jazıń...'}
                 value={answers[c.id] || ''}
                 onChange={(e) => setAnswers((a) => ({ ...a, [c.id]: e.target.value }))}
                 rows={2}

@@ -1,16 +1,17 @@
 [
   {
     "id": "ctf-1",
-    "title": "Sezer shifrlash",
+    "title": "Sezer shifri",
     "category": "kriptologiya",
     "difficulty": "basta",
     "points": 100,
-    "description": "Berilgan misoldı Sezer (Caesar) usılı menen dekodlań. Siljisiw: 3 pozitsiya. Javobıńızdı tekst kórinishinde jiberiń.",
-    "berilganMisol": "FBEHU{vhchu_vkliuodvk}",
-    "hint": "Lotin álifbiti boyınsha 3 harf artqa qaytıń (yamasa 23 aldıńǵa).",
-    "javobFormat": "CYBER{dekodlangan_sóz}",
-    "cipherMeta": { "type": "caesar", "shift": 3 },
-    "flag": "CYBER{sezer_shifrlash}"
+    "description": "Sizde «AXBOROT» sózli matn bar. Onı 3 pozitsiyaǵa siljitip Sezer (Caesar) shifri menen shifrlań. Shifrlangan javobıńızdı tekst kórinishinde jiberiń.",
+    "ochiqMatn": "AXBOROT",
+    "berilganMisol": "a b c d e f g h i j k l m n o p q r s t u v w x y z",
+    "hint": "Hár bir harfdi alfavit boyınsha 3 qadam aldıńǵa siljitiń (A → D, X → A, B → E, ...).",
+    "javobFormat": "DAERURW",
+    "cipherMeta": { "type": "caesar", "shift": 3, "mode": "encrypt" },
+    "flag": "DAERURW"
   },
   {
     "id": "ctf-2",
