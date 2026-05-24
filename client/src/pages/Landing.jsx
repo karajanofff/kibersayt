@@ -75,9 +75,17 @@ export default function Landing() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-12 text-center text-sm text-slate-500">
-        <p>Demo oqıwshı: Allayar007@student.local / Allayar123</p>
-        <p className="mt-1">Demo basqarıwshı: admin@cyberedu.local / admin123</p>
+      <section className="mx-auto max-w-7xl border-t border-slate-800 px-4 py-12 text-center text-sm text-slate-500">
+        <p className="font-medium text-slate-400">Platforma tiykarshıları</p>
+        <p className="mt-2">Full-Stack programmist: Bektemir Karajanov</p>
+        <p className="mt-1">Junior programmist: Allayar Xamdullaev</p>
+        <p className="mt-6 text-slate-600">
+          © 2026 Kiberqáwipsizlik injiniringi kafedrasi. Barlıq huqıqlar qorǵalǵan.
+        </p>
+        <p className="mt-4 text-xs text-slate-600">
+          Demo oqıwshı: Allayar007@student.local / Allayar123 · Demo basqarıwshı:
+          admin@cyberedu.local / admin123
+        </p>
       </section>
     </div>
   );

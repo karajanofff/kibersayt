@@ -135,9 +135,13 @@ export default function Layout() {
         <Outlet />
       </main>
 
-      <footer className="mt-16 border-t border-slate-800 py-8 text-center text-sm text-slate-500">
-        <p>© 2026 CyberEdu — Kiberqáwipsizlik kursı platforması</p>
-        <p className="mt-1">Barlıq tapsırmalar nızamlı oqıw simulyaciyası retinde dúzilgen.</p>
+      <footer className="mt-16 border-t border-slate-800 py-10 text-center text-sm text-slate-500">
+        <p className="font-medium text-slate-400">Platforma tiykarshıları</p>
+        <p className="mt-2">Full-Stack programmist: Bektemir Karajanov</p>
+        <p className="mt-1">Junior programmist: Allayar Xamdullaev</p>
+        <p className="mt-6 text-slate-600">
+          © 2026 Kiberqáwipsizlik injiniringi kafedrasi. Barlıq huqıqlar qorǵalǵan.
+        </p>
       </footer>
     </div>
   );
