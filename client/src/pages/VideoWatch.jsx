@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { ArrowLeft, CheckCircle, ExternalLink, Tag } from 'lucide-react';
 import { apiFetch } from '../api/client';
+import { kaa, formatDuration } from '../i18n/kaa';
 
 export default function VideoWatch() {
   const { id } = useParams();
@@ -24,7 +25,7 @@ export default function VideoWatch() {
     }
   };
 
-  if (!video) return <p className="text-slate-400">Júklenbekte...</p>;
+  if (!video) return <p className="text-slate-400">{kaa.loading}</p>;
 
   const origin = typeof window !== 'undefined' ? window.location.origin : '';
   const embedParams = new URLSearchParams({
@@ -45,7 +46,9 @@ export default function VideoWatch() {
       </Link>
       <h1 className="mt-4 text-3xl font-bold text-white">{video.title}</h1>
       <div className="mt-2 flex flex-wrap items-center gap-3 text-sm text-slate-500">
-        <span>Oqıw waqıtı: {video.duration}</span>
+        <span>
+          {kaa.videoStudyTime}: {formatDuration(video.duration)}
+        </span>
         {video.theme && (
           <span className="inline-flex items-center gap-1 rounded bg-slate-800 px-2 py-1 text-cyber-300">
             <Tag className="h-3.5 w-3.5" />
@@ -78,12 +81,12 @@ export default function VideoWatch() {
         className="mt-4 inline-flex items-center gap-1 text-sm text-red-400 hover:underline"
       >
         <ExternalLink className="h-4 w-4" />
-        YouTube-da ashıw
+        {kaa.videoWatchOnYoutube}
       </a>
 
       <button type="button" onClick={markComplete} disabled={done} className="btn-primary mt-6">
         <CheckCircle className="h-4 w-4" />
-        {done ? 'Tamamlandı' : 'Videonı kórip boldım'}
+        {done ? kaa.videoCompleted : kaa.videoWatched}
       </button>
     </div>
   );

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { BookOpen, Video, FlaskConical, ClipboardCheck, Flag, TrendingUp } from 'lucide-react';
 import { apiFetch } from '../api/client';
 import { useAuth } from '../context/AuthContext';
-import { formatLessonCount, formatVideoCount } from '../i18n/kaa';
+import { kaa, formatLessonCount, formatVideoCount } from '../i18n/kaa';
 
 export default function Dashboard() {
   const { user } = useAuth();
@@ -27,25 +27,25 @@ export default function Dashboard() {
 
   const stats = [
     {
-      label: 'Tamamlanǵan sabaqlar',
+      label: kaa.statCompletedLessons,
       value: progress?.completedLessons?.length || 0,
       icon: BookOpen,
       color: 'text-cyber-400',
     },
     {
-      label: 'Kórilgen videolar',
+      label: kaa.statWatchedVideos,
       value: progress?.completedVideos?.length || 0,
       icon: Video,
       color: 'text-red-400',
     },
     {
-      label: 'Laboratoriyalar',
+      label: kaa.statLabs,
       value: progress?.completedLabs?.length || 0,
       icon: FlaskConical,
       color: 'text-emerald-400',
     },
     {
-      label: 'Test ortasha ballı',
+      label: kaa.statTestAvg,
       value:
         progress?.testScores && Object.keys(progress.testScores).length > 0
           ? `${progress.testScore ?? '—'}%`
@@ -54,7 +54,7 @@ export default function Dashboard() {
       color: 'text-amber-400',
     },
     {
-      label: 'Sheshilgen CTF',
+      label: kaa.statCtfSolved,
       value: progress?.ctfSolved?.length || 0,
       icon: Flag,
       color: 'text-purple-400',
@@ -63,8 +63,10 @@ export default function Dashboard() {
 
   return (
     <div>
-      <h1 className="text-3xl font-bold text-white">Salám, {user?.name}!</h1>
-      <p className="mt-2 text-slate-400">Basqarıw paneli — oqıw júrińizdi kúziń</p>
+      <h1 className="text-3xl font-bold text-white">
+        {kaa.dashboardGreeting}, {user?.name}!
+      </h1>
+      <p className="mt-2 text-slate-400">{kaa.dashboardSubtitle}</p>
 
       <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
         {stats.map(({ label, value, icon: Icon, color }) => (
@@ -79,7 +81,7 @@ export default function Dashboard() {
       <div className="mt-10">
         <h2 className="flex items-center gap-2 text-xl font-semibold text-white">
           <TrendingUp className="h-5 w-5 text-cyber-400" />
-          Kurs modulları
+          {kaa.sectionModules}
         </h2>
         <div className="mt-4 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {modules.slice(0, 6).map((mod) => (
@@ -91,7 +93,7 @@ export default function Dashboard() {
           ))}
         </div>
         <Link to="/modules" className="mt-4 inline-block text-cyber-400 hover:underline">
-          Barlıq modullar →
+          {kaa.allModules}
         </Link>
       </div>
 
@@ -99,7 +101,7 @@ export default function Dashboard() {
         <div className="mt-10">
           <h2 className="flex items-center gap-2 text-xl font-semibold text-white">
             <Video className="h-5 w-5 text-red-400" />
-            Video kurslar
+            {kaa.sectionVideoCourses}
           </h2>
           <div className="mt-4 grid gap-4 md:grid-cols-2">
             {videoCourses.map((course) => (
@@ -115,7 +117,7 @@ export default function Dashboard() {
             ))}
           </div>
           <Link to="/video-courses" className="mt-4 inline-block text-red-400 hover:underline">
-            Barlıq video kurslar →
+            {kaa.allVideoCourses}
           </Link>
         </div>
       )}

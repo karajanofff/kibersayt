@@ -27,7 +27,7 @@ import {
 const router = Router();
 
 router.get('/health', (req, res) => {
-  res.json({ success: true, message: 'CyberEdu API isleydi' });
+  res.json({ success: true, message: 'CyberEdu API islep jatır' });
 });
 
 router.get('/modules', (req, res) => {
@@ -207,7 +207,7 @@ router.post(
   (req, res) => {
     const user = findUserByEmail(req.body.email);
     if (!user || user.password !== req.body.password) {
-      return res.status(401).json({ success: false, message: 'Email yamasa parol nadurıs' });
+      return res.status(401).json({ success: false, message: 'Elektron pochta yamasa parol nadurıs' });
     }
     const token = jwt.sign(
       { id: user.id, email: user.email, role: user.role, name: user.name },
@@ -253,7 +253,7 @@ router.post(
 
 router.get('/students', authRequired, (req, res) => {
   if (req.user.role !== 'admin') {
-    return res.status(403).json({ success: false, message: 'Admin huqıqı kerek' });
+    return res.status(403).json({ success: false, message: 'Basqarıwshı huqıqı kerek' });
   }
   const students = getStudents().map(({ password, ...s }) => s);
   res.json({ success: true, data: students });

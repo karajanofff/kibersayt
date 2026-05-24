@@ -1,5 +1,6 @@
 import { Navigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import { kaa } from '../i18n/kaa';
 
 export default function ProtectedRoute({ children, adminOnly }) {
   const { user, loading } = useAuth();
@@ -7,7 +8,7 @@ export default function ProtectedRoute({ children, adminOnly }) {
   if (loading) {
     return (
       <div className="flex min-h-[40vh] items-center justify-center text-slate-400">
-        Júklenbekte...
+        {kaa.loading}
       </div>
     );
   }

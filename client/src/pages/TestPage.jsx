@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ClipboardCheck, ChevronRight, CheckCircle2 } from 'lucide-react';
 import { apiFetch } from '../api/client';
+import { kaa, formatQuestionCount } from '../i18n/kaa';
 
 export default function TestPage() {
   const [data, setData] = useState(null);
@@ -16,16 +17,16 @@ export default function TestPage() {
       .catch(() => {});
   }, []);
 
-  if (!data) return <p className="text-slate-400">Júklenbekte...</p>;
+  if (!data) return <p className="text-slate-400">{kaa.loading}</p>;
 
   return (
     <div>
       <h1 className="flex items-center gap-2 text-3xl font-bold text-white">
         <ClipboardCheck className="h-8 w-8 text-cyber-400" />
-        Testler
+        {kaa.testsTitle}
       </h1>
       <p className="mt-2 text-slate-400">
-        Hár tema boyınsha 10 soraw · Ótish ballı: {data.passingScore}% · Bólimler ajratılǵan
+        {kaa.testsSubtitle}: {data.passingScore}% · Bólimler ajratılǵan
       </p>
 
       <div className="mt-8 grid gap-4 md:grid-cols-2">
@@ -38,10 +39,12 @@ export default function TestPage() {
               className="card flex items-center justify-between transition hover:border-cyber-500/50"
             >
               <div className="flex-1">
-                <span className="text-xs font-medium text-purple-400">Tema {i + 1}/6</span>
+                <span className="text-xs font-medium text-purple-400">
+                  {kaa.theme} {i + 1}/6
+                </span>
                 <h2 className="mt-1 text-lg font-semibold text-white">{section.title}</h2>
                 <p className="mt-1 text-sm text-slate-400">{section.description}</p>
-                <p className="mt-2 text-xs text-cyber-400">{section.questionCount} soraw</p>
+                <p className="mt-2 text-xs text-cyber-400">{formatQuestionCount(section.questionCount)}</p>
                 {result && (
                   <p
                     className={`mt-2 flex items-center gap-1 text-sm ${
@@ -49,7 +52,7 @@ export default function TestPage() {
                     }`}
                   >
                     <CheckCircle2 className="h-4 w-4" />
-                    Ball: {result.score}% {result.passed ? '· Ótti' : '· Qayta urınıń'}
+                    {kaa.testsScore}: {result.score}% {result.passed ? `· ${kaa.testsPassed}` : `· ${kaa.testsRetry}`}
                   </p>
                 )}
               </div>

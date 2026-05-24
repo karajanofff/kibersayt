@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Flag, Send, HelpCircle, KeyRound, FileText, PenLine } from 'lucide-react';
 import { apiFetch } from '../api/client';
+import { kaa } from '../i18n/kaa';
 
 export default function CTF() {
   const [challenges, setChallenges] = useState([]);
@@ -34,16 +35,13 @@ export default function CTF() {
     <div>
       <h1 className="flex items-center gap-2 text-3xl font-bold text-white">
         <Flag className="h-8 w-8 text-cyber-400" />
-        CTF — Kriptologiya
+        {kaa.ctfTitle}
       </h1>
-      <p className="mt-2 text-slate-400">
-        4 ta masala. Berilgan misoldı yeshiń, javobıńızdı tekst kórinishinde jiberiń.
-      </p>
+      <p className="mt-2 text-slate-400">{kaa.ctfSubtitle}</p>
 
       <div className="card mt-6 border-cyber-500/30 bg-cyber-500/5">
         <p className="text-sm text-cyber-200">
-          <strong>Qanday isleydi:</strong> Berilgan misoldı óqiń, shifrlań yamasa dekodlań.
-          «Javobıńız» maydanına natijeni tekst kórinishinde jazıp, «Javobni jiberiw» basıń.
+          <strong>Qanday isleydi:</strong> {kaa.ctfHowItWorks}
         </p>
       </div>
 
@@ -53,12 +51,12 @@ export default function CTF() {
             <div className="flex flex-wrap items-start justify-between gap-2">
               <div>
                 <span className="text-xs font-semibold uppercase tracking-wide text-purple-400">
-                  KRIPTOLOGIYA · Masala {index + 1}/4
+                  KRIPTOLOGIYA · {kaa.ctfProblem} {index + 1}/4
                 </span>
                 <h2 className="mt-1 text-xl font-semibold text-white">{c.title}</h2>
               </div>
               <span className="rounded-full bg-purple-500/20 px-3 py-1 text-sm text-purple-300">
-                {c.points} ball
+                {c.points} {kaa.points}
               </span>
             </div>
 
@@ -66,15 +64,15 @@ export default function CTF() {
 
             {c.cipherMeta && (
               <p className="mt-2 text-xs text-slate-500">
-                Shifrlaw túri: <span className="text-slate-400">{c.cipherMeta.type}</span>
-                {c.cipherMeta.shift != null && ` · siljisiw: ${c.cipherMeta.shift}`}
-                {c.cipherMeta.key && ` · kalit: ${c.cipherMeta.key}`}
+                {kaa.ctfCipherType}: <span className="text-slate-400">{c.cipherMeta.type}</span>
+                {c.cipherMeta.shift != null && ` · ${kaa.ctfShift}: ${c.cipherMeta.shift}`}
+                {c.cipherMeta.key && ` · ${kaa.ctfKey}: ${c.cipherMeta.key}`}
               </p>
             )}
 
             {c.ochiqMatn && (
               <div className="mt-5 rounded-lg border-2 border-emerald-500/40 bg-emerald-950/30 p-4">
-                <div className="mb-2 text-sm font-semibold text-emerald-400">Ashıq matn:</div>
+                <div className="mb-2 text-sm font-semibold text-emerald-400">{kaa.ctfPlaintext}</div>
                 <pre className="select-all text-center font-mono text-2xl font-bold tracking-widest text-white">
                   {c.ochiqMatn}
                 </pre>
@@ -85,7 +83,7 @@ export default function CTF() {
               <div className="mt-4 rounded-lg border-2 border-cyber-500/40 bg-cyber-950/50 p-4">
                 <div className="mb-2 flex items-center gap-2 text-sm font-semibold text-cyber-400">
                   <FileText className="h-4 w-4" />
-                  {c.ochiqMatn ? 'Alfavit (kómek)' : 'Berilgan misol (shifrlangan matn)'}
+                  {c.ochiqMatn ? kaa.ctfAlphabetHelp : kaa.ctfGivenExample}
                 </div>
                 <pre className="select-all whitespace-pre-wrap break-all font-mono text-sm leading-relaxed text-cyber-200">
                   {getMisol(c)}
@@ -97,7 +95,7 @@ export default function CTF() {
               <p className="mt-3 flex items-start gap-2 text-sm text-amber-200/90">
                 <HelpCircle className="mt-0.5 h-4 w-4 shrink-0" />
                 <span>
-                  <strong className="text-amber-300">Kómek:</strong> {c.hint}
+                  <strong className="text-amber-300">{kaa.ctfHint}:</strong> {c.hint}
                 </span>
               </p>
             )}
@@ -106,18 +104,18 @@ export default function CTF() {
               <div className="mt-4 rounded-lg border border-amber-500/30 bg-amber-950/20 p-4 text-sm">
                 <div className="mb-2 flex items-center gap-2 font-semibold text-amber-300">
                   <KeyRound className="h-4 w-4" />
-                  Dekodlaw ushın málimotlar (tayar)
+                  {kaa.ctfDecodeInfo}
                 </div>
                 <p>
-                  <span className="text-slate-500">Algoritm:</span>{' '}
+                  <span className="text-slate-500">{kaa.ctfAlgorithm}:</span>{' '}
                   <span className="text-slate-200">{c.kriptoKomek.algorithm}</span>
                 </p>
                 <p className="mt-1">
-                  <span className="text-slate-500">Kalit (Key):</span>{' '}
+                  <span className="text-slate-500">{kaa.ctfKeyLabel}:</span>{' '}
                   <code className="select-all text-cyber-300">{c.kriptoKomek.key}</code>
                 </p>
                 <p className="mt-1">
-                  <span className="text-slate-500">IV:</span>{' '}
+                  <span className="text-slate-500">{kaa.ctfIvLabel}:</span>{' '}
                   <code className="select-all text-cyber-300">{c.kriptoKomek.iv}</code>
                 </p>
                 {c.kriptoKomek.qadamlar && (
@@ -133,21 +131,20 @@ export default function CTF() {
                   rel="noopener noreferrer"
                   className="mt-3 inline-block text-cyber-400 hover:underline"
                 >
-                  CyberChef saytın ashıw →
+                  {kaa.ctfOpenCyberChef}
                 </a>
               </div>
             )}
 
-            {/* Javob */}
             <div className="mt-5 rounded-lg border border-slate-600 bg-slate-800/30 p-4">
               <div className="mb-2 flex items-center gap-2 text-sm font-semibold text-emerald-400">
                 <PenLine className="h-4 w-4" />
-                Javobıńız (tekst kórinishinde)
+                {kaa.ctfYourAnswer}
               </div>
               <textarea
                 className="input-field min-h-[80px] resize-y font-mono text-base uppercase"
-                placeholder="Durıs javobtı kiritiń"
-                aria-label="Durıs javobtı kiritiń"
+                placeholder={kaa.ctfAnswerPlaceholder}
+                aria-label={kaa.ctfAnswerPlaceholder}
                 value={answers[c.id] || ''}
                 onChange={(e) => setAnswers((a) => ({ ...a, [c.id]: e.target.value }))}
                 rows={2}
@@ -158,7 +155,7 @@ export default function CTF() {
                 onClick={() => submitAnswer(c.id)}
               >
                 <Send className="h-4 w-4" />
-                Javobni jiberiw
+                {kaa.ctfSubmit}
               </button>
             </div>
 
@@ -172,7 +169,7 @@ export default function CTF() {
               >
                 {messages[c.id].text}
                 {messages[c.id].ok && messages[c.id].points
-                  ? ` (+${messages[c.id].points} ball)`
+                  ? ` (+${messages[c.id].points} ${kaa.points})`
                   : ''}
               </p>
             )}

@@ -9,31 +9,31 @@
       {
         "id": "lesson-1-1",
         "title": "Kiberqáwipsizlik nima?",
-        "duration": "25 min",
+        "duration": "25 mın",
         "content": "Kiberqáwipsizlik — maǵlıwmatlar, tizimler, qurılma hám tarmaqlardı qorǵaw sanatı hám ilmi.\n\nCIA triadası:\n• Confidentiality (Qupiyalıq) — maǵlıwmatlardı tek qáwimli kishiler kóre aladı.\n• Integrity (Túrlilik) — maǵlıwmat ózgermegen yamasa ózgeris anıqlanadı.\n• Availability (Qoljetimlilik) — qızmetler barlıq waqıtta isleydi.\n\nZamanavı kiber landshaft: ransomware, phishing, supply chain hujumları kópáyip baradı. Shirketler ushın kiberqáwipsizlik endi IT máselesi emes, biznes máselesi.\n\nQorǵaw strategiyası: qáwiplerdi anıqlaw → qarsı sharaalar → monitoring → qayta bahalaw.\n\nQorındı: Kiberqáwipsizlik — proaktiv qorǵaw hám doimiy jańalanıw."
       },
       {
         "id": "lesson-1-2",
         "title": "Kiber qáwipler túrleri",
-        "duration": "30 min",
+        "duration": "30 mın",
         "content": "Negizgi qáwip túrleri:\n\n1. Malware — virus, trojan, ransomware. Ransomware maǵlıwmatlardı bloklap, tolem talap etedi.\n2. Phishing — elektron pochta yamasa silteme arqalı aldaw. Paydalanıwshı parolini yamasa maǵlıwmat beredi.\n3. DDoS — serverdi júklemge túsirip, sayt ishlemey qaladı.\n4. Ishki qáwip — shirket xodimi qáseten yamasa qásetsiz maǵlıwmat sızıwı.\n5. Social engineering — psixologiyalıq manevr, texnik emes, insannı aldaw.\n\nQáwip modeli (STRIDE):\n• Spoofing — kimlik aldaw\n• Tampering — maǵlıwmat ózgertiw\n• Repudiation — bárden tolıqıw\n• Information disclosure — sızıw\n• Denial of service — qızmetten sheshiriw\n• Elevation of privilege — ruxsat kóteriw\n\nQorındı: Qáwiplerdi tánis bolıw — qorǵanishdiń birinshi qadami."
       },
       {
         "id": "lesson-1-3",
         "title": "Parol qáwipsizligi",
-        "duration": "28 min",
+        "duration": "28 mın",
         "content": "Parol — eń kóp qollanılatın autentifikatsiya usılı. Náçar parol — eń kóp qáwip.\n\nQáwipsiz parol qáwimleri:\n• Uzınlıq: keminde 12–16 ta belgi\n• Únikallıq: hár jerde basqa parol\n• Kúshlilik: kishi hám úlken harf, san, arnawlı belgi\n\nNáçar parol misalları: 123456, password, ism+tuwılǵan sáne — bulardı tekseriwshiler sekundlarda buzadı.\n\nParol menejeri (Bitwarden, KeePass) — parollardı qáwipsiz saqlaw usılı.\n\nMFA (kóp faktorlı autentifikatsiya) — parol + SMS kod / authenticator ilojası. MFA qollanılsa, parol buzilse de kiris qiyinlesedi.\n\nBrute-force: robot million kombinatsiya sinaydı. Qarsı shara: account lockout, CAPTCHA, MFA.\n\nQorındı: Uzın, únikal parol + MFA = kúshli kiris qorǵawı."
       },
       {
         "id": "lesson-1-4",
         "title": "Social engineering",
-        "duration": "22 min",
+        "duration": "22 mın",
         "content": "Social engineering — insannı psixologiyasına tiykarlanǵan aldaw. Texnik qáwipsizlik kúshli bolsa da, paydalanıwshı aldansa — sistema buzıladı.\n\nTúrleri:\n• Phishing — elektron xat\n• Vishing — telefon arqalı\n• Pretexting — jálǵan senariy (IT xodimi dep)\n• Baiting — USB stick qoyıw\n• Tailgating — esikten art qalıp kiriw\n\nQanday qorǵanamız:\n• Shubhalı xabarlar menen elektron pochtanı tekseriw\n• URL hám jiberiwshini tekseriw\n• Parol yamasa kodtı telefon arqalı bermew\n• Oqıw hám eslatmalar\n\nQorındı: Texnologiya + insannı oqıtıw = tolıq qorǵaw."
       },
       {
         "id": "lesson-1-5",
         "title": "Kiberetika hám qanun",
-        "duration": "25 min",
+        "duration": "25 mın",
         "content": "Kiberqáwipsizlik oqıwı qonuniy hám etikalı ramkada ótewi kerek.\n\nEtikalı tamallar:\n• Ruxsatsız sistemalarga kirmew\n• Topılǵan qáwipsizlik kamchiligin jetkilikli xabarlaw\n• Maǵlıwmatlardı qorǵaw\n• Oqıw maqsadında simulyatsiya\n\nJetkilikli ashkaralaw (responsible disclosure):\n1. Kamchilikti anıqlaw\n2. Shirketke xabarlaw\n3. Remont waqtın beriw\n4. Keyin ashkaralaw (eger kelisilse)\n\nQonuniy jeke: kompyuter qanunları, jeke maǵlıwmatlardı qorǵaw.\n\nPlatformada barlıq mashqlar — qonuniy oqıw simulyatsiyası. Haqıyqıy hujum, parol satusıw, noqonuniy ekspluatatsiya qadaǵan.\n\nQorındı: Bilim + etika = sáwleli kiber maman."
       }
     ]
@@ -48,31 +48,31 @@
       {
         "id": "lesson-2-1",
         "title": "TCP/IP negizleri",
-        "duration": "30 min",
+        "duration": "30 mın",
         "content": "Tarmaq protokolların túsiniw — kiberqáwipsizlik negizi.\n\nOSI modeli (7 qabat) hám TCP/IP (4 qabat):\n• Application — HTTP, DNS, FTP\n• Transport — TCP (sáykesli), UDP (tez)\n• Internet — IP manzillar\n• Network access — Ethernet, Wi-Fi\n\nIP manzil: hár qurılmanıń tarmaqtaǵı adı. IPv4: 192.168.1.1 kabi.\n\nPortlar: bir IPde birneше xizmet. HTTP=80, HTTPS=443, SSH=22.\n\nTCP — ulanish ornatıp, maǵlıwmat jetkiligin qáwipsiz jetkizedi.\nUDP — tez, biraq sáykesiz (DNS, video streaming).\n\nPaket filtrlew: hár paket qayerge baratının basqarıw — firewall negizi.\n\nQorındı: Paketlerdi túsiniw — tarmoq hujumların anıqlawdı osonlatadı."
       },
       {
         "id": "lesson-2-2",
         "title": "Firewall hám IDS",
-        "duration": "32 min",
+        "duration": "32 mın",
         "content": "Firewall — tarmoq qáwimi. Trafikti qoideler boyınsha ótkizedi yamasa bloklaydı.\n\nTúrleri:\n• Packet filtering — IP, port boyınsha\n• Stateful — ulanish holatin eslap qaladı\n• Application-layer — HTTP, DNS boyınsha\n\nQáwim qoideleri:\n• Default deny — barlıq narseni bloklaw, tek kereklerin ashıw\n• Least privilege — minimal portlar ashıq\n• Inbound vs Outbound — kiris hám shıǵıs alohida\n\nIDS (Intrusion Detection) — qáwipli aktivlikti anıqlaydı, log jazadı.\nIPS (Intrusion Prevention) — anıqlap, avtomatik bloklaydı.\n\nSIEM — loglardı bir joyda jinaydı hám tahlil qıladı.\n\nQorındı: Firewall + IDS/IPS = tarmoq qorǵawı."
       },
       {
         "id": "lesson-2-3",
         "title": "VPN hám shifrlaw",
-        "duration": "28 min",
+        "duration": "28 mın",
         "content": "VPN (Virtual Private Network) — internet üzerinde qáwipsiz túnel.\n\nNe ushın:\n• Uzakdan islew (ofis tarmagına qáwipsiz kiris)\n• ISPdan jasırınlıq\n• Geografiyalıq sheklovlanıwdan ótew\n\nVPN túrleri: Site-to-site, Remote access (paydalanıwshı VPN klienti).\n\nTLS/SSL — web trafikti shifrlaw. HTTPS = HTTP + TLS. Brauzerde qulf belgisi.\n\nShifrlaw protokolları: TLS 1.2, TLS 1.3 (jańa, qáwipsiz).\n\nVPN vs HTTPS: VPN — barlıq trafikti túnelde; HTTPS — tek brauzer trafiki.\n\nQorındı: Ochiq Wi-Fi da VPN yamasa faqat HTTPS saytlarǵa kiriń."
       },
       {
         "id": "lesson-2-4",
         "title": "DNS hám Wi-Fi qáwipsizligi",
-        "duration": "26 min",
+        "duration": "26 mın",
         "content": "DNS — domen atların IP manzilge aylantıradı (google.com → 142.250.x.x).\n\nDNS qáwipleri:\n• DNS spoofing — jálǵan IP qaytarıw\n• DNS hijacking — routerdı buzıw\n• DNS tunneling — maǵlıwmat sızıw\n\nQorǵaw: DNSSEC, isenimli DNS (Cloudflare 1.1.1.1), HTTPS.\n\nWi-Fi qáwipsizligi:\n• WPA3 — eń jańa standart (WEP, WPA eski — qáwipsiz emes)\n• Kúshli Wi-Fi paroli\n• Mehmon tarmagı (guest network) ajratıw\n• Ochiq Wi-Fi — VPNsiz paydalanbaw\n\nEv router: admin parolini ózgertiń, firmware jańalań.\n\nQorındı: DNS hám Wi-Fi — kórinbeytin, biraq muhim qáwipsizlik qatlamları."
       },
       {
         "id": "lesson-2-5",
         "title": "Tarmoq monitoring",
-        "duration": "24 min",
+        "duration": "24 mın",
         "content": "Monitoring — tarmoqda nima bolıp jatqanın kúziw.\n\nNe kúzetiledi:\n• Bandwidth (trafik kólemi)\n• Port skanerlash urınısları\n• Anormal trafik (DDoS belgisi)\n• Ulanish logları\n\nQuraldar: Wireshark (paket tahlili), Nagios, Zabbix, Grafana.\n\nPort skaner: qaysı portlar ashıq ekenin tekseriw. Qáwipsizlik auditinde qollanıladı. Ruxsatsız skaner — qonuniy emes.\n\nNetFlow — trafik statistikası, qayerden-qayda ketkenin kóriw.\n\nAlerting: anormal holatda xabar — tez reaksiya.\n\nQorındı: Kórmesek — basqaramız. Monitoring — erkin waqıtta anıqlaw."
       }
     ]
@@ -87,31 +87,31 @@
       {
         "id": "lesson-3-1",
         "title": "HTTP hám sessiya",
-        "duration": "28 min",
+        "duration": "28 mın",
         "content": "Web isleydi: klient (brauzer) ↔ server (sayt).\n\nHTTP — protokol. Metodlar: GET (alıw), POST (jiberiw), PUT, DELETE.\n\nHTTP qáwipsiz emes — maǵlıwmat ochiq jiberiledi. HTTPS — HTTP + TLS shifrlaw.\n\nCookie — brauzer saqlaydı, server tanıydı. Session cookie — kirgen paydalanıwshını belgileydi.\n\nCookie qáwimleri: HttpOnly (JavaScript kóre almaydı), Secure (tek HTTPS), SameSite (CSRF qarsı).\n\nSessiya basqarıwı: login → server session ID beredi → cookie saqlanadı.\n\nSessiya hijacking: basqanıwshı session ID alsa — sizdiń eslińizden kiredi. Qarsı: HTTPS, qisqa sessiya waqıtı, MFA.\n\nQorındı: HTTPS + qáwipsiz cookie = web sessiya negizi."
       },
       {
         "id": "lesson-3-2",
         "title": "XSS hám CSRF",
-        "duration": "35 min",
+        "duration": "35 mın",
         "content": "XSS (Cross-Site Scripting) — saytqa ziyankeser kod eniziw.\n\nTúrleri:\n• Reflected — URL arqalı (tek márte)\n• Stored — DBda saqlanadı (xavfli)\n• DOM-based — brauzerde\n\nMúmkin nátije: cookie urlıw, keylogger, sahifa ózgertiw.\n\nQorǵaw: output encoding, CSP (Content Security Policy), input validatsiya.\n\nCSRF (Cross-Site Request Forgery) — paydalanıwshı atınan jiberilmegen sórew.\n\nMysal: bank saytında pul ótkeriw — basqa sayt sizi atınan form jiberedi.\n\nQorǵaw: CSRF token, SameSite cookie, Referer tekseriw.\n\nQorındı: XSS — serverdan shıǵadı; CSRF — paydalanıwshı atınan sórew."
       },
       {
         "id": "lesson-3-3",
         "title": "SQL injection qarsı",
-        "duration": "32 min",
+        "duration": "32 mın",
         "content": "SQL injection — maǵlıwmatlar bazasına ziyankeser sórew eniziw.\n\nMysal: login formasında ' OR '1'='1 — barlıq paydalanıwshılarga kiris.\n\nNátije: maǵlıwmat oqıw, ózgertiw, óchiriw, sistema basqarıwı.\n\nQorǵaw:\n• Parametrli sórovlar (prepared statements) — eń muhim\n• ORM (Object-Relational Mapping)\n• Input validatsiya\n• Minimal DB ruxsatları\n• WAF (Web Application Firewall)\n\nKodda heshqashan: \"SELECT * FROM users WHERE name = '\" + input + \"'\" — QÁWIPSIZ EMAS!\n\nDurıs: preparedStatement.setString(1, input)\n\nQorındı: Parametrli sórovlar — SQL injectionnan #1 qorǵaw."
       },
       {
         "id": "lesson-3-4",
         "title": "OWASP Top 10",
-        "duration": "30 min",
+        "duration": "30 mın",
         "content": "OWASP — ochiq web qáwipsizligi qawımı. Top 10 — eń kóp kezdesetin qáwipler.\n\n2021 versiya (qısqa):\n1. Broken Access Control — ruxsat basqarıw qáteligi\n2. Cryptographic Failures — náçar shifrlaw\n3. Injection — SQL, XSS, command injection\n4. Insecure Design — qátel dizayn\n5. Security Misconfiguration — náçar sozlaw\n6. Vulnerable Components — eskirgen kutarxpalar\n7. Authentication Failures — náçar login\n8. Software Integrity Failures — manipulyatsiya\n9. Logging Failures — log joq\n10. SSRF — server arqalı basqa serverge sórew\n\nHar bir web loyihada OWASP tekseriw júriw kerek.\n\nQorındı: OWASP Top 10 — web maman ushın májbúriy bilim."
       },
       {
         "id": "lesson-3-5",
         "title": "API qáwipsizligi",
-        "duration": "28 min",
+        "duration": "28 mın",
         "content": "Zamonavı saytlar API (Application Programming Interface) qollanadı — mobil ilojalar, SPA.\n\nAPI qáwipleri:\n• Autentifikatsiya joq\n• API key ochiq (GitHubda)\n• Rate limit joq (brute-force)\n• Arlıq maǵlıwmat qaytarıw\n• Mass assignment\n\nQorǵaw:\n• OAuth 2.0 / JWT tokenlar\n• API key rotation\n• Rate limiting\n• Input validatsiya\n• HTTPS májbúriy\n\nJWT (JSON Web Token) — login keyin token beriledi. Token múddeti qisqa bolıwı kerek.\n\nQorındı: API — sayt arqası; onı da qorǵaw kerek."
       }
     ]
@@ -126,31 +126,31 @@
       {
         "id": "lesson-4-1",
         "title": "Hash funkciyaları",
-        "duration": "30 min",
+        "duration": "30 mın",
         "content": "Hash — maǵlıwmattı qatıq uzınlıqqa aylantırıw. Qayta dekodlaw MÚMKIN EMAS.\n\nQollanıw:\n• Parol saqlaw (server parol emes, hash saqlaydı)\n• Fayl túrliligin tekseriw\n• Raqamli imzo\n\nSHA-256 — zamonavı standart. MD5, SHA-1 — eski, qáwipsiz emes.\n\nSalt — hár parolge qosılatın random qısqaq. Rainbow table qarsı.\n\nMysal: parol \"mypassword\" → hash. Biraq salt bilan har safar basqa hash.\n\nbcrypt, Argon2 — parol ushın arnawlı (sekin, brute-force qiyin).\n\nCollision — eki basqa maǵlıwmat bir hash. SHA-256 da práktikada joq.\n\nQorındı: Hash — bir jónlı; parol saqlawda salt májbúriy."
       },
       {
         "id": "lesson-4-2",
         "title": "AES hám RSA",
-        "duration": "35 min",
+        "duration": "35 mın",
         "content": "Simmetrik shifrlaw — bir kalit (shifrlaw hám dekodlaw).\nAES-128, AES-256 — tez, kóp maǵlıwmat ushın. Kalit uzınlıǵı: 128 yamasa 256 bit.\n\nAsimmetrik shifrlaw — eki kalit:\n• Public key (ashıq) — shifrlaw ushın\n• Private key (jeke) — dekodlaw ushın\n\nRSA — klasik asimmetrik. Sezin, biraq qáwipsiz.\n\nGibrid sistema: AES menen maǵlıwmat shifrlanadı, AES kaliti RSA menen shifrlanadı. HTTPS shu usıl.\n\nKalit almasıw (key exchange): eki tárep bir xil kalitke kelse — Diffie-Hellman, ECDH.\n\nQorındı: Kóp maǵlıwmat — AES; kalit almasıw — RSA/ECDH."
       },
       {
         "id": "lesson-4-3",
         "title": "Sertifikatlar hám PKI",
-        "duration": "30 min",
+        "duration": "30 mın",
         "content": "HTTPS islew ushın server sertifikatı kerek.\n\nSertifikat — server kimligin tastıyqıydı (domen: cyberedu.local).\n\nPKI (Public Key Infrastructure):\n• CA (Certificate Authority) — sertifikat beriwshı (Let's Encrypt, DigiCert)\n• RA — talaplardı qabıl qıladı\n• Sertifikat zanjiri — Root CA → Intermediate → Server\n\nBrauzer Root CAlarǵa senen. Sertifikat tekseriledi → qulf belgisi.\n\nSelf-signed — ózin jasaydı, brauzer eskertedi (ichki test ushın).\n\nSertifikat múddeti — múddeti támam bolsa, sayt ishlemey qaladı. Avtomatik jańalaw (Let's Encrypt).\n\nQorındı: Sertifikat — HTTPS iseniminin negizi."
       },
       {
         "id": "lesson-4-4",
         "title": "Raqamli imzo",
-        "duration": "24 min",
+        "duration": "24 mın",
         "content": "Raqamli imzo — hujjetke elektron imzo. Qánigelik hám túrlilik kafolatlaydı.\n\nQanday isleydi:\n1. Hujjet hashlenedi\n2. Hash jeke kalit menen shifrlanadı (imzo)\n3. Tekseriwshi ashıq kalit penen tekseredi\n\nQollanıw: shartnamalar, memlekettik xizmetler, bank.\n\nImzo hám shifrlaw ayırması: imzo — kim jazǵanın ispatlaydı; shifrlaw — maǵlıwmatnı jasırın qıladı.\n\nQorındı: Raqamli imzo — qágaz imzanıń elektron analogı."
       },
       {
         "id": "lesson-4-5",
         "title": "Kriptografiya amaliyati",
-        "duration": "26 min",
+        "duration": "26 mın",
         "content": "Amaliy maslahatlar:\n\nParol saqlaw:\n• bcrypt/Argon2 qollanıń\n• Salt májbúriy\n• Hechqashan plain text saqlamayń\n\nMaǵlıwmat shifrlaw:\n• AES-256-CBC yamasa GCM\n• IV (Initialization Vector) hár márte basqa\n• Kalitlardi kod ishinde emes, env da saqlaw\n\nTransport:\n• TLS 1.3\n• HSTS (brauzer tek HTTPS qıladı)\n\nQadaǵan:\n• MD5, SHA-1 parol ushın\n• ECB rejimi (pattern kórinedi)\n• Óz kalitin ózi shifrlaw\n\nCyberChef — oqıw ushın dekodlaw/shifrlaw quralı.\n\nQorındı: Kriptografiya — durıs qollanılsa kúshli qorǵaw."
       }
     ]
@@ -165,31 +165,31 @@
       {
         "id": "lesson-5-1",
         "title": "Insident josparı",
-        "duration": "30 min",
+        "duration": "30 mın",
         "content": "Insident — qáwipsizlik buzılıwı yamasa qáwipli holat.\n\nNIST IR fazaları:\n1. Tayarlıq (Preparation) — jospar, komanda, quraldar\n2. Anıqlaw (Detection) — insident bar ekenin biliw\n3. Jazıw (Containment) — tarqalwın toqtatıw\n4. Qayta tiklew (Recovery) — normal iske qaytarıw\n5. Óqıw (Lessons learned) — post-mortem\n\nInsident komandası: IR manager, texnik mamanlar, huquqshı, PR.\n\nKommunikatsiya: kimge, qashan xabar beriledi — aldin jazıp qoyıw.\n\nQorındı: Tayarlıq — insident bolǵanda panikasız reaksiya."
       },
       {
         "id": "lesson-5-2",
         "title": "Log tallawı",
-        "duration": "32 min",
+        "duration": "32 mın",
         "content": "Log — sistema ne qılǵanın jazıwı. Insidentte birinshi dálil.\n\nLog túrleri:\n• Application log — sayt, API\n• System log — OS, server\n• Network log — firewall, router\n• Security log — login, ruxsat ózgerisleri\n\nSIEM — barlıq loglardı jinaydı, qáwipli aktivlikti izleydi.\n\nKorrelatsiya: bir waqıtta birneше log — tolqın súwret.\n\nIOC (Indicator of Compromise): qáwipli IP, fayl hash, domen.\n\nLog saqlaw: keminde 90 kún, muhim sistemalar — 1 jıl.\n\nQorındı: Logsız IR — kóre almaysız. Log — kózińiz."
       },
       {
         "id": "lesson-5-3",
         "title": "Forensics kirispe",
-        "duration": "30 min",
+        "duration": "30 mın",
         "content": "Digital forensics — raqamli dálillerdi jıynaw hám tahlil.\n\nDálil túrleri: disk imajı, memória dump, log, tarmoq trafik.\n\nTamallar:\n• Chain of custody — kim, qashan tiykardi\n• Dálildi ózgertpew (write blocker)\n• Vaqt belgisi (timestamp)\n\nQadamlar:\n1. Izolyatsiya (tarmoqtan ajratıw)\n2. Imij alıw (bit-by-bit nusqa)\n3. Tahlil (quraldar: Autopsy, Volatility)\n4. Esabat\n\nEtika: faqat qonuniy ruxsat penen, faqat kerek maǵlıwmat.\n\nQorındı: Forensics — insidentti túsiniw ushın dálil."
       },
       {
         "id": "lesson-5-4",
         "title": "Backup hám qayta tiklew",
-        "duration": "28 min",
+        "duration": "28 mın",
         "content": "Ransomware — maǵlıwmatlardı shifrlaydı. Backup — eń jaqsı qarsı shara.\n\nBackup qáwimleri:\n• 3-2-1 qoidası: 3 nusqa, 2 turli media, 1 sırttaki jer\n• Offline backup — tarmoqtan ajratılǵan (ransomware kóre almaydı)\n• Test qılıw — backup isleydimi? (restore sinaw)\n• Shifrlangan backup\n\nRTO (Recovery Time Objective) — qancha waqıtta tiklew kerek.\nRPO (Recovery Point Objective) — qancha maǵlıwmat júgine múlkun.\n\nQayta tiklew qadamları: izolyatsiya → toza sistema → backupdan tiklew → tekseriw.\n\nQorındı: Backup joq bolsa — ransomwaredan keyin hech nárse joq."
       },
       {
         "id": "lesson-5-5",
         "title": "Business Continuity",
-        "duration": "26 min",
+        "duration": "26 mın",
         "content": "BCP (Business Continuity Plan) — insidentten keyin biznes islewine qanday dawam etedi.\n\nDRP (Disaster Recovery Plan) — IT infrastruktura tiklew.\n\nMuhim sistemalar reytingi: qaysı biri birinshi tiklenedi.\n\nKommunikatsiya rejimi: mijozlar, xodimler, BASMI.\n\nStsenariylar aldın jazıladı:\n• Ransomware\n• DDoS\n• Maǵlıwmat sızıwı\n• Fizikalıq ápbet\n\nMashq ótkeriw (tabletop exercise): jazıwda emes, amalda sinaw.\n\nPost-mortem: insidentten keyin — ne isledi, ne islemedi, ne ózgertemiz.\n\nQorındı: IR + BCP = tolıq tayarlıq."
       }
     ]
@@ -204,31 +204,31 @@
       {
         "id": "lesson-6-1",
         "title": "Ortaq jawapkerlik",
-        "duration": "28 min",
+        "duration": "28 mın",
         "content": "Bultta qáwipsizlik — provayder hám mijoz ortasında bólinedi.\n\nProvayder masuliyati (AWS, Azure, GCP):\n• Fizikalıq data-center qáwipsizligi\n• Hypervisor qáwipsizligi\n• Tarmoq infratuzilması\n• IaaS qatlamlarının qáwipsizligi\n\nMijoz masuliyati:\n• OS jańalawları\n• Firewall sozlawları\n• Maǵlıwmat shifrlawı\n• Paydalanıwshı basqarıwı\n• Iloja qáwipsizligi\n\nShared responsibility model — hár xizmet túri ushın diagramma bar.\n\nQorındı: «Bultta barlıq narseni provayder qıladı» — QÁTE QABUL."
       },
       {
         "id": "lesson-6-2",
         "title": "IAM hám MFA",
-        "duration": "30 min",
+        "duration": "30 mın",
         "content": "IAM (Identity and Access Management) — kim nege ruxsatı bar.\n\nPrintsipler:\n• Least privilege — minimal ruxsat\n• Separation of duties — bir kishi barlıq narseni basqarmaydı\n• Regular review — ruxsatlardı waqıt-waqıt tekseriw\n\nRBAC — rol boyınsha: Admin, Developer, Viewer.\n\nMFA — bult konsolga kiris ushın májbúriy.\n\nRoot account — eń qáwip. MFA + minimal qollanıw.\n\nService account — ilojalar ushın. Kalitler rotation.\n\nQorındı: IAM — bult qáwipsizliginin #1 máselesi."
       },
       {
         "id": "lesson-6-3",
         "title": "Konteyner qáwipsizligi",
-        "duration": "32 min",
+        "duration": "32 mın",
         "content": "Docker, Kubernetes — zamonavı deployment.\n\nQáwipler:\n• Eski image (qáwipli kutarxpalar)\n• Root rejiminde islew\n• Secrets kodda\n• Ochiq portlar\n\nQorǵaw:\n• Image skaner (Trivy, Clair)\n• Non-root user\n• Secrets manager (Vault, AWS Secrets)\n• Network policy\n• Resource limit\n\nKubernetes: RBAC, Pod Security Standards, namespace izolyatsiyası.\n\nQorındı: Konteyner — tezlik beredi, biraq qáwipsizlik sozlaw kerek."
       },
       {
         "id": "lesson-6-4",
         "title": "Bult storage qáwipsizligi",
-        "duration": "26 min",
+        "duration": "26 mın",
         "content": "S3 bucket, Azure Blob — maǵlıwmat saqlaw.\n\nKóp qáwip: ochiq bucket — internetten barlıq kóre aladı.\n\nQorǵaw:\n• Private by default\n• Bucket policy tekseriw\n• Encryption at rest (AES-256)\n• Versioning — káslenen ózgerisler\n• Access logging\n\nMaǵlıwmat klassifikatsiyası: qaysı maǵlıwmat bultqa jiberiledi?\n\nGDPR, jeke maǵlıwmat — geografiyalıq sheklovlar.\n\nQorındı: Ochiq S3 — #1 bult qáwipi. Tekseriń!"
       },
       {
         "id": "lesson-6-5",
         "title": "DevOps hám bult qáwipsizligi",
-        "duration": "28 min",
+        "duration": "28 mın",
         "content": "CI/CD — kod jazıw → avtomatik test → deploy.\n\nDevSecOps — qáwipsizlik CI/CD ga integratsiya.\n\nAmaliyotlar:\n• SAST — kod tahlili (statik)\n• DAST — iloja tahlili (dinamik)\n• Dependency scan — eskirgen kutarxpalar\n• Infrastructure as Code (Terraform) — infrastruktura kodda\n\nSecrets: .env fayllar GitHubqa túsirmew. CI/CD secrets manager.\n\nIaC qáwipsizligi: Terraform state qorǵaw, policy as code.\n\nQorındı: Tez deploy + qáwipsizlik — birge bolıwı kerek."
       }
     ]

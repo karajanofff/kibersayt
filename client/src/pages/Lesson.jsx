@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { ArrowLeft, CheckCircle } from 'lucide-react';
 import { apiFetch } from '../api/client';
+import { kaa, formatDuration } from '../i18n/kaa';
 
 function renderContent(text) {
   if (!text) return null;
@@ -55,7 +56,7 @@ export default function Lesson() {
     }
   };
 
-  if (!lesson) return <p className="text-slate-400">Júklenbekte...</p>;
+  if (!lesson) return <p className="text-slate-400">{kaa.loading}</p>;
 
   return (
     <div>
@@ -67,13 +68,15 @@ export default function Lesson() {
         {lesson.moduleTitle}
       </Link>
       <h1 className="mt-4 text-3xl font-bold text-white">{lesson.title}</h1>
-      <p className="mt-1 text-sm text-slate-500">Oqıw waqıtı: {lesson.duration}</p>
+      <p className="mt-1 text-sm text-slate-500">
+        {kaa.lessonStudyTime}: {formatDuration(lesson.duration)}
+      </p>
 
       <article className="card mt-8 max-w-none">{renderContent(lesson.content)}</article>
 
       <button type="button" onClick={markComplete} disabled={done} className="btn-primary mt-6">
         <CheckCircle className="h-4 w-4" />
-        {done ? 'Tamamlandı' : 'Sabaqtı tamamladım'}
+        {done ? kaa.lessonCompleted : kaa.lessonComplete}
       </button>
     </div>
   );

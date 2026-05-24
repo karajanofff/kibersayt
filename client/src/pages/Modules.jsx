@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { BookOpen, Shield, Globe, Lock, Cloud, AlertTriangle, Network } from 'lucide-react';
 import { apiFetch } from '../api/client';
-import { formatLessonCount } from '../i18n/kaa';
+import { kaa, formatLessonCount } from '../i18n/kaa';
 
 const icons = {
   shield: Shield,
@@ -23,15 +23,15 @@ export default function Modules() {
       .finally(() => setLoading(false));
   }, []);
 
-  if (loading) return <p className="text-slate-400">Júklenbekte...</p>;
+  if (loading) return <p className="text-slate-400">{kaa.loading}</p>;
 
   return (
     <div>
       <h1 className="flex items-center gap-2 text-3xl font-bold text-white">
         <BookOpen className="h-8 w-8 text-cyber-400" />
-        Kurs modulları
+        {kaa.modulesTitle}
       </h1>
-      <p className="mt-2 text-slate-400">6 modul, hár birinde 5 sabaq</p>
+      <p className="mt-2 text-slate-400">{kaa.modulesSubtitle}</p>
 
       <div className="mt-8 grid gap-6 md:grid-cols-2">
         {modules.map((mod) => {

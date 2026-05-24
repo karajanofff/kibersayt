@@ -29,15 +29,15 @@ export default function Admin() {
     <div>
       <h1 className="flex items-center gap-2 text-3xl font-bold text-white">
         <Settings className="h-8 w-8 text-amber-400" />
-        Basqarıwshı paneli
+        {kaa.adminTitle}
       </h1>
-      <p className="mt-2 text-slate-400">Platforma basqarıwı — demo rejim</p>
+      <p className="mt-2 text-slate-400">{kaa.adminSubtitle}</p>
 
       <div className="mt-8 grid gap-4 sm:grid-cols-3">
         {[
-          { label: 'Modullar', value: stats.modules, icon: BookOpen },
-          { label: 'Laboratoriyalar', value: stats.labs, icon: Settings },
-          { label: 'Kripto CTF', value: stats.ctf, icon: Flag },
+          { label: kaa.adminStatModules, value: stats.modules, icon: BookOpen },
+          { label: kaa.adminStatLabs, value: stats.labs, icon: Settings },
+          { label: kaa.adminStatCtf, value: stats.ctf, icon: Flag },
         ].map(({ label, value, icon: Icon }) => (
           <div key={label} className="card border-amber-500/20">
             <Icon className="h-8 w-8 text-amber-400" />
@@ -50,15 +50,15 @@ export default function Admin() {
       <div className="card mt-10">
         <h2 className="flex items-center gap-2 text-xl font-semibold text-white">
           <Users className="h-5 w-5 text-amber-400" />
-          Demo oqıwshılar ({students.length})
+          {kaa.adminStudents} ({students.length})
         </h2>
         <div className="mt-4 overflow-x-auto">
           <table className="w-full text-left text-sm">
             <thead>
               <tr className="border-b border-slate-700 text-slate-400">
-                <th className="py-2 pr-4">Atı</th>
-                <th className="py-2 pr-4">Elektron pochta</th>
-                <th className="py-2">Roli</th>
+                <th className="py-2 pr-4">{kaa.adminColName}</th>
+                <th className="py-2 pr-4">{kaa.adminColEmail}</th>
+                <th className="py-2">{kaa.adminColRole}</th>
               </tr>
             </thead>
             <tbody>
@@ -72,7 +72,7 @@ export default function Admin() {
             </tbody>
           </table>
         </div>
-        <p className="mt-4 text-xs text-slate-500">Demo oqıwshı paroli: student123</p>
+        <p className="mt-4 text-xs text-slate-500">{kaa.adminDemoPassword}</p>
       </div>
     </div>
   );

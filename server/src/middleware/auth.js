@@ -27,7 +27,7 @@ export function authRequired(req, res, next) {
 
 export function adminRequired(req, res, next) {
   if (req.user?.role !== 'admin') {
-    return res.status(403).json({ success: false, message: 'Admin huqıqı kerek' });
+    return res.status(403).json({ success: false, message: 'Basqarıwshı huqıqı kerek' });
   }
   next();
 }

@@ -6,8 +6,8 @@ export function errorHandler(err, req, res, next) {
   const status = err.status || 500;
   const message =
     process.env.NODE_ENV === 'production' && status === 500
-      ? 'Server qáteligi'
-      : err.message || 'Server qáteligi';
+      ? 'Arnaq server qáteligi'
+      : err.message || 'Arnaq server qáteligi';
 
   if (process.env.NODE_ENV !== 'production') {
     console.error(err);

@@ -3,11 +3,11 @@
     "id": "lab-1",
     "title": "Parol qáwipsizligi simulyatsiyası",
     "difficulty": "basta",
-    "duration": "30 min",
+    "duration": "30 mın",
     "description": "Parol qáwipsizligi qáwimlerin oqıw ishinde amaliy mashq qılıń. Haqıyqıy sistemalarga hujum qılmaymız.",
     "objectives": ["Parol qáwimlerin túsiniw", "Brute-force qáwipin bahalaw", "Qáwipsiz parol jasaw"],
     "steps": [
-      "Demo parol generatorin isletiń",
+      "Sınaq parol generatorin isletiń",
       "Parol qáwim ballın tallañ",
       "Qáwipsiz parol siyasatın jazıń"
     ],
@@ -17,7 +17,7 @@
     "id": "lab-2",
     "title": "Phishing xabarın anıqlaw",
     "difficulty": "orta",
-    "duration": "45 min",
+    "duration": "45 mın",
     "description": "Simulyatsiya elektron pochta xabarları arasında phishing belgilerin tabıń.",
     "objectives": ["Phishing belgilerin taniw", "URL tekseriw", "Xabar metadata tallawı"],
     "steps": [
@@ -31,11 +31,11 @@
     "id": "lab-3",
     "title": "Firewall qáwimlerin sozlaw",
     "difficulty": "orta",
-    "duration": "60 min",
+    "duration": "60 mın",
     "description": "Virtual firewall ishinde trafik qáwimlerin sozlaw mashqı.",
     "objectives": ["Kiruvchi/shıǵıw qáwimleri", "Port filtratsiyası", "Log tallawı"],
     "steps": [
-      "Demo firewall interfeysin ashıń",
+      "Sınaq firewall interfeysin ashıń",
       "HTTP/HTTPS qáwimlerin qosıń",
       "Test trafikti tekseriń"
     ],
@@ -45,7 +45,7 @@
     "id": "lab-4",
     "title": "Hash funkciyaları laboratoriyası",
     "difficulty": "basta",
-    "duration": "40 min",
+    "duration": "40 mın",
     "description": "MD5, SHA-256 hashlerdi salıstırıw mashqı (oqıw maqsadında).",
     "objectives": ["Hash túsiniw", "Salt qollanıw", "Collision túsiniw"],
     "steps": [
@@ -59,7 +59,7 @@
     "id": "lab-5",
     "title": "Insidentke javap beriw josparı",
     "difficulty": "joqarı",
-    "duration": "90 min",
+    "duration": "90 mın",
     "description": "Simulyatsiya insidenti boyınsha javap beriw josparın jasaw.",
     "objectives": ["Insident klassifikatsiyası", "Kommunikatsiya", "Qayta tiklew"],
     "steps": [

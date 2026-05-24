@@ -16,15 +16,16 @@ import {
 } from 'lucide-react';
 import { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
+import { kaa } from '../i18n/kaa';
 
 const nav = [
-  { to: '/dashboard', label: 'Basqarıw paneli', icon: LayoutDashboard },
-  { to: '/modules', label: 'Kurs modulları', icon: BookOpen },
-  { to: '/video-courses', label: 'Video kurslar', icon: Video },
-  { to: '/labs', label: 'Laboratoriya', icon: FlaskConical },
-  { to: '/test', label: 'Test', icon: ClipboardCheck },
-  { to: '/ctf', label: 'Kripto CTF', icon: Flag },
-  { to: '/resources', label: 'Resurslar', icon: Library },
+  { to: '/dashboard', label: kaa.navDashboard, icon: LayoutDashboard },
+  { to: '/modules', label: kaa.navModules, icon: BookOpen },
+  { to: '/video-courses', label: kaa.navVideoCourses, icon: Video },
+  { to: '/labs', label: kaa.navLabs, icon: FlaskConical },
+  { to: '/test', label: kaa.navTests, icon: ClipboardCheck },
+  { to: '/ctf', label: kaa.navCtf, icon: Flag },
+  { to: '/resources', label: kaa.navResources, icon: Library },
 ];
 
 export default function Layout() {
@@ -43,7 +44,7 @@ export default function Layout() {
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
           <Link to="/" className="flex items-center gap-2 font-bold text-cyber-400">
             <Shield className="h-8 w-8" />
-            <span>CyberEdu</span>
+            <span>{kaa.brand}</span>
           </Link>
 
           <nav className="hidden items-center gap-1 md:flex">
@@ -71,7 +72,7 @@ export default function Layout() {
                 }
               >
                 <Settings className="h-4 w-4" />
-                Basqarıw
+                {kaa.navAdmin}
               </NavLink>
             )}
           </nav>
@@ -82,13 +83,13 @@ export default function Layout() {
                 <span className="text-sm text-slate-400">{user.name}</span>
                 <button type="button" onClick={handleLogout} className="btn-secondary text-sm">
                   <LogOut className="h-4 w-4" />
-                  Shıǵıw
+                  {kaa.navLogout}
                 </button>
               </>
             ) : (
               <Link to="/login" className="btn-primary text-sm">
                 <LogIn className="h-4 w-4" />
-                Kiris
+                {kaa.navLogin}
               </Link>
             )}
           </div>
@@ -97,7 +98,7 @@ export default function Layout() {
             type="button"
             className="md:hidden text-slate-300"
             onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label="Menyu"
+            aria-label={kaa.menu}
           >
             {mobileOpen ? <X /> : <Menu />}
           </button>
@@ -117,16 +118,16 @@ export default function Layout() {
             ))}
             {isAdmin && (
               <NavLink to="/admin" onClick={() => setMobileOpen(false)} className="block py-2 text-amber-300">
-                Basqarıw
+                {kaa.navAdmin}
               </NavLink>
             )}
             {user ? (
               <button type="button" onClick={handleLogout} className="mt-2 text-sm text-red-400">
-                Shıǵıw
+                {kaa.navLogout}
               </button>
             ) : (
               <Link to="/login" onClick={() => setMobileOpen(false)} className="mt-2 block text-cyber-400">
-                Kiris
+                {kaa.navLogin}
               </Link>
             )}
           </div>
@@ -138,12 +139,10 @@ export default function Layout() {
       </main>
 
       <footer className="mt-16 border-t border-slate-800 py-10 text-center text-sm text-slate-500">
-        <p className="font-medium text-slate-400">Platforma tiykarshıları</p>
-        <p className="mt-2">Full-Stack programmist: Bektemir Karajanov</p>
-        <p className="mt-1">Junior programmist: Allayar Xamdullaev</p>
-        <p className="mt-6 text-slate-600">
-          © 2026 Kiberqáwipsizlik injiniringi kafedrasi. Barlıq huqıqlar qorǵalǵan.
-        </p>
+        <p className="font-medium text-slate-400">{kaa.footerCreators}</p>
+        <p className="mt-2">{kaa.footerFullStack}</p>
+        <p className="mt-1">{kaa.footerJunior}</p>
+        <p className="mt-6 text-slate-600">{kaa.footerCopyright}</p>
       </footer>
     </div>
   );

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Video } from 'lucide-react';
 import { apiFetch } from '../api/client';
-import { formatVideoCount } from '../i18n/kaa';
+import { kaa, formatVideoCount } from '../i18n/kaa';
 
 export default function VideoCourses() {
   const [courses, setCourses] = useState([]);
@@ -14,17 +14,15 @@ export default function VideoCourses() {
       .finally(() => setLoading(false));
   }, []);
 
-  if (loading) return <p className="text-slate-400">Júklenbekte...</p>;
+  if (loading) return <p className="text-slate-400">{kaa.loading}</p>;
 
   return (
     <div>
       <h1 className="flex items-center gap-2 text-3xl font-bold text-white">
         <Video className="h-8 w-8 text-cyber-400" />
-        Video kurslar
+        {kaa.videoCoursesTitle}
       </h1>
-      <p className="mt-2 text-slate-400">
-        YouTube «Kiberxavfsizlik» playlisti — tematik video darslar
-      </p>
+      <p className="mt-2 text-slate-400">{kaa.videoCoursesSubtitle}</p>
 
       <div className="mt-8 grid gap-6 md:grid-cols-2">
         {courses.map((course) => (

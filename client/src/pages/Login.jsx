@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Shield, LogIn, GraduationCap, UserCog } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
+import { kaa } from '../i18n/kaa';
 
 const DEMO_ADMIN = { email: 'admin@cyberedu.local', password: 'admin123' };
 const DEMO_STUDENT = { email: 'Allayar007@student.local', password: 'Allayar123' };
@@ -48,17 +49,18 @@ export default function Login() {
       <div className="card w-full max-w-md">
         <div className="mb-6 flex items-center justify-center gap-2 text-cyber-400">
           <Shield className="h-10 w-10" />
-          <span className="text-2xl font-bold">CyberEdu</span>
+          <span className="text-2xl font-bold">{kaa.brand}</span>
         </div>
-        <h1 className="text-center text-xl font-semibold text-white">Platformaga kiris</h1>
+        <h1 className="text-center text-xl font-semibold text-white">{kaa.loginTitle}</h1>
 
         <div className="mt-4 space-y-2 rounded-lg border border-slate-700 bg-slate-800/50 p-3 text-sm">
-          <p className="font-medium text-slate-300">Demo akkauntlar</p>
+          <p className="font-medium text-slate-300">{kaa.loginDemoAccounts}</p>
           <p className="text-slate-400">
-            <span className="text-cyber-400">Oqıwshı:</span> {DEMO_STUDENT.email} / {DEMO_STUDENT.password}
+            <span className="text-cyber-400">{kaa.loginStudent}:</span> {DEMO_STUDENT.email} /{' '}
+            {DEMO_STUDENT.password}
           </p>
           <p className="text-slate-400">
-            <span className="text-amber-400">Basqarıwshı:</span> {DEMO_ADMIN.email} / {DEMO_ADMIN.password}
+            <span className="text-amber-400">{kaa.loginAdmin}:</span> {DEMO_ADMIN.email} / {DEMO_ADMIN.password}
           </p>
         </div>
 
@@ -67,36 +69,36 @@ export default function Login() {
             type="button"
             disabled={loading}
             onClick={() => quickLogin(DEMO_STUDENT)}
-            className="btn-primary text-sm py-2"
+            className="btn-primary py-2 text-sm"
           >
             <GraduationCap className="h-4 w-4" />
-            Oqıwshı kirisi
+            {kaa.loginStudentQuick}
           </button>
           <button
             type="button"
             disabled={loading}
             onClick={() => quickLogin(DEMO_ADMIN)}
-            className="btn-secondary text-sm py-2"
+            className="btn-secondary py-2 text-sm"
           >
             <UserCog className="h-4 w-4" />
-            Basqarıwshı kirisi
+            {kaa.loginAdminQuick}
           </button>
         </div>
 
         <form onSubmit={handleSubmit} className="mt-6 space-y-4">
           <div>
-            <label className="mb-1 block text-sm text-slate-400">Elektron pochta</label>
+            <label className="mb-1 block text-sm text-slate-400">{kaa.loginEmail}</label>
             <input
               type="email"
               className="input-field"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              placeholder="email@misal.local"
+              placeholder={kaa.loginEmailPlaceholder}
             />
           </div>
           <div>
-            <label className="mb-1 block text-sm text-slate-400">Parol</label>
+            <label className="mb-1 block text-sm text-slate-400">{kaa.loginPassword}</label>
             <input
               type="password"
               className="input-field"
@@ -108,13 +110,13 @@ export default function Login() {
           {error && <p className="text-sm text-red-400">{error}</p>}
           <button type="submit" disabled={loading} className="btn-primary w-full">
             <LogIn className="h-4 w-4" />
-            {loading ? 'Kútipek...' : 'Kiris'}
+            {loading ? kaa.waiting : kaa.loginSubmit}
           </button>
         </form>
 
         <p className="mt-6 text-center text-sm text-slate-500">
           <Link to="/" className="text-cyber-400 hover:underline">
-            Bas betke qaytıw
+            {kaa.backToHome}
           </Link>
         </p>
       </div>

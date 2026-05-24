@@ -45,9 +45,9 @@
     "category": "kriptologiya",
     "difficulty": "orta",
     "points": 150,
-    "description": "Tómendegi kalit hám IV járdeminde shifrlangan matnı dekodlań. CyberChef saytın qollawıńız múmkin. Dekodlangan javob CYBER{...} formatında boladı.",
+    "description": "Tómendegi kalit hám IV járdeminde shifrlangan matnı dekodlań. Kiber Oshxona saytın qollawıńız múmkin. Dekodlangan javob CYBER{...} formatında boladı.",
     "berilganMisol": "Z7lpNoFtIqEHCh913KpYUw==",
-    "hint": "CyberChef: From Base64 → AES Decrypt. Mode: CBC, Input: Base64, Output: UTF8.",
+    "hint": "Kiber Oshxona: From Base64 → AES Decrypt. Mode: CBC, Input: Base64, Output: UTF8.",
     "cipherMeta": { "type": "aes-128-cbc" },
     "kriptoKomek": {
       "algorithm": "AES-128-CBC",
@@ -55,10 +55,10 @@
       "iv": "1234567890abcdef",
       "encoding": "Base64",
       "qadamlar": [
-        "1. https://gchq.github.io/CyberChef/ saytın ashıń",
+        "1. https://gchq.github.io/Kiber Oshxona/ saytın ashıń",
         "2. Input: tómendegi shifrlangan matn (nusqalap qoyıń)",
         "3. Recipe: «From Base64» hám «AES Decrypt» qosıń",
-        "4. AES Decrypt: Key = CyberEduAESKey16, IV = 1234567890abcdef, Mode = CBC",
+        "4. AES dekodlaw: Kalit = CyberEduAESKey16, Bastapqı vektor = 1234567890abcdef, Rejim = CBC",
         "5. Outputta CYBER{...} kórinesi — onı javob maydanına jazıń"
       ]
     },

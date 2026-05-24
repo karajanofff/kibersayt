@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { ClipboardCheck, ArrowLeft } from 'lucide-react';
 import { apiFetch } from '../api/client';
+import { kaa, formatQuestionCount } from '../i18n/kaa';
 
 export default function TestTake() {
   const { id } = useParams();
@@ -27,7 +28,7 @@ export default function TestTake() {
       selectedIndex: answers[q.id] ?? -1,
     }));
     if (payload.some((a) => a.selectedIndex < 0)) {
-      alert('Barlıq sorawlarga juwap beriń!');
+      alert(kaa.testsAnswerAll);
       return;
     }
     setSubmitting(true);
@@ -44,28 +45,30 @@ export default function TestTake() {
     }
   };
 
-  if (!test) return <p className="text-slate-400">Júklenbekte...</p>;
+  if (!test) return <p className="text-slate-400">{kaa.loading}</p>;
 
   if (result) {
     return (
       <div>
         <Link to="/test" className="inline-flex items-center gap-1 text-sm text-cyber-400 hover:underline">
           <ArrowLeft className="h-4 w-4" />
-          Testlerge qaytıw
+          {kaa.backToTests}
         </Link>
         <div className="card mx-auto mt-6 max-w-lg text-center">
           <ClipboardCheck className="mx-auto h-16 w-16 text-cyber-400" />
           <h2 className="mt-4 text-2xl font-bold text-white">{test.title}</h2>
-          <p className="mt-1 text-sm text-slate-500">Test nátijesi</p>
+          <p className="mt-1 text-sm text-slate-500">{kaa.testsResult}</p>
           <p className="mt-4 text-4xl font-bold text-cyber-400">{result.score}%</p>
           <p className="mt-2 text-slate-400">
-            {result.correct} / {result.total} durıs juwap
+            {result.correct} / {result.total} {kaa.testsCorrect}
           </p>
           <p className={`mt-4 text-lg ${result.passed ? 'text-emerald-400' : 'text-amber-400'}`}>
-            {result.passed ? 'Tabıslı óttińiz!' : `Ótish ushın minimum ${result.passingScore}% kerek`}
+            {result.passed
+              ? kaa.testsPassSuccess
+              : `${kaa.testsPassMin} ${result.passingScore}% kerek`}
           </p>
           <Link to="/test" className="btn-primary mt-6 inline-flex">
-            Basqa testler
+            {kaa.testsOther}
           </Link>
         </div>
       </div>
@@ -76,7 +79,7 @@ export default function TestTake() {
     <div>
       <Link to="/test" className="inline-flex items-center gap-1 text-sm text-cyber-400 hover:underline">
         <ArrowLeft className="h-4 w-4" />
-        Testlerge qaytıw
+        {kaa.backToTests}
       </Link>
       <h1 className="mt-4 flex items-center gap-2 text-3xl font-bold text-white">
         <ClipboardCheck className="h-8 w-8 text-cyber-400" />
@@ -84,7 +87,7 @@ export default function TestTake() {
       </h1>
       <p className="mt-2 text-slate-400">{test.description}</p>
       <p className="mt-1 text-sm text-slate-500">
-        {test.questions.length} soraw · Ótish ballı: {test.passingScore}%
+        {formatQuestionCount(test.questions.length)} · {kaa.testsSubtitle}: {test.passingScore}%
       </p>
 
       <div className="mt-8 space-y-8">
@@ -119,7 +122,7 @@ export default function TestTake() {
       </div>
 
       <button type="button" onClick={submit} disabled={submitting} className="btn-primary mt-8">
-        {submitting ? 'Jiberilbekte...' : 'Testti jiberiw'}
+        {submitting ? kaa.submitting : kaa.testsSubmit}
       </button>
     </div>
   );

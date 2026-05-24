@@ -2,7 +2,7 @@
   {
     "id": "vc-kiber",
     "title": "Kiberxavfsizlik video kursı",
-    "description": "Kiberqáwipsizlik negizleri — YouTube «Kiberxavfsizlik» playlistinen 5 dars.",
+    "description": "Kiberqáwipsizlik negizleri — «Kiberxavfsizlik» video darslar toplamınan 5 sabaq.",
     "icon": "video",
     "playlistUrl": "https://www.youtube.com/playlist?list=PLFRnhpV9odGDXUoUp5p50A6NHH4m4v7qS",
     "order": 1,
@@ -12,7 +12,7 @@
         "youtubeId": "unTavenYgDo",
         "title": "Kiberxavfsizlik nima?",
         "theme": "Kiberqáwipsizlikke kirispe",
-        "duration": "~45 min",
+        "duration": "~45 mın",
         "description": "Kiberqáwipsizlik túsiniwi, maǵlıwmat qorǵawı hám zamanaǵı qáwipler haqqında kirispe dars."
       },
       {
@@ -20,7 +20,7 @@
         "youtubeId": "tAzT4h0Pwt0",
         "title": "CIA uchligi",
         "theme": "Kiberqáwipsizlikke kirispe",
-        "duration": "~40 min",
+        "duration": "~40 mın",
         "description": "Confidentiality, Integrity, Availability — qorǵaw strategiyası negizi."
       },
       {
@@ -28,7 +28,7 @@
         "youtubeId": "9Il1tlODnVA",
         "title": "Kiberhujumlar",
         "theme": "Qáwipler hám hujumlar",
-        "duration": "~50 min",
+        "duration": "~50 mın",
         "description": "Kiber hujum túrleri, qanday isleydi hám qarsı sharaalar."
       },
       {
@@ -36,7 +36,7 @@
         "youtubeId": "AEHK_2RT30c",
         "title": "Firewall",
         "theme": "Tarmaq qáwipsizligi",
-        "duration": "~35 min",
+        "duration": "~35 mın",
         "description": "Firewall qanday isleydi, qoideler hám tarmoq qorǵawı."
       },
       {
@@ -44,7 +44,7 @@
         "youtubeId": "UhSSY7HToZk",
         "title": "Maǵlıwmatlardı maxfiylashtiriw",
         "theme": "Kriptografiya",
-        "duration": "~40 min",
+        "duration": "~40 mın",
         "description": "Shifrlaw, maxfiylik hám maǵlıwmatlardı qorǵaw usılları."
       }
     ]
