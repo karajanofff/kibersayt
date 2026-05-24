@@ -65,7 +65,7 @@ Bitta server `server/client-dist` papkasından frontendni static qilib serve qil
 | Email | `admin@cyberedu.local` |
 | Parol | `admin123` |
 
-Student demo: `aqiljan@student.local` / `student123`
+Student demo: `Allayar007@student.local` / `Allayar123`
 
 ## API endpoints
 

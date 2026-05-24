@@ -71,7 +71,7 @@ export default function Landing() {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 py-12 text-center text-sm text-slate-500">
-        <p>Demo student: aqiljan@student.local / student123</p>
+        <p>Demo student: Allayar007@student.local / Allayar123</p>
         <p className="mt-1">Demo admin: admin@cyberedu.local / admin123</p>
       </section>
     </div>

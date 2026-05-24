@@ -4,7 +4,7 @@ import { Shield, LogIn, GraduationCap, UserCog } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 
 const DEMO_ADMIN = { email: 'admin@cyberedu.local', password: 'admin123' };
-const DEMO_STUDENT = { email: 'aqiljan@student.local', password: 'student123' };
+const DEMO_STUDENT = { email: 'Allayar007@student.local', password: 'Allayar123' };
 
 export default function Login() {
   const [email, setEmail] = useState('');

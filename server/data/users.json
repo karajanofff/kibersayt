@@ -40,5 +40,12 @@
     "email": "jasura@student.local",
     "password": "student123",
     "role": "student"
+  },
+  {
+    "id": "student-6",
+    "name": "Allayar",
+    "email": "Allayar007@student.local",
+    "password": "Allayar123",
+    "role": "student"
   }
 ]
