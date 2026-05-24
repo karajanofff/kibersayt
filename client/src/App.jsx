@@ -7,6 +7,9 @@ import Dashboard from './pages/Dashboard';
 import Modules from './pages/Modules';
 import ModuleDetail from './pages/ModuleDetail';
 import Lesson from './pages/Lesson';
+import VideoCourses from './pages/VideoCourses';
+import VideoCourseDetail from './pages/VideoCourseDetail';
+import VideoWatch from './pages/VideoWatch';
 import Labs from './pages/Labs';
 import LabDetail from './pages/LabDetail';
 import TestPage from './pages/TestPage';
@@ -51,6 +54,30 @@ export default function App() {
           element={
             <ProtectedRoute>
               <Lesson />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/video-courses"
+          element={
+            <ProtectedRoute>
+              <VideoCourses />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/video-courses/:id"
+          element={
+            <ProtectedRoute>
+              <VideoCourseDetail />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/videos/:id"
+          element={
+            <ProtectedRoute>
+              <VideoWatch />
             </ProtectedRoute>
           }
         />

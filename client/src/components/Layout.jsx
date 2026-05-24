@@ -3,6 +3,7 @@ import {
   Shield,
   LayoutDashboard,
   BookOpen,
+  Video,
   FlaskConical,
   ClipboardCheck,
   Flag,
@@ -19,6 +20,7 @@ import { useAuth } from '../context/AuthContext';
 const nav = [
   { to: '/dashboard', label: 'Basqarıw paneli', icon: LayoutDashboard },
   { to: '/modules', label: 'Kurs modulları', icon: BookOpen },
+  { to: '/video-courses', label: 'Video kurslar', icon: Video },
   { to: '/labs', label: 'Laboratoriya', icon: FlaskConical },
   { to: '/test', label: 'Test', icon: ClipboardCheck },
   { to: '/ctf', label: 'Kripto CTF', icon: Flag },

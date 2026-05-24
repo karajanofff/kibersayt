@@ -33,6 +33,29 @@ export function getLessonById(id) {
   return null;
 }
 
+export function getVideoCourses() {
+  return readJson('videoCourses');
+}
+
+export function getVideoCourseById(id) {
+  return getVideoCourses().find((c) => c.id === id) || null;
+}
+
+export function getVideoById(id) {
+  for (const course of getVideoCourses()) {
+    const video = course.videos?.find((v) => v.id === id);
+    if (video) {
+      return {
+        ...video,
+        courseId: course.id,
+        courseTitle: course.title,
+        playlistUrl: course.playlistUrl,
+      };
+    }
+  }
+  return null;
+}
+
 export function getLabs() {
   return readJson('labs');
 }
@@ -109,6 +132,7 @@ export function getProgress(userId) {
     : {};
   return all[userId] || {
     completedLessons: [],
+    completedVideos: [],
     completedLabs: [],
     testScore: null,
     testPassed: null,

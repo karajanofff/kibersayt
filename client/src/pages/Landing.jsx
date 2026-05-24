@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Shield, BookOpen, FlaskConical, Flag, ArrowRight } from 'lucide-react';
+import { Shield, BookOpen, Video, FlaskConical, Flag, ArrowRight } from 'lucide-react';
 
 export default function Landing() {
   return (
@@ -54,6 +54,11 @@ export default function Landing() {
               icon: BookOpen,
               title: '6 kurs moduli',
               desc: 'Hár birinde 5 sabaq — tolıq teoriya hám amaliy maǵlıwmat.',
+            },
+            {
+              icon: Video,
+              title: 'Video kurslar',
+              desc: 'YouTube «Kiberxavfsizlik» playlisti — 5 tematik video dars.',
             },
             {
               icon: FlaskConical,

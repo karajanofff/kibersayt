@@ -1,20 +1,26 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { BookOpen, FlaskConical, ClipboardCheck, Flag, TrendingUp } from 'lucide-react';
+import { BookOpen, Video, FlaskConical, ClipboardCheck, Flag, TrendingUp } from 'lucide-react';
 import { apiFetch } from '../api/client';
 import { useAuth } from '../context/AuthContext';
-import { formatLessonCount } from '../i18n/kaa';
+import { formatLessonCount, formatVideoCount } from '../i18n/kaa';
 
 export default function Dashboard() {
   const { user } = useAuth();
   const [progress, setProgress] = useState(null);
   const [modules, setModules] = useState([]);
+  const [videoCourses, setVideoCourses] = useState([]);
 
   useEffect(() => {
-    Promise.all([apiFetch('/api/progress'), apiFetch('/api/modules')])
-      .then(([p, m]) => {
+    Promise.all([
+      apiFetch('/api/progress'),
+      apiFetch('/api/modules'),
+      apiFetch('/api/video-courses'),
+    ])
+      .then(([p, m, v]) => {
         setProgress(p.data);
         setModules(m.data);
+        setVideoCourses(v.data);
       })
       .catch(() => {});
   }, []);
@@ -25,6 +31,12 @@ export default function Dashboard() {
       value: progress?.completedLessons?.length || 0,
       icon: BookOpen,
       color: 'text-cyber-400',
+    },
+    {
+      label: 'Kórilgen videolar',
+      value: progress?.completedVideos?.length || 0,
+      icon: Video,
+      color: 'text-red-400',
     },
     {
       label: 'Laboratoriyalar',
@@ -54,7 +66,7 @@ export default function Dashboard() {
       <h1 className="text-3xl font-bold text-white">Salám, {user?.name}!</h1>
       <p className="mt-2 text-slate-400">Basqarıw paneli — oqıw júrińizdi kúziń</p>
 
-      <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
         {stats.map(({ label, value, icon: Icon, color }) => (
           <div key={label} className="card">
             <Icon className={`h-8 w-8 ${color}`} />
@@ -82,6 +94,31 @@ export default function Dashboard() {
           Barlıq modullar →
         </Link>
       </div>
+
+      {videoCourses.length > 0 && (
+        <div className="mt-10">
+          <h2 className="flex items-center gap-2 text-xl font-semibold text-white">
+            <Video className="h-5 w-5 text-red-400" />
+            Video kurslar
+          </h2>
+          <div className="mt-4 grid gap-4 md:grid-cols-2">
+            {videoCourses.map((course) => (
+              <Link
+                key={course.id}
+                to={`/video-courses/${course.id}`}
+                className="card transition hover:border-red-500/50"
+              >
+                <h3 className="font-semibold text-white">{course.title}</h3>
+                <p className="mt-2 line-clamp-2 text-sm text-slate-400">{course.description}</p>
+                <p className="mt-3 text-xs text-red-400">{formatVideoCount(course.videoCount)}</p>
+              </Link>
+            ))}
+          </div>
+          <Link to="/video-courses" className="mt-4 inline-block text-red-400 hover:underline">
+            Barlıq video kurslar →
+          </Link>
+        </div>
+      )}
     </div>
   );
 }

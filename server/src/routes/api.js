@@ -7,6 +7,9 @@ import {
   getModules,
   getModuleById,
   getLessonById,
+  getVideoCourses,
+  getVideoCourseById,
+  getVideoById,
   getLabs,
   getTestSections,
   getTestSectionById,
@@ -54,6 +57,36 @@ router.get(
     const lesson = getLessonById(req.params.id);
     if (!lesson) return res.status(404).json({ success: false, message: 'Sabaq tabılmadı' });
     res.json({ success: true, data: lesson });
+  }
+);
+
+router.get('/video-courses', (req, res) => {
+  const courses = getVideoCourses().map(({ videos, ...c }) => ({
+    ...c,
+    videoCount: videos?.length || 0,
+  }));
+  res.json({ success: true, data: courses });
+});
+
+router.get(
+  '/video-courses/:id',
+  param('id').notEmpty(),
+  validate,
+  (req, res) => {
+    const course = getVideoCourseById(req.params.id);
+    if (!course) return res.status(404).json({ success: false, message: 'Video kurs tabılmadı' });
+    res.json({ success: true, data: course });
+  }
+);
+
+router.get(
+  '/videos/:id',
+  param('id').notEmpty(),
+  validate,
+  (req, res) => {
+    const video = getVideoById(req.params.id);
+    if (!video) return res.status(404).json({ success: false, message: 'Video tabılmadı' });
+    res.json({ success: true, data: video });
   }
 );
 
@@ -193,7 +226,7 @@ router.get('/progress', authRequired, (req, res) => {
 router.post(
   '/progress/update',
   authRequired,
-  body('type').isIn(['lesson', 'lab', 'module']),
+  body('type').isIn(['lesson', 'lab', 'module', 'video']),
   body('id').notEmpty(),
   validate,
   (req, res) => {
@@ -203,6 +236,9 @@ router.post(
     if (type === 'lesson') {
       const completedLessons = [...new Set([...progress.completedLessons, id])];
       updateProgress(req.user.id, { completedLessons });
+    } else if (type === 'video') {
+      const completedVideos = [...new Set([...(progress.completedVideos || []), id])];
+      updateProgress(req.user.id, { completedVideos });
     } else if (type === 'lab') {
       const completedLabs = [...new Set([...progress.completedLabs, id])];
       updateProgress(req.user.id, { completedLabs });
