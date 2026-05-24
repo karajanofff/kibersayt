@@ -57,14 +57,14 @@
   },
   {
     "id": "lab-5",
-    "title": "Insidentke javap beriw josparı",
+    "title": "Insidentke juwap beriw josparı",
     "difficulty": "joqarı",
     "duration": "90 mın",
-    "description": "Simulyatsiya insidenti boyınsha javap beriw josparın jasaw.",
+    "description": "Simulyatsiya insidenti boyınsha juwap beriw josparın jasaw.",
     "objectives": ["Insident klassifikatsiyası", "Kommunikatsiya", "Qayta tiklew"],
     "steps": [
       "Insident stsenariyin oqıń",
-      "Javap beriw josparın toltırıń",
+      "Juwap beriw josparın toltırıń",
       "Post-mortem eslatmasın jazıń"
     ],
     "status": "available"

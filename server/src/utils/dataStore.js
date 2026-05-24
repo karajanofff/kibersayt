@@ -109,7 +109,7 @@ export function checkCtfFlag(id, submittedFlag) {
   const ok = accepted.includes(submitted);
   return {
     valid: ok,
-    message: ok ? 'Javob durıs! Qutlıqlısız!' : 'Javob nadurıs. Qayta urınıp kóriń.',
+    message: ok ? 'Juwap durıs! Qutlıqlısız!' : 'Juwap nadurıs. Qayta urınıp kóriń.',
     points: ok ? challenge.points : 0,
   };
 }

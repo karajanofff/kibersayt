@@ -76,10 +76,10 @@
     {
       "id": "test-mod-5",
       "moduleId": "mod-5",
-      "title": "Insidentke javap beriw",
+      "title": "Insidentke juwap beriw",
       "description": "Insident josparı, log tallaw hám forensics boyınsha 10 soraw.",
       "questions": [
-        { "id": "t5-q1", "text": "Insidentke javap beriwdiń birinshi qadami?", "options": ["Anıqlaw hám klassifikatsiya", "Formatlaw", "Marketing", "Satuw"], "correctIndex": 0 },
+        { "id": "t5-q1", "text": "Insidentke juwap beriwdiń birinshi qadami?", "options": ["Anıqlaw hám klassifikatsiya", "Formatlaw", "Marketing", "Satuw"], "correctIndex": 0 },
         { "id": "t5-q2", "text": "Minimal ruxsat printsipi?", "options": ["Minimal kerek ruxsat", "Maksimal admin", "Parolsız kiriw", "Ashıq portlar"], "correctIndex": 0 },
         { "id": "t5-q3", "text": "SIEM ne qıladı?", "options": ["Loglardı jinaydı hám tahlil qıladı", "Parol buzadı", "Elektron xat jazadı", "Virus jazadı"], "correctIndex": 0 },
         { "id": "t5-q4", "text": "IOC — ne?", "options": ["Buzılıw belgisi", "Kompyuterler interneti", "Kiritiw-shıǵıw basqarıwı", "Ishxana ishki kodi"], "correctIndex": 0 },
