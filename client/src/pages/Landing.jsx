@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { Shield, BookOpen, Video, FlaskConical, Flag, ArrowRight } from 'lucide-react';
 import { useTranslation } from '../context/LanguageContext';
-import LanguageSwitcher from '../components/LanguageSwitcher';
+import TopLanguageBar from '../components/TopLanguageBar';
 
 export default function Landing() {
   const { t } = useTranslation();
@@ -19,13 +19,14 @@ export default function Landing() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
-      <header className="mx-auto flex max-w-7xl items-center justify-between px-4 py-6">
+      <header className="sticky top-0 z-50 bg-slate-950/95 backdrop-blur">
+        <TopLanguageBar />
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-6">
         <div className="flex items-center gap-2 text-xl font-bold text-cyber-400">
           <Shield className="h-9 w-9" />
           {t('brand')}
         </div>
         <div className="flex items-center gap-3">
-          <LanguageSwitcher />
           <Link to="/login" className="btn-secondary">
             {t('navLogin')}
           </Link>
@@ -33,6 +34,7 @@ export default function Landing() {
             {t('landingStart')}
             <ArrowRight className="h-4 w-4" />
           </Link>
+        </div>
         </div>
       </header>
 

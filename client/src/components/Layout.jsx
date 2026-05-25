@@ -17,7 +17,7 @@ import {
 import { useMemo, useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { useTranslation } from '../context/LanguageContext';
-import LanguageSwitcher from './LanguageSwitcher';
+import TopLanguageBar from './TopLanguageBar';
 
 export default function Layout() {
   const { user, logout, isAdmin } = useAuth();
@@ -45,14 +45,16 @@ export default function Layout() {
 
   return (
     <div className="min-h-screen bg-slate-950">
-      <header className="sticky top-0 z-50 border-b border-slate-800 bg-slate-950/90 backdrop-blur">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
-          <Link to="/" className="flex items-center gap-2 font-bold text-cyber-400">
+      <header className="sticky top-0 z-50 bg-slate-950/95 backdrop-blur">
+        <TopLanguageBar />
+        <div className="border-b border-slate-800">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3">
+          <Link to="/" className="flex shrink-0 items-center gap-2 font-bold text-cyber-400">
             <Shield className="h-8 w-8" />
-            <span>{t('brand')}</span>
+            <span className="hidden sm:inline">{t('brand')}</span>
           </Link>
 
-          <nav className="hidden items-center gap-1 md:flex">
+          <nav className="hidden flex-1 items-center justify-center gap-1 md:flex">
             {nav.map(({ to, label, icon: Icon }) => (
               <NavLink
                 key={to}
@@ -83,7 +85,6 @@ export default function Layout() {
           </nav>
 
           <div className="hidden items-center gap-3 md:flex">
-            <LanguageSwitcher />
             {user ? (
               <>
                 <span className="text-sm text-slate-400">{user.name}</span>
@@ -100,8 +101,7 @@ export default function Layout() {
             )}
           </div>
 
-          <div className="flex items-center gap-2 md:hidden">
-            <LanguageSwitcher />
+          <div className="flex items-center gap-2 lg:hidden">
             <button
               type="button"
               className="text-slate-300"
@@ -114,7 +114,7 @@ export default function Layout() {
         </div>
 
         {mobileOpen && (
-          <div className="border-t border-slate-800 px-4 py-3 md:hidden">
+          <div className="border-t border-slate-800 px-4 py-3 lg:hidden">
             {nav.map(({ to, label }) => (
               <NavLink
                 key={to}
@@ -141,6 +141,7 @@ export default function Layout() {
             )}
           </div>
         )}
+        </div>
       </header>
 
       <main className="mx-auto max-w-7xl px-4 py-8">

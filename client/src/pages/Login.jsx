@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Shield, LogIn, GraduationCap, UserCog } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { useTranslation } from '../context/LanguageContext';
-import LanguageSwitcher from '../components/LanguageSwitcher';
+import TopLanguageBar from '../components/TopLanguageBar';
 
 const DEMO_ADMIN = { email: 'admin@cyberedu.local', password: 'admin123' };
 const DEMO_STUDENT = { email: 'Allayar007@student.local', password: 'Allayar123' };
@@ -47,11 +47,12 @@ export default function Login() {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-slate-950 px-4">
-      <div className="card relative w-full max-w-md">
-        <div className="absolute right-4 top-4">
-          <LanguageSwitcher />
-        </div>
+    <div className="min-h-screen bg-slate-950">
+      <header className="sticky top-0 z-50 bg-slate-950/95 backdrop-blur">
+        <TopLanguageBar />
+      </header>
+      <div className="flex min-h-[calc(100vh-4.5rem)] items-center justify-center px-4">
+      <div className="card w-full max-w-md">
         <div className="mb-6 flex items-center justify-center gap-2 text-cyber-400">
           <Shield className="h-10 w-10" />
           <span className="text-2xl font-bold">{t('brand')}</span>
@@ -124,6 +125,7 @@ export default function Login() {
             {t('backToHome')}
           </Link>
         </p>
+      </div>
       </div>
     </div>
   );
