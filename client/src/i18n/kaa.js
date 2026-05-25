@@ -1,239 +1,7 @@
-/** Qaraqalpaq tilindegi barlıq foydalanıwshı interfeysi matnlari */
-export const kaa = {
-  brand: 'CyberEdu',
+/** @deprecated — use useTranslation() from LanguageContext */
+import { kaaMessages } from './messages.kaa';
 
-  loading: 'Júkliniwde',
-  submitting: 'Jiberilbekte...',
-  waiting: 'Kútipek...',
-
-  navHome: 'Bas bet',
-  navDashboard: 'Basqarıw paneli',
-  navModules: 'Modullar',
-  navVideoCourses: 'Video sabaqlar',
-  navLabs: 'Laboratoriya jumısları',
-  navTests: 'Testler',
-  navCtf: 'CTF shınıǵıwları',
-  navResources: 'Resurslar',
-  navAdmin: 'Administrator paneli',
-  navLogin: 'Kiriw',
-  navLogout: 'Shıǵıw',
-  navRegister: 'Dizimnen ótiw',
-  menu: 'Menyu',
-
-  roleAdmin: 'Basqarıwshı',
-  roleStudent: 'Oqıwshı',
-
-  lesson: 'sabaq',
-  video: 'video',
-  minutes: 'mın',
-  question: 'soraw',
-  points: 'ball',
-  theme: 'Tema',
-  module: 'Modul',
-
-  backToHome: 'Bas betke qaytıw',
-  backToModules: 'Modullarǵa qaytıw',
-  backToLabs: 'Laboratoriya jumıslarına qaytıw',
-  backToVideoCourses: 'Video sabaqlarǵa qaytıw',
-  backToTests: 'Testlerge qaytıw',
-  allModules: 'Barlıq modullar →',
-  allVideoCourses: 'Barlıq video sabaqlar →',
-  open: 'Ashıw',
-  view: 'Kóriw',
-  download: 'Júklep alıw',
-  save: 'Saqlaw',
-  cancel: 'Biykarlaw',
-  edit: 'Ózgertiw',
-  delete: 'Óshiriw',
-  create: 'Jaratiw',
-  update: 'Jańalaw',
-  search: 'Izlew',
-  filter: 'Filtrlew',
-  category: 'Kategoriya',
-  level: 'Dáreje',
-  progress: 'Nátiyje barısı',
-  result: 'Nátiyje',
-  description: 'Táriyp',
-
-  landingTagline: 'KIBERQÁWIPSIZLIK KURSÍ PLATFORMASÍ',
-  landingSubtitle: '— Kiberqáwipsizlikti kásiplik dárejede úyreniń',
-  landingIntro:
-    'Modullar, laboratoriya jumısları, testler hám qáwipsiz CTF shınıǵıwları arqalı kiberqáwipsizlik boyınsha bilimlerińizdi arttırıń.',
-  landingDisclaimer: 'Barlıq tapsırmalar nızamlı oqıw simulyaciyası retinde dúzilgen.',
-  landingStart: 'Platformaǵa kiriw',
-  landingLearnMore: 'Kóbirek biliw',
-  featureModulesTitle: '6 kurs moduli',
-  featureModulesDesc: 'Hár birinde 5 sabaq — tolıq teoriya hám amaliy maǵlıwmat.',
-  featureVideoTitle: 'Video sabaqlar',
-  featureVideoDesc: '«Kiberqáwipsizlik» video sabaqlar toplamı — 5 tematik sabaq.',
-  featureLabsTitle: '5 laboratoriya',
-  featureLabsDesc: 'Qáwipsiz simulyaciya ishinde amaliy jumıslar.',
-  featureCtfTitle: '4 CTF shınıǵıwı',
-  featureCtfDesc: 'Sezer, ROT13, Vejiner hám AES shınıǵıwları.',
-  footerCreators: 'Platforma tiykarshıları',
-  footerFullStack: 'Full-Stack programmist: B. Karajanov',
-  footerJunior: 'Junior programmist: Xamdullaev Allayar',
-  footerCopyright: '© 2026 CyberEdu. Barlıq huqıqlar qorǵalǵan.',
-  footerDemoAccounts:
-    'Sınaq oqıwshı: Allayar007@student.local / Allayar123 · Sınaq basqarıwshı: admin@cyberedu.local / admin123',
-
-  loginTitle: 'Platformaǵa kiriw',
-  loginDemoAccounts: 'Sınaq akkauntlar',
-  loginStudent: 'Oqıwshı',
-  loginAdmin: 'Basqarıwshı',
-  loginStudentQuick: 'Oqıwshı kiriwi',
-  loginAdminQuick: 'Basqarıwshı kiriwi',
-  loginEmail: 'Elektron pochta',
-  loginPassword: 'Parol',
-  loginFullName: 'Tolıq atı-jóni',
-  loginUsername: 'Paydalanıwshı atı',
-  loginEmailPlaceholder: 'pochta@misal.local',
-  loginSubmit: 'Kiriw',
-  loginSignUp: 'Dizimnen ótiw',
-  loginSuccess: 'Kiriw ámelge asırıldı',
-  loginFailed: 'Kiriw ámelge aspadi',
-  sessionExpired: 'Sessiya waqtı támam boldı. Qayta kiriń.',
-  requiredField: 'Bul maydan toltırılıwı kerek',
-
-  dashboardWelcome: 'Qayta xosh keldińiz',
-  dashboardGreeting: 'Salám',
-  dashboardSubtitle: 'Basqarıw paneli — oqıw júrińizdi kúziń',
-  dashboardQuickAccess: 'Tez kiriw',
-  dashboardOverallProgress: 'Ulıwma nátiyje barısı',
-  dashboardTodayLesson: 'Búgingi sabaq',
-  dashboardActiveLabs: 'Aktiv laboratoriyalar',
-  dashboardTestResults: 'Test nátiyjeleri',
-  dashboardCtfProgress: 'CTF barısı',
-  dashboardRecentActivity: 'Sońǵı háreketler',
-  statCompletedLessons: 'Tamamlanǵan sabaqlar',
-  statWatchedVideos: 'Kórilgen videolar',
-  statLabs: 'Laboratoriyalar',
-  statTestAvg: 'Test ortasha ballı',
-  statCtfSolved: 'Sheshilgen CTF shınıǵıwları',
-  sectionModules: 'Kurs modulları',
-  sectionVideoCourses: 'Video sabaqlar',
-
-  modulesTitle: 'Kurs modulları',
-  modulesSubtitle: '6 modul, hár birinde 5 sabaq',
-  openLesson: 'Sabaqtı ashıw',
-  startLesson: 'Sabaqtı baslaw',
-  continueLesson: 'Sabaqtı dawam etiw',
-  markCompleted: 'Tamamlandı dep belgilew',
-  completed: 'Tamamlandı',
-  notCompleted: 'Tamamlanbaǵan',
-  duration: 'Dawamlılıǵı',
-  difficulty: 'Qıyınlıq dárejesi',
-  topics: 'Temalar',
-
-  videoCoursesTitle: 'Video sabaqlar',
-  videoCoursesSubtitle: '«Kiberqáwipsizlik» video sabaqlar toplamı — tematik video sabaqlar',
-  videoFullPlaylist: 'Toliq darslar toplamı',
-  videoWatchOnYoutube: 'Video xizmetinde kóriw',
-  videoStudyTime: 'Dawamlılıǵı',
-  videoWatched: 'Videonı kórip boldım',
-  videoCompleted: 'Tamamlandı',
-
-  lessonStudyTime: 'Dawamlılıǵı',
-  lessonComplete: 'Tamamlandı dep belgilew',
-  lessonCompleted: 'Tamamlandı',
-  summaryPrefix: 'Qorındı:',
-
-  labsTitle: 'Laboratoriya tapsırmaları',
-  labsSubtitle: 'Qáwipsiz simulyaciya — 5 laboratoriya jumısı',
-  labObjectives: 'Maqsatlar',
-  labSteps: 'Qadamlar',
-  labOpen: 'Laboratoriyanı ashıw',
-  labStart: 'Laboratoriyanı baslaw',
-  labSubmitReport: 'Esabattı jiberiw',
-  labResult: 'Laboratoriya nátiyjesi',
-  labDisclaimer:
-    'Esletpe: Bul laboratoriya faqat oqıw simulyaciyası. Haqıyqıy sistemalarga ruxsatsız kiriw qadaǵanlanǵan.',
-  labComplete: 'Tamamlandı dep belgilew',
-
-  diffBeginner: 'Baslanǵısh',
-  diffMedium: 'Orta',
-  diffAdvanced: 'Joqarı',
-
-  testsTitle: 'Testler',
-  testsSubtitle: 'Hár tema boyınsha 10 soraw · Ótish ballı',
-  testsTheme: 'Tema',
-  testsStart: 'Testti baslaw',
-  testsPassed: 'Ótti',
-  testsRetry: 'Qayta tapsırıw',
-  testsScore: 'Sizdiń ballıńız',
-  testsResult: 'Test nátiyjesi',
-  testsCorrect: 'Durıs juwap',
-  testsWrong: 'Qáte juwap',
-  testsPassMin: 'Ótish ushın minimum',
-  testsPassSuccess: 'Tabıslı óttińiz!',
-  testsOther: 'Basqa testler',
-  testsSubmit: 'Testti tapsırıw',
-  testsFinish: 'Testti juwmaqlaw',
-  testsNext: 'Keyingi soraw',
-  testsPrevious: 'Aldıńǵı soraw',
-  testsTotalQuestions: 'Ulıwma sorawlar',
-  testsAnswerAll: 'Barlıq sorawlarga juwap beriń!',
-
-  ctfTitle: 'CTF shınıǵıwları',
-  ctfSubtitle: '4 ta shınıǵıw. Berilgan misoldı yeshiń, flag tekst kórinishinde jiberiń.',
-  ctfHowItWorks:
-    'Berilgan misoldı óqiń, shifrlań yamasa dekodlań. Flag maydanına natijeni jazıp, «Flag jiberiw» basıń.',
-  ctfChallenge: 'Shınıǵıw',
-  ctfOpenChallenge: 'Shınıǵıwdı ashıw',
-  ctfProblem: 'Shınıǵıw',
-  ctfCipherType: 'Shifrlaw túri',
-  ctfShift: 'siljisiw',
-  ctfKey: 'kalit',
-  ctfPlaintext: 'Ashıq matn',
-  ctfAlphabetHelp: 'Alfavit (kómek)',
-  ctfGivenExample: 'Berilgan misol (shifrlangan matn)',
-  ctfHint: 'Kórsetpe',
-  ctfDecodeInfo: 'Dekodlaw ushın málimotlar (tayar)',
-  ctfAlgorithm: 'Algoritm',
-  ctfKeyLabel: 'Kalit',
-  ctfIvLabel: 'Bastapqı vektor',
-  ctfOpenCyberChef: 'Kiber Oshxona quralın ashıw →',
-  ctfYourAnswer: 'Flag (tekst kórinishinde)',
-  ctfAnswerPlaceholder: 'Flag kiritiń',
-  ctfSubmit: 'Flag jiberiw',
-  ctfCorrectFlag: 'Durıs flag',
-  ctfWrongFlag: 'Qáte flag',
-
-  resourcesTitle: 'Resurslar',
-  resourcesSubtitle: '10 ta oqıw materialları',
-  resourcesBooks: 'Kitaplar',
-  resourcesArticles: 'Maqalalar',
-  resourcesVideos: 'Video sabaqlar',
-  resourcesDocs: 'Hújjetler',
-  resourcesRecommended: 'Usınıs etilgen',
-  resourcesLearningMaterials: 'Oqıw materialları',
-  resourcesOpen: 'Resurstı ashıw',
-
-  adminTitle: 'Administrator paneli',
-  adminSubtitle: 'Platforma basqarıwı — sınaq rejimi',
-  adminStatModules: 'Modullar',
-  adminStatLabs: 'Laboratoriyalar',
-  adminStatCtf: 'CTF shınıǵıwları',
-  adminStudents: 'Studentler',
-  adminColName: 'Atı',
-  adminColEmail: 'Elektron pochta',
-  adminColRole: 'Roli',
-  adminDemoPassword: 'Sınaq oqıwshı paroli: student123',
-  adminManageContent: 'Mazmundı basqarıw',
-  adminStudentProgress: 'Studentlerdiń nátiyje barısı',
-  adminAddModule: 'Modul qosıw',
-  adminAddLesson: 'Sabaq qosıw',
-  adminAddLab: 'Laboratoriya qosıw',
-  adminAddTest: 'Test sorawın qosıw',
-  adminAddCtf: 'CTF shınıǵıwın qosıw',
-
-  noData: 'Maǵlıwmat tabılmadı',
-  errorOccurred: 'Qátelik júz berdi',
-  savedSuccess: 'Sáttli saqlandı',
-  updatedSuccess: 'Sáttli jańalandı',
-  deletedSuccess: 'Sáttli óshirildi',
-  requestError: 'Sorawda qátelik júz berdi',
-};
+export const kaa = kaaMessages;
 
 export const resourceTypeLabels = {
   hújjet: 'Hújjet',
@@ -247,18 +15,18 @@ export const resourceTypeLabels = {
 };
 
 export function formatLessonCount(n) {
-  return `${n} ${kaa.lesson}`;
+  return `${n} ${kaaMessages.lesson}`;
 }
 
 export function formatVideoCount(n) {
-  return `${n} ${kaa.video}`;
+  return `${n} ${kaaMessages.video}`;
 }
 
 export function formatQuestionCount(n) {
-  return `${n} ${kaa.question}`;
+  return `${n} ${kaaMessages.question}`;
 }
 
 export function formatDuration(duration) {
   if (!duration) return '';
-  return String(duration).replace(/\bmin\b/gi, kaa.minutes);
+  return String(duration).replace(/\bmin\b/gi, kaaMessages.minutes);
 }

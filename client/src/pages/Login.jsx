@@ -2,12 +2,14 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Shield, LogIn, GraduationCap, UserCog } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
-import { kaa } from '../i18n/kaa';
+import { useTranslation } from '../context/LanguageContext';
+import LanguageSwitcher from '../components/LanguageSwitcher';
 
 const DEMO_ADMIN = { email: 'admin@cyberedu.local', password: 'admin123' };
 const DEMO_STUDENT = { email: 'Allayar007@student.local', password: 'Allayar123' };
 
 export default function Login() {
+  const { t } = useTranslation();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -46,21 +48,24 @@ export default function Login() {
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-slate-950 px-4">
-      <div className="card w-full max-w-md">
+      <div className="card relative w-full max-w-md">
+        <div className="absolute right-4 top-4">
+          <LanguageSwitcher />
+        </div>
         <div className="mb-6 flex items-center justify-center gap-2 text-cyber-400">
           <Shield className="h-10 w-10" />
-          <span className="text-2xl font-bold">{kaa.brand}</span>
+          <span className="text-2xl font-bold">{t('brand')}</span>
         </div>
-        <h1 className="text-center text-xl font-semibold text-white">{kaa.loginTitle}</h1>
+        <h1 className="text-center text-xl font-semibold text-white">{t('loginTitle')}</h1>
 
         <div className="mt-4 space-y-2 rounded-lg border border-slate-700 bg-slate-800/50 p-3 text-sm">
-          <p className="font-medium text-slate-300">{kaa.loginDemoAccounts}</p>
+          <p className="font-medium text-slate-300">{t('loginDemoAccounts')}</p>
           <p className="text-slate-400">
-            <span className="text-cyber-400">{kaa.loginStudent}:</span> {DEMO_STUDENT.email} /{' '}
+            <span className="text-cyber-400">{t('loginStudent')}:</span> {DEMO_STUDENT.email} /{' '}
             {DEMO_STUDENT.password}
           </p>
           <p className="text-slate-400">
-            <span className="text-amber-400">{kaa.loginAdmin}:</span> {DEMO_ADMIN.email} / {DEMO_ADMIN.password}
+            <span className="text-amber-400">{t('loginAdmin')}:</span> {DEMO_ADMIN.email} / {DEMO_ADMIN.password}
           </p>
         </div>
 
@@ -72,7 +77,7 @@ export default function Login() {
             className="btn-primary py-2 text-sm"
           >
             <GraduationCap className="h-4 w-4" />
-            {kaa.loginStudentQuick}
+            {t('loginStudentQuick')}
           </button>
           <button
             type="button"
@@ -81,24 +86,24 @@ export default function Login() {
             className="btn-secondary py-2 text-sm"
           >
             <UserCog className="h-4 w-4" />
-            {kaa.loginAdminQuick}
+            {t('loginAdminQuick')}
           </button>
         </div>
 
         <form onSubmit={handleSubmit} className="mt-6 space-y-4">
           <div>
-            <label className="mb-1 block text-sm text-slate-400">{kaa.loginEmail}</label>
+            <label className="mb-1 block text-sm text-slate-400">{t('loginEmail')}</label>
             <input
               type="email"
               className="input-field"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              placeholder={kaa.loginEmailPlaceholder}
+              placeholder={t('loginEmailPlaceholder')}
             />
           </div>
           <div>
-            <label className="mb-1 block text-sm text-slate-400">{kaa.loginPassword}</label>
+            <label className="mb-1 block text-sm text-slate-400">{t('loginPassword')}</label>
             <input
               type="password"
               className="input-field"
@@ -110,13 +115,13 @@ export default function Login() {
           {error && <p className="text-sm text-red-400">{error}</p>}
           <button type="submit" disabled={loading} className="btn-primary w-full">
             <LogIn className="h-4 w-4" />
-            {loading ? kaa.waiting : kaa.loginSubmit}
+            {loading ? t('waiting') : t('loginSubmit')}
           </button>
         </form>
 
         <p className="mt-6 text-center text-sm text-slate-500">
           <Link to="/" className="text-cyber-400 hover:underline">
-            {kaa.backToHome}
+            {t('backToHome')}
           </Link>
         </p>
       </div>

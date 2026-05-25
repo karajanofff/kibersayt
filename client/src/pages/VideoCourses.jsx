@@ -2,9 +2,10 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Video } from 'lucide-react';
 import { apiFetch } from '../api/client';
-import { kaa, formatVideoCount } from '../i18n/kaa';
+import { useTranslation } from '../context/LanguageContext';
 
 export default function VideoCourses() {
+  const { t, formatVideoCount, localizeVideoCourse } = useTranslation();
   const [courses, setCourses] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -14,33 +15,36 @@ export default function VideoCourses() {
       .finally(() => setLoading(false));
   }, []);
 
-  if (loading) return <p className="text-slate-400">{kaa.loading}</p>;
+  if (loading) return <p className="text-slate-400">{t('loading')}</p>;
 
   return (
     <div>
       <h1 className="flex items-center gap-2 text-3xl font-bold text-white">
         <Video className="h-8 w-8 text-cyber-400" />
-        {kaa.videoCoursesTitle}
+        {t('videoCoursesTitle')}
       </h1>
-      <p className="mt-2 text-slate-400">{kaa.videoCoursesSubtitle}</p>
+      <p className="mt-2 text-slate-400">{t('videoCoursesSubtitle')}</p>
 
       <div className="mt-8 grid gap-6 md:grid-cols-2">
-        {courses.map((course) => (
-          <Link
-            key={course.id}
-            to={`/video-courses/${course.id}`}
-            className="card flex gap-4 transition hover:border-cyber-500/50"
-          >
-            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-lg bg-red-500/20">
-              <Video className="h-7 w-7 text-red-400" />
-            </div>
-            <div className="min-w-0 flex-1">
-              <h2 className="text-lg font-semibold text-white">{course.title}</h2>
-              <p className="mt-1 text-sm text-slate-400">{course.description}</p>
-              <p className="mt-2 text-xs text-cyber-400">{formatVideoCount(course.videoCount)}</p>
-            </div>
-          </Link>
-        ))}
+        {courses.map((course) => {
+          const c = localizeVideoCourse(course);
+          return (
+            <Link
+              key={c.id}
+              to={`/video-courses/${c.id}`}
+              className="card flex gap-4 transition hover:border-cyber-500/50"
+            >
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-lg bg-red-500/20">
+                <Video className="h-7 w-7 text-red-400" />
+              </div>
+              <div className="min-w-0 flex-1">
+                <h2 className="text-lg font-semibold text-white">{c.title}</h2>
+                <p className="mt-1 text-sm text-slate-400">{c.description}</p>
+                <p className="mt-2 text-xs text-cyber-400">{formatVideoCount(c.videoCount)}</p>
+              </div>
+            </Link>
+          );
+        })}
       </div>
     </div>
   );

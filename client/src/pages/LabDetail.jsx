@@ -2,9 +2,10 @@ import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { ArrowLeft, CheckCircle, ListChecks } from 'lucide-react';
 import { apiFetch } from '../api/client';
-import { kaa } from '../i18n/kaa';
+import { useTranslation } from '../context/LanguageContext';
 
 export default function LabDetail() {
+  const { t, localizeLab } = useTranslation();
   const { id } = useParams();
   const [lab, setLab] = useState(null);
   const [done, setDone] = useState(false);
@@ -24,22 +25,24 @@ export default function LabDetail() {
     setDone(true);
   };
 
-  if (!lab) return <p className="text-slate-400">{kaa.loading}</p>;
+  if (!lab) return <p className="text-slate-400">{t('loading')}</p>;
+
+  const l = localizeLab(lab);
 
   return (
     <div>
       <Link to="/labs" className="inline-flex items-center gap-1 text-sm text-cyber-400 hover:underline">
         <ArrowLeft className="h-4 w-4" />
-        {kaa.backToLabs}
+        {t('backToLabs')}
       </Link>
-      <h1 className="mt-4 text-3xl font-bold text-white">{lab.title}</h1>
-      <p className="mt-2 text-slate-400">{lab.description}</p>
+      <h1 className="mt-4 text-3xl font-bold text-white">{l.title}</h1>
+      <p className="mt-2 text-slate-400">{l.description}</p>
 
       <div className="mt-8 grid gap-6 lg:grid-cols-2">
         <div className="card">
-          <h2 className="font-semibold text-white">{kaa.labObjectives}</h2>
+          <h2 className="font-semibold text-white">{t('labObjectives')}</h2>
           <ul className="mt-3 space-y-2">
-            {lab.objectives?.map((o) => (
+            {l.objectives?.map((o) => (
               <li key={o} className="flex items-start gap-2 text-sm text-slate-300">
                 <ListChecks className="mt-0.5 h-4 w-4 shrink-0 text-cyber-400" />
                 {o}
@@ -48,9 +51,9 @@ export default function LabDetail() {
           </ul>
         </div>
         <div className="card">
-          <h2 className="font-semibold text-white">{kaa.labSteps}</h2>
+          <h2 className="font-semibold text-white">{t('labSteps')}</h2>
           <ol className="mt-3 list-decimal space-y-2 pl-5 text-sm text-slate-300">
-            {lab.steps?.map((s) => (
+            {l.steps?.map((s) => (
               <li key={s}>{s}</li>
             ))}
           </ol>
@@ -58,12 +61,12 @@ export default function LabDetail() {
       </div>
 
       <div className="card mt-6 border-amber-500/30 bg-amber-500/5">
-        <p className="text-sm text-amber-200">{kaa.labDisclaimer}</p>
+        <p className="text-sm text-amber-200">{t('labDisclaimer')}</p>
       </div>
 
       <button type="button" onClick={complete} disabled={done} className="btn-primary mt-6">
         <CheckCircle className="h-4 w-4" />
-        {done ? kaa.lessonCompleted : kaa.labComplete}
+        {done ? t('lessonCompleted') : t('labComplete')}
       </button>
     </div>
   );

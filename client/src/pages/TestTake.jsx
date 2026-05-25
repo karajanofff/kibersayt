@@ -2,15 +2,15 @@ import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { ClipboardCheck, ArrowLeft } from 'lucide-react';
 import { apiFetch } from '../api/client';
-import { kaa, formatQuestionCount } from '../i18n/kaa';
+import { useTranslation } from '../context/LanguageContext';
 
 export default function TestTake() {
+  const { t, formatQuestionCount, localizeTestSection } = useTranslation();
   const { id } = useParams();
   const [test, setTest] = useState(null);
   const [answers, setAnswers] = useState({});
   const [result, setResult] = useState(null);
   const [submitting, setSubmitting] = useState(false);
-
   const [loadError, setLoadError] = useState('');
 
   useEffect(() => {
@@ -25,13 +25,13 @@ export default function TestTake() {
         if (active) setTest(res.data);
       })
       .catch((err) => {
-        if (active) setLoadError(err.message || kaa.errorOccurred);
+        if (active) setLoadError(err.message || t('errorOccurred'));
       });
 
     return () => {
       active = false;
     };
-  }, [id]);
+  }, [id, t]);
 
   const select = (questionId, index) => {
     setAnswers((prev) => ({ ...prev, [questionId]: index }));
@@ -44,7 +44,7 @@ export default function TestTake() {
       selectedIndex: answers[q.id] ?? -1,
     }));
     if (payload.some((a) => a.selectedIndex < 0)) {
-      alert(kaa.testsAnswerAll);
+      alert(t('testsAnswerAll'));
       return;
     }
     setSubmitting(true);
@@ -61,12 +61,16 @@ export default function TestTake() {
     }
   };
 
+  const localizedMeta = test ? localizeTestSection({ id, title: test.title, description: test.description }) : null;
+  const displayTitle = localizedMeta?.title ?? test?.title;
+  const displayDescription = localizedMeta?.description ?? test?.description;
+
   if (loadError) {
     return (
       <div>
         <Link to="/test" className="inline-flex items-center gap-1 text-sm text-cyber-400 hover:underline">
           <ArrowLeft className="h-4 w-4" />
-          {kaa.backToTests}
+          {t('backToTests')}
         </Link>
         <p className="mt-6 rounded-lg border border-red-500/40 bg-red-500/10 px-4 py-3 text-red-300">
           {loadError}
@@ -75,30 +79,30 @@ export default function TestTake() {
     );
   }
 
-  if (!test) return <p className="text-slate-400">{kaa.loading}</p>;
+  if (!test) return <p className="text-slate-400">{t('loading')}</p>;
 
   if (result) {
     return (
       <div>
         <Link to="/test" className="inline-flex items-center gap-1 text-sm text-cyber-400 hover:underline">
           <ArrowLeft className="h-4 w-4" />
-          {kaa.backToTests}
+          {t('backToTests')}
         </Link>
         <div className="card mx-auto mt-6 max-w-lg text-center">
           <ClipboardCheck className="mx-auto h-16 w-16 text-cyber-400" />
-          <h2 className="mt-4 text-2xl font-bold text-white">{test.title}</h2>
-          <p className="mt-1 text-sm text-slate-500">{kaa.testsResult}</p>
+          <h2 className="mt-4 text-2xl font-bold text-white">{displayTitle}</h2>
+          <p className="mt-1 text-sm text-slate-500">{t('testsResult')}</p>
           <p className="mt-4 text-4xl font-bold text-cyber-400">{result.score}%</p>
           <p className="mt-2 text-slate-400">
-            {result.correct} / {result.total} {kaa.testsCorrect}
+            {result.correct} / {result.total} {t('testsCorrect')}
           </p>
           <p className={`mt-4 text-lg ${result.passed ? 'text-emerald-400' : 'text-amber-400'}`}>
             {result.passed
-              ? kaa.testsPassSuccess
-              : `${kaa.testsPassMin} ${result.passingScore}% kerek`}
+              ? t('testsPassSuccess')
+              : t('testsPassMinDetail').replace('{score}', String(result.passingScore))}
           </p>
           <Link to="/test" className="btn-primary mt-6 inline-flex">
-            {kaa.testsOther}
+            {t('testsOther')}
           </Link>
         </div>
       </div>
@@ -109,15 +113,15 @@ export default function TestTake() {
     <div>
       <Link to="/test" className="inline-flex items-center gap-1 text-sm text-cyber-400 hover:underline">
         <ArrowLeft className="h-4 w-4" />
-        {kaa.backToTests}
+        {t('backToTests')}
       </Link>
       <h1 className="mt-4 flex items-center gap-2 text-3xl font-bold text-white">
         <ClipboardCheck className="h-8 w-8 text-cyber-400" />
-        {test.title}
+        {displayTitle}
       </h1>
-      <p className="mt-2 text-slate-400">{test.description}</p>
+      <p className="mt-2 text-slate-400">{displayDescription}</p>
       <p className="mt-1 text-sm text-slate-500">
-        {formatQuestionCount(test.questions.length)} · {kaa.testsSubtitle}: {test.passingScore}%
+        {formatQuestionCount(test.questions.length)} · {t('testsSubtitle')}: {test.passingScore}%
       </p>
 
       <div className="mt-8 space-y-8">
@@ -152,7 +156,7 @@ export default function TestTake() {
       </div>
 
       <button type="button" onClick={submit} disabled={submitting} className="btn-primary mt-8">
-        {submitting ? kaa.submitting : kaa.testsSubmit}
+        {submitting ? t('submitting') : t('testsSubmit')}
       </button>
     </div>
   );

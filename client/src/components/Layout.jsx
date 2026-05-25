@@ -14,24 +14,29 @@ import {
   Menu,
   X,
 } from 'lucide-react';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { useAuth } from '../context/AuthContext';
-import { kaa } from '../i18n/kaa';
-
-const nav = [
-  { to: '/dashboard', label: kaa.navDashboard, icon: LayoutDashboard },
-  { to: '/modules', label: kaa.navModules, icon: BookOpen },
-  { to: '/video-courses', label: kaa.navVideoCourses, icon: Video },
-  { to: '/labs', label: kaa.navLabs, icon: FlaskConical },
-  { to: '/test', label: kaa.navTests, icon: ClipboardCheck },
-  { to: '/ctf', label: kaa.navCtf, icon: Flag },
-  { to: '/resources', label: kaa.navResources, icon: Library },
-];
+import { useTranslation } from '../context/LanguageContext';
+import LanguageSwitcher from './LanguageSwitcher';
 
 export default function Layout() {
   const { user, logout, isAdmin } = useAuth();
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  const nav = useMemo(
+    () => [
+      { to: '/dashboard', label: t('navDashboard'), icon: LayoutDashboard },
+      { to: '/modules', label: t('navModules'), icon: BookOpen },
+      { to: '/video-courses', label: t('navVideoCourses'), icon: Video },
+      { to: '/labs', label: t('navLabs'), icon: FlaskConical },
+      { to: '/test', label: t('navTests'), icon: ClipboardCheck },
+      { to: '/ctf', label: t('navCtf'), icon: Flag },
+      { to: '/resources', label: t('navResources'), icon: Library },
+    ],
+    [t],
+  );
 
   const handleLogout = () => {
     logout();
@@ -44,7 +49,7 @@ export default function Layout() {
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
           <Link to="/" className="flex items-center gap-2 font-bold text-cyber-400">
             <Shield className="h-8 w-8" />
-            <span>{kaa.brand}</span>
+            <span>{t('brand')}</span>
           </Link>
 
           <nav className="hidden items-center gap-1 md:flex">
@@ -72,36 +77,40 @@ export default function Layout() {
                 }
               >
                 <Settings className="h-4 w-4" />
-                {kaa.navAdmin}
+                {t('navAdmin')}
               </NavLink>
             )}
           </nav>
 
           <div className="hidden items-center gap-3 md:flex">
+            <LanguageSwitcher />
             {user ? (
               <>
                 <span className="text-sm text-slate-400">{user.name}</span>
                 <button type="button" onClick={handleLogout} className="btn-secondary text-sm">
                   <LogOut className="h-4 w-4" />
-                  {kaa.navLogout}
+                  {t('navLogout')}
                 </button>
               </>
             ) : (
               <Link to="/login" className="btn-primary text-sm">
                 <LogIn className="h-4 w-4" />
-                {kaa.navLogin}
+                {t('navLogin')}
               </Link>
             )}
           </div>
 
-          <button
-            type="button"
-            className="md:hidden text-slate-300"
-            onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label={kaa.menu}
-          >
-            {mobileOpen ? <X /> : <Menu />}
-          </button>
+          <div className="flex items-center gap-2 md:hidden">
+            <LanguageSwitcher />
+            <button
+              type="button"
+              className="text-slate-300"
+              onClick={() => setMobileOpen(!mobileOpen)}
+              aria-label={t('menu')}
+            >
+              {mobileOpen ? <X /> : <Menu />}
+            </button>
+          </div>
         </div>
 
         {mobileOpen && (
@@ -118,16 +127,16 @@ export default function Layout() {
             ))}
             {isAdmin && (
               <NavLink to="/admin" onClick={() => setMobileOpen(false)} className="block py-2 text-amber-300">
-                {kaa.navAdmin}
+                {t('navAdmin')}
               </NavLink>
             )}
             {user ? (
               <button type="button" onClick={handleLogout} className="mt-2 text-sm text-red-400">
-                {kaa.navLogout}
+                {t('navLogout')}
               </button>
             ) : (
               <Link to="/login" onClick={() => setMobileOpen(false)} className="mt-2 block text-cyber-400">
-                {kaa.navLogin}
+                {t('navLogin')}
               </Link>
             )}
           </div>
@@ -139,10 +148,10 @@ export default function Layout() {
       </main>
 
       <footer className="mt-16 border-t border-slate-800 py-10 text-center text-sm text-slate-500">
-        <p className="font-medium text-slate-400">{kaa.footerCreators}</p>
-        <p className="mt-2">{kaa.footerFullStack}</p>
-        <p className="mt-1">{kaa.footerJunior}</p>
-        <p className="mt-6 text-slate-600">{kaa.footerCopyright}</p>
+        <p className="font-medium text-slate-400">{t('footerCreators')}</p>
+        <p className="mt-2">{t('footerFullStack')}</p>
+        <p className="mt-1">{t('footerJunior')}</p>
+        <p className="mt-6 text-slate-600">{t('footerCopyright')}</p>
       </footer>
     </div>
   );

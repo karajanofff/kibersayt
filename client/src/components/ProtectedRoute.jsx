@@ -1,14 +1,15 @@
 import { Navigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { kaa } from '../i18n/kaa';
+import { useTranslation } from '../context/LanguageContext';
 
 export default function ProtectedRoute({ children, adminOnly }) {
   const { user, loading } = useAuth();
+  const { t } = useTranslation();
 
   if (loading) {
     return (
       <div className="flex min-h-[40vh] items-center justify-center text-slate-400">
-        {kaa.loading}
+        {t('loading')}
       </div>
     );
   }

@@ -2,9 +2,10 @@ import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { ArrowLeft, PlayCircle } from 'lucide-react';
 import { apiFetch } from '../api/client';
-import { kaa, formatDuration } from '../i18n/kaa';
+import { useTranslation } from '../context/LanguageContext';
 
 export default function ModuleDetail() {
+  const { t, formatDuration, localizeModule } = useTranslation();
   const { id } = useParams();
   const [mod, setMod] = useState(null);
 
@@ -12,19 +13,21 @@ export default function ModuleDetail() {
     apiFetch(`/api/modules/${id}`).then((res) => setMod(res.data));
   }, [id]);
 
-  if (!mod) return <p className="text-slate-400">{kaa.loading}</p>;
+  if (!mod) return <p className="text-slate-400">{t('loading')}</p>;
+
+  const m = localizeModule(mod);
 
   return (
     <div>
       <Link to="/modules" className="inline-flex items-center gap-1 text-sm text-cyber-400 hover:underline">
         <ArrowLeft className="h-4 w-4" />
-        {kaa.backToModules}
+        {t('backToModules')}
       </Link>
-      <h1 className="mt-4 text-3xl font-bold text-white">{mod.title}</h1>
-      <p className="mt-2 text-slate-400">{mod.description}</p>
+      <h1 className="mt-4 text-3xl font-bold text-white">{m.title}</h1>
+      <p className="mt-2 text-slate-400">{m.description}</p>
 
       <div className="mt-8 space-y-3">
-        {mod.lessons?.map((lesson, i) => (
+        {m.lessons?.map((lesson, i) => (
           <Link
             key={lesson.id}
             to={`/lessons/${lesson.id}`}

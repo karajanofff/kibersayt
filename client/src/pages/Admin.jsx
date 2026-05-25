@@ -1,16 +1,20 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Settings, Users, BookOpen, Flag } from 'lucide-react';
 import { apiFetch } from '../api/client';
-import { kaa } from '../i18n/kaa';
-
-const roleLabels = {
-  admin: kaa.roleAdmin,
-  student: kaa.roleStudent,
-};
+import { useTranslation } from '../context/LanguageContext';
 
 export default function Admin() {
+  const { t } = useTranslation();
   const [students, setStudents] = useState([]);
   const [stats, setStats] = useState({ modules: 6, labs: 5, ctf: 4 });
+
+  const roleLabels = useMemo(
+    () => ({
+      admin: t('roleAdmin'),
+      student: t('roleStudent'),
+    }),
+    [t],
+  );
 
   useEffect(() => {
     apiFetch('/api/students')
@@ -29,15 +33,15 @@ export default function Admin() {
     <div>
       <h1 className="flex items-center gap-2 text-3xl font-bold text-white">
         <Settings className="h-8 w-8 text-amber-400" />
-        {kaa.adminTitle}
+        {t('adminTitle')}
       </h1>
-      <p className="mt-2 text-slate-400">{kaa.adminSubtitle}</p>
+      <p className="mt-2 text-slate-400">{t('adminSubtitle')}</p>
 
       <div className="mt-8 grid gap-4 sm:grid-cols-3">
         {[
-          { label: kaa.adminStatModules, value: stats.modules, icon: BookOpen },
-          { label: kaa.adminStatLabs, value: stats.labs, icon: Settings },
-          { label: kaa.adminStatCtf, value: stats.ctf, icon: Flag },
+          { label: t('adminStatModules'), value: stats.modules, icon: BookOpen },
+          { label: t('adminStatLabs'), value: stats.labs, icon: Settings },
+          { label: t('adminStatCtf'), value: stats.ctf, icon: Flag },
         ].map(({ label, value, icon: Icon }) => (
           <div key={label} className="card border-amber-500/20">
             <Icon className="h-8 w-8 text-amber-400" />
@@ -50,15 +54,15 @@ export default function Admin() {
       <div className="card mt-10">
         <h2 className="flex items-center gap-2 text-xl font-semibold text-white">
           <Users className="h-5 w-5 text-amber-400" />
-          {kaa.adminStudents} ({students.length})
+          {t('adminStudents')} ({students.length})
         </h2>
         <div className="mt-4 overflow-x-auto">
           <table className="w-full text-left text-sm">
             <thead>
               <tr className="border-b border-slate-700 text-slate-400">
-                <th className="py-2 pr-4">{kaa.adminColName}</th>
-                <th className="py-2 pr-4">{kaa.adminColEmail}</th>
-                <th className="py-2">{kaa.adminColRole}</th>
+                <th className="py-2 pr-4">{t('adminColName')}</th>
+                <th className="py-2 pr-4">{t('adminColEmail')}</th>
+                <th className="py-2">{t('adminColRole')}</th>
               </tr>
             </thead>
             <tbody>
@@ -72,7 +76,7 @@ export default function Admin() {
             </tbody>
           </table>
         </div>
-        <p className="mt-4 text-xs text-slate-500">{kaa.adminDemoPassword}</p>
+        <p className="mt-4 text-xs text-slate-500">{t('adminDemoPassword')}</p>
       </div>
     </div>
   );

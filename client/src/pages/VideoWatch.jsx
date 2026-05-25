@@ -2,9 +2,10 @@ import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { ArrowLeft, CheckCircle, ExternalLink, Tag } from 'lucide-react';
 import { apiFetch } from '../api/client';
-import { kaa, formatDuration } from '../i18n/kaa';
+import { useTranslation } from '../context/LanguageContext';
 
 export default function VideoWatch() {
+  const { t, formatDuration, localizeVideo } = useTranslation();
   const { id } = useParams();
   const [video, setVideo] = useState(null);
   const [done, setDone] = useState(false);
@@ -25,34 +26,35 @@ export default function VideoWatch() {
     }
   };
 
-  if (!video) return <p className="text-slate-400">{kaa.loading}</p>;
+  if (!video) return <p className="text-slate-400">{t('loading')}</p>;
 
+  const v = localizeVideo(video);
   const origin = typeof window !== 'undefined' ? window.location.origin : '';
   const embedParams = new URLSearchParams({
     rel: '0',
     modestbranding: '1',
     ...(origin ? { origin } : {}),
   });
-  const embedUrl = `https://www.youtube-nocookie.com/embed/${video.youtubeId}?${embedParams}`;
+  const embedUrl = `https://www.youtube-nocookie.com/embed/${v.youtubeId}?${embedParams}`;
 
   return (
     <div>
       <Link
-        to={`/video-courses/${video.courseId}`}
+        to={`/video-courses/${v.courseId}`}
         className="inline-flex items-center gap-1 text-sm text-cyber-400 hover:underline"
       >
         <ArrowLeft className="h-4 w-4" />
-        {video.courseTitle}
+        {v.courseTitle}
       </Link>
-      <h1 className="mt-4 text-3xl font-bold text-white">{video.title}</h1>
+      <h1 className="mt-4 text-3xl font-bold text-white">{v.title}</h1>
       <div className="mt-2 flex flex-wrap items-center gap-3 text-sm text-slate-500">
         <span>
-          {kaa.videoStudyTime}: {formatDuration(video.duration)}
+          {t('videoStudyTime')}: {formatDuration(v.duration)}
         </span>
-        {video.theme && (
+        {v.theme && (
           <span className="inline-flex items-center gap-1 rounded bg-slate-800 px-2 py-1 text-cyber-300">
             <Tag className="h-3.5 w-3.5" />
-            {video.theme}
+            {v.theme}
           </span>
         )}
       </div>
@@ -60,7 +62,7 @@ export default function VideoWatch() {
       <div className="card mt-6 overflow-hidden p-0">
         <div className="relative aspect-video w-full bg-black">
           <iframe
-            title={video.title}
+            title={v.title}
             src={embedUrl}
             className="absolute inset-0 h-full w-full border-0"
             referrerPolicy="strict-origin-when-cross-origin"
@@ -70,23 +72,21 @@ export default function VideoWatch() {
         </div>
       </div>
 
-      {video.description && (
-        <p className="mt-6 leading-relaxed text-slate-300">{video.description}</p>
-      )}
+      {v.description && <p className="mt-6 leading-relaxed text-slate-300">{v.description}</p>}
 
       <a
-        href={`https://www.youtube.com/watch?v=${video.youtubeId}`}
+        href={`https://www.youtube.com/watch?v=${v.youtubeId}`}
         target="_blank"
         rel="noopener noreferrer"
         className="mt-4 inline-flex items-center gap-1 text-sm text-red-400 hover:underline"
       >
         <ExternalLink className="h-4 w-4" />
-        {kaa.videoWatchOnYoutube}
+        {t('videoWatchOnYoutube')}
       </a>
 
       <button type="button" onClick={markComplete} disabled={done} className="btn-primary mt-6">
         <CheckCircle className="h-4 w-4" />
-        {done ? kaa.videoCompleted : kaa.videoWatched}
+        {done ? t('videoCompleted') : t('videoWatched')}
       </button>
     </div>
   );

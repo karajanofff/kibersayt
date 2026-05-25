@@ -1,3 +1,5 @@
+import { translateKey } from '../i18n/store';
+
 const API_BASE = import.meta.env.VITE_API_URL || '';
 const DEFAULT_TIMEOUT_MS = 20000;
 
@@ -33,16 +35,16 @@ export async function apiFetch(path, options = {}) {
     if (res.status === 401) {
       clearSession();
       window.dispatchEvent(new Event('cyberedu:session-expired'));
-      throw new Error(data.message || 'Sessiya waqtı támam boldı. Qayta kiriń.');
+      throw new Error(data.message || translateKey('sessionExpired'));
     }
 
     if (!res.ok) {
-      throw new Error(data.message || 'Sorawda qátelik júz berdi');
+      throw new Error(data.message || translateKey('requestError'));
     }
     return data;
   } catch (err) {
     if (err.name === 'AbortError') {
-      throw new Error('Server juwap bermedi. Keyin qayta urınıp kóriń.');
+      throw new Error(translateKey('serverTimeout'));
     }
     throw err;
   } finally {
